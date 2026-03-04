@@ -1132,7 +1132,7 @@ main {
 
 @media screen and (max-width: 980px) {
 	.md-w-full { width: 100%; }
-   .md-flex-col-reverse { flex-direction: column-reverse; }
+   .md-flex-col-reverse { flex-direction: column-reverse !important; }
 	.md-lh-150 { line-height: 1.5em; }
    .md-lh-160 { line-height: 1.6em; }
 	.md-items-start { align-items: start !important;}
