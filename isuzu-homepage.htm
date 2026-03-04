@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isuzu Philippines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Your existing global.css -->
+  <link rel="stylesheet" href="assets/css/global.css">
+
+  <!-- Page-specific styles + animations -->
+  <style>
+    /* ═══════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════ */
+    .btn-red {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      border-radius: 99px;
+      font-family: var(--font-be);
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-red:hover {
+      background: #a00000;
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    .btn-red:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--black);
+      border: 1.5px solid var(--red);
+      border-radius: 99px;
+      font-family: var(--font-be);
+      cursor: pointer;
+      transition: all 0.35s ease;
+    }
+
+    .btn-outline:hover {
+      background: var(--red);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 0, 0, 0.3);
+    }
+
+    .btn-outline:active {
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════
+       HERO SLIDER
+    ═══════════════════════════════════ */
+    .hero {
+      height: 680px;
+      position: relative;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .hero-slides {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      z-index: 0;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Ken Burns zoom effect on active slide */
+    .hero-slide.active img {
+      animation: kenBurns 8s ease-in-out forwards;
+    }
+
+    @keyframes kenBurns {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.06);
+      }
+    }
+
+    .hero__cta {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Per-slide CTA button */
+    .hero-slide__cta {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .hero-slide__btn {
+      opacity: 0;
+      transform: translateY(20px);
+      white-space: nowrap;
+    }
+
+    .hero-slide__btn.is-entering {
+      animation: heroCTAIn 0.8s 0.6s ease-out forwards;
+    }
+
+    @keyframes heroCTAIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Dots */
+    .hero-dots {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .hero-dot {
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .hero-dot--lg {
+      width: 10px;
+      height: 10px;
+    }
+
+    .hero-dot--sm {
+      width: 7px;
+      height: 7px;
+    }
+
+    .hero-dot--inactive {
+      background: #999;
+    }
+
+    .hero-dot--active {
+      background: var(--red);
+      transform: scale(1.3);
+    }
+
+    .hero-dot:hover:not(.hero-dot--active) {
+      background: var(--black);
+      transform: scale(1.2);
+    }
+
+    /* Progress bar under hero */
+    .hero-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: var(--red);
+      z-index: 10;
+      transition: width 0.1s linear;
+    }
+
+    /* ═══════════════════════════════════
+       OBJECT FIT HELPERS
+    ═══════════════════════════════════ */
+    .obj-cover {
+      object-fit: cover;
+    }
+
+    .obj-contain {
+      object-fit: contain;
+    }
+
+    /* ═══════════════════════════════════
+       SCROLL REVEAL ANIMATIONS
+    ═══════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .reveal-left.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .reveal-right.revealed {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .reveal-scale.revealed {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Stagger children delays */
+    .stagger-1 {
+      transition-delay: 0.1s;
+    }
+
+    .stagger-2 {
+      transition-delay: 0.2s;
+    }
+
+    .stagger-3 {
+      transition-delay: 0.3s;
+    }
+
+    .stagger-4 {
+      transition-delay: 0.4s;
+    }
+
+    /* ═══════════════════════════════════
+       VEHICLE CARDS
+    ═══════════════════════════════════ */
+    .vehicle-card {
+      transition: transform 0.4s ease;
+    }
+
+    .vehicle-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .vehicle-card:hover .vehicle-card__img {
+      transform: scale(1.05);
+    }
+
+    .vehicle-card__img {
+      transition: transform 0.5s ease;
+    }
+
+    /* ═══════════════════════════════════
+       BUYING TOOLS
+    ═══════════════════════════════════ */
+    .buying-tool {
+      width: 140px;
+      padding: 16px 0;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      transition: background 0.35s ease;
+    }
+
+    .buying-tool:hover {
+      background: #F5F5F5;
+    }
+
+    .buying-tool__icon {
+      transition: transform 0.35s ease;
+    }
+
+    .buying-tool:hover .buying-tool__icon {
+      transform: translateY(6px);
+    }
+
+    /* ═══════════════════════════════════
+       WHY ISUZU OVERLAY + PARALLAX
+    ═══════════════════════════════════ */
+    .why-isuzu__img {
+      transition: transform 0.5s ease;
+    }
+
+    .why-isuzu:hover .why-isuzu__img {
+      transform: scale(1.03);
+    }
+
+    .why-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40%;
+      height: 100%;
+      background: rgba(24, 24, 24, 0.29);
+      transition: width 0.5s ease;
+    }
+
+    .why-isuzu:hover .why-overlay {
+      width: 45%;
+    }
+
+    /* ═══════════════════════════════════
+       PROMO / OWNER CARDS
+    ═══════════════════════════════════ */
+    .promo-card {
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .promo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .promo-card__img {
+      transition: transform 0.6s ease;
+    }
+
+    .promo-card:hover .promo-card__img {
+      transform: scale(1.06);
+    }
+
+    /* ═══════════════════════════════════
+       NEWS CAROUSEL
+    ═══════════════════════════════════ */
+    .news-carousel-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .news-card {
+      min-width: calc(25% - 19px);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.35s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      background: #F5F5F5;
+    }
+
+    .news-card__img {
+      transition: transform 0.5s ease;
+    }
+
+    .news-card:hover .news-card__img {
+      transform: scale(1.08);
+    }
+
+    .news-link-bar {
+      width: 80px;
+      height: 2px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease-out;
+    }
+
+    .news-card:hover .news-link-bar {
+      transform: scaleX(1);
+    }
+
+    .news-card__read {
+      transition: color 0.3s ease;
+    }
+
+    .news-card:hover .news-card__read {
+      color: var(--red);
+    }
+
+    /* Carousel arrows */
+    .carousel-arrow {
+      width: 24px;
+      height: 36px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: transform 0.25s ease, opacity 0.3s ease;
+    }
+
+    .carousel-arrow:hover {
+      transform: translateY(-50%) scale(1.15);
+    }
+
+    .carousel-arrow:active {
+      transform: translateY(-50%) scale(0.9);
+    }
+
+    .carousel-arrow svg {
+      display: block;
+    }
+
+    /* ═══════════════════════════════════
+       HEADER
+    ═══════════════════════════════════ */
+    .site-header {
+      transition: box-shadow 0.35s ease, height 0.35s ease;
+    }
+
+    .site-header.scrolled {
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-item::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--red);
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .nav-item:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .nav-item:hover .nav-label {
+      color: var(--red) !important;
+    }
+
+    .nav-item:hover .nav-arrow {
+      transform: rotate(180deg);
+    }
+
+    .nav-arrow {
+      transition: transform 0.3s ease;
+    }
+
+    /* ═══════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════ */
+    .footer-link {
+      transition: color 0.2s ease, padding-left 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--red) !important;
+      padding-left: 4px;
+    }
+
+    /* ═══════════════════════════════════
+       MEGA MENU
+    ═══════════════════════════════════ */
+    .mega-menu {
+      position: absolute;
+      top: 90px;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.13);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      z-index: 200;
+      pointer-events: none;
+    }
+
+    .mega-menu.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .mega-menu__body {
+      padding: 48px 160px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1024px;
+      margin: auto;
+    }
+
+    .mega-menu__title {
+      font-size: 32px;
+      line-height: 1;
+      margin-bottom: 28px;
+    }
+
+    .mega-menu__links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mega-menu__links a {
+      text-decoration: none;
+      line-height: 1;
+      transition: color 0.2s ease;
+    }
+
+    .mega-menu__links a:hover {
+      color: var(--red) !important;
+    }
+
+    .mega-menu__img {
+      max-height: 260px;
+      max-width: 52%;
+      object-fit: contain;
+    }
+
+    .mega-menu__bar {
+      background: var(--grey);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      gap: 64px;
+    }
+
+    .mega-tool {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: transform 0.25s ease;
+    }
+
+    .mega-tool:hover {
+      transform: translateY(-3px);
+    }
+
+    .mega-tool:hover span {
+      color: var(--red) !important;
+    }
+
+    .mega-tool img {
+      height: 28px;
+      object-fit: contain;
+    }
+
+    /* Simple nav dropdown */
+    .nav-dropdown {
+      position: absolute;
+      top: 90px;
+      width: 230px;
+      background: #fff;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      padding: 12px 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+      z-index: 200;
+      pointer-events: none;
+    }
+
+    .nav-dropdown.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .nav-dropdown a {
+      display: block;
+      text-decoration: none;
+      padding: 9px 22px;
+      transition: color 0.18s ease, background 0.18s ease;
+    }
+
+    .nav-dropdown a:hover {
+      color: var(--red) !important;
+      background: #f9f9f9;
+    }
+
+    .nav-item.menu-open .nav-label {
+      color: var(--red) !important;
+    }
+
+    .nav-item.menu-open .nav-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* ═══════════════════════════════════
+       MISC HELPERS
+    ═══════════════════════════════════ */
+    img {
+      display: block;
+    }
+
+    /* Smooth load-in for entire page */
+    .page-wrap {
+      opacity: 0;
+      animation: pageLoad 0.6s 0.1s ease-out forwards;
+    }
+
+    @keyframes pageLoad {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page-wrap max-full mx-auto bg-white">
+
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header class="site-header sticky top-0 z-50 bg-white flex items-center justify-between px-80"
+      style="height:90px; border-bottom:3px solid var(--red); overflow:visible;">
+      <a href="/">
+        <img src="https://www.figma.com/api/mcp/asset/66a6dbcf-b449-4ae4-a451-b987e6e65f18" alt="Isuzu Philippines"
+          class="obj-contain" style="height:55px;">
+      </a>
+
+      <nav class="flex items-center cg-20">
+        <div class="nav-item flex flex-row cg-10 items-center cursor-pointer" data-menu="dmax">
+          <span class="nav-label font-be fs-15 text-black">D-MAX</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="currentColor" />
+          </svg>
+        </div>
+        <div class="nav-item flex flex-row cg-10 items-center cursor-pointer" data-menu="mux">
+          <span class="nav-label font-be fs-15 text-black">MU-X</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="currentColor" />
+          </svg>
+        </div>
+        <div class="nav-item flex flex-row cg-10 items-center cursor-pointer" data-menu="traviz">
+          <span class="nav-label font-be fs-15 text-black">TRAVIZ</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="currentColor" />
+          </svg>
+        </div>
+        <div class="nav-item flex flex-row cg-10 items-center cursor-pointer" data-menu="trucks">
+          <span class="nav-label font-be fs-15 text-black">TRUCKS</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="currentColor" />
+          </svg>
+        </div>
+        <div class="nav-item flex flex-row cg-10 items-center cursor-pointer" data-menu="discover">
+          <span class="nav-label font-be fs-15 text-black">DISCOVER</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="currentColor" />
+          </svg>
+        </div>
+        <div class="nav-item flex flex-row cg-10 items-center cursor-pointer" data-menu="services">
+          <span class="nav-label font-be fs-15 text-black">SERVICES</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="currentColor" />
+          </svg>
+        </div>
+        <div class="nav-item flex flex-row cg-10 items-center cursor-pointer">
+          <span class="nav-label font-be fs-15 text-black">OWNERS</span>
+        </div>
+        <div class="nav-item flex flex-row cg-10 items-center cursor-pointer">
+          <span class="nav-label font-be fs-15 text-black">FLEET</span>
+        </div>
+        <div class="nav-item flex flex-row cg-10 items-center cursor-pointer" data-menu="buying">
+          <span class="nav-label font-be fs-15 text-red">BUYING TOOLS</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="#C90000" />
+          </svg>
+        </div>
+      </nav>
+
+      <a href="#" class="flex items-center cg-8 cursor-pointer text-decoration-none">
+        <svg width="13" height="16" viewBox="0 0 13 16" fill="none">
+          <path
+            d="M6.5 0C2.91 0 0 2.91 0 6.5 0 11.375 6.5 16 6.5 16S13 11.375 13 6.5C13 2.91 10.09 0 6.5 0zm0 8.82a2.32 2.32 0 110-4.64 2.32 2.32 0 010 4.64z"
+            fill="#181818" />
+        </svg>
+        <span class="font-be fs-15 text-black">FIND A DEALER</span>
+      </a>
+
+      <!-- ─── D-MAX MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-dmax">
+        <div class="mega-menu__body">
+          <div>
+            <h2 class="font-be text-black mega-menu__title">D-MAX</h2>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">OVERVIEW</a>
+              <a href="#" class="font-be text-black fs-20">DESIGN</a>
+              <a href="#" class="font-be text-black fs-20">FEATURES</a>
+              <a href="#" class="font-be text-black fs-20">VARIANTS</a>
+              <a href="#" class="font-be text-black fs-20">ACCESSORIES</a>
+            </div>
+          </div>
+          <img src="assets/images/top/RG16 LS-A 2025 copy 1.png" alt="D-MAX" class="mega-menu__img">
+        </div>
+        <div class="mega-menu__bar">
+          <a href="#" class="mega-tool"><img src="assets/images/top/quote-ask-icon.png" alt=""><span
+              class="font-be fs-13 text-black ls-5">ASK A QUOTATION</span></a>
+          <a href="#" class="mega-tool"><img src="assets/images/top/brochure-vector.png" alt=""><span
+              class="font-be fs-13 text-black ls-5">BROCHURE</span></a>
+          <a href="#" class="mega-tool"><img src="assets/images/top/location-vector.png" alt=""><span
+              class="font-be fs-13 text-black ls-5">FIND A DEALER</span></a>
+          <a href="#" class="mega-tool"><img src="assets/images/top/test-drive-vector.png" alt=""><span
+              class="font-be fs-13 text-black ls-5">TEST DRIVE</span></a>
+        </div>
+      </div>
+
+      <!-- ─── MU-X MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-mux">
+        <div class="mega-menu__body">
+          <div>
+            <h2 class="font-be text-black mega-menu__title">MU-X</h2>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">OVERVIEW</a>
+              <a href="#" class="font-be text-black fs-20">DESIGN</a>
+              <a href="#" class="font-be text-black fs-20">FEATURES</a>
+              <a href="#" class="font-be text-black fs-20">VARIANTS</a>
+              <a href="#" class="font-be text-black fs-20">ACCESSORIES</a>
+            </div>
+          </div>
+          <img src="assets/images/top/Splash White front left 2.png" alt="MU-X" class="mega-menu__img">
+        </div>
+        <div class="mega-menu__bar">
+          <a href="#" class="mega-tool"><img src="assets/images/top/quote-ask-icon.png" alt=""><span
+              class="font-be fs-13 text-black ls-5">ASK A QUOTATION</span></a>
+          <a href="#" class="mega-tool"><img src="assets/images/top/brochure-vector.png" alt=""><span
+              class="font-be fs-13 text-black ls-5">BROCHURE</span></a>
+          <a href="#" class="mega-tool"><img src="assets/images/top/location-vector.png" alt=""><span
+              class="font-be fs-13 text-black ls-5">FIND A DEALER</span></a>
+          <a href="#" class="mega-tool"><img src="assets/images/top/test-drive-vector.png" alt=""><span
+              class="font-be fs-13 text-black ls-5">TEST DRIVE</span></a>
+        </div>
+      </div>
+
+      <!-- ─── TRAVIZ MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-traviz">
+        <div class="mega-menu__body">
+          <div>
+            <h2 class="font-be text-black mega-menu__title">TRAVIZ</h2>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">OVERVIEW</a>
+              <a href="#" class="font-be text-black fs-20">DESIGN</a>
+              <a href="#" class="font-be text-black fs-20">FEATURES</a>
+              <a href="#" class="font-be text-black fs-20">VARIANTS</a>
+              <a href="#" class="font-be text-black fs-20">ACCESSORIES</a>
+            </div>
+          </div>
+          <img src="assets/images/top/Traviz UV right angle 2.png" alt="TRAVIZ" class="mega-menu__img">
+        </div>
+        <div class="mega-menu__bar">
+          <a href="#" class="mega-tool"><img src="assets/images/top/quote-ask-icon.png" alt=""><span
+              class="font-be fs-13 text-black ls-5">ASK A QUOTATION</span></a>
+          <a href="#" class="mega-tool"><img src="assets/images/top/brochure-vector.png" alt=""><span
+              class="font-be fs-13 text-black ls-5">BROCHURE</span></a>
+          <a href="#" class="mega-tool"><img src="assets/images/top/location-vector.png" alt=""><span
+              class="font-be fs-13 text-black ls-5">FIND A DEALER</span></a>
+          <a href="#" class="mega-tool"><img src="assets/images/top/test-drive-vector.png" alt=""><span
+              class="font-be fs-13 text-black ls-5">TEST DRIVE</span></a>
+        </div>
+      </div>
+
+      <!-- ─── TRUCKS MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-trucks">
+        <div class="mega-menu__body" style="align-items: flex-start !important; max-width: 800px !important;">
+          <div>
+            <h2 class="font-be text-black mega-menu__title">TRUCKS</h2>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">TRAVIZ</a>
+              <a href="#" class="font-be text-black fs-20">N-SERIES</a>
+              <a href="#" class="font-be text-black fs-20">F-SERIES</a>
+              <a href="#" class="font-be text-black fs-20">C&E SERIES</a>
+              <a href="#" class="font-be text-black fs-20">PUV</a>
+              <a href="#" class="font-be text-black fs-20">S&E SERIES</a>
+            </div>
+          </div>
+          <div>
+            <h2 class="font-be text-black mega-menu__title">BUSES</h2>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">BUSES</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── DISCOVER MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-discover">
+        <div class="mega-menu__body" style="align-items: flex-start !important; max-width: 800px !important;">
+          <div>
+            <div class="flex items-center cg-20 mb-28">
+              <img src="assets//images/top/about-us-icon.png" width="50" alt="" />
+              <h2 class="font-be text-black mega-menu__title" style="margin: 0 !important">ABOUT US</h2>
+            </div>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">ABOUT ISUZU</a>
+              <a href="#" class="font-be text-black fs-20">WHY ISUZU</a>
+              <a href="#" class="font-be text-black fs-20">PROMOS</a>
+              <a href="#" class="font-be text-black fs-20">CAREERS</a>
+              <a href="#" class="font-be text-black fs-20">CONTACT US</a>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center cg-20 mb-28">
+              <img src="assets//images/top/news-vector.png" width="50" alt="" />
+              <h2 class="font-be text-black mega-menu__title" style="margin: 0 !important">NEWS</h2>
+            </div>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">LATEST NEWS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── SERVICES MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-services">
+        <div class="mega-menu__body" style="display: block !important; max-width: 800px !important;">
+          <div>
+            <div class="flex items-center cg-20 mb-30">
+              <img src="assets//images/top/mdi_wrench-settings.png" width="50" alt="" />
+              <h2 class="font-be text-black mega-menu__title" style="margin: 0 !important">SERVICES</h2>
+            </div>
+            <div class="flex justify-between items-start">
+              <div class="mega-menu__links">
+                <a href="#" class="font-be text-black fs-20">PARTS & ACCESSORIES</a>
+                <a href="#" class="font-be text-black fs-20">ISUZU SELECT PARTS</a>
+                <a href="#" class="font-be text-black fs-20">BEST VALUE PARTS</a>
+                <a href="#" class="font-be text-black fs-20">ISUZU LUBRICANTS</a>
+              </div>
+              <div class="mega-menu__links">
+                <a href="#" class="font-be text-black fs-20">GENUINE ACCESSORIES</a>
+                <a href="#" class="font-be text-black fs-20">GENUINE PARTS</a>
+                <a href="#" class="font-be text-black fs-20">GENUINE BATTERY</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── BUYING TOOLS MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-buying">
+        <div class="mega-menu__body" style="display: block !important; max-width: 980px !important;">
+          <div>
+            <h2 class="font-be text-black mega-menu__title" style="margin: 0 !important">BUYING TOOLS</h2>
+            <div class="flex items-center cg-48 mt-30">
+              <a href="#"
+                class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-1"
+                style="gap:10px;">
+                <div class="flex items-center justify-center" style="height:55px;">
+                  <img src="assets/images/top/quote-vector.png" alt="" class="buying-tool__icon obj-contain"
+                    style="width:42px;">
+                </div>
+                <span class="font-be fs-15 text-black ls-5">ASK A QUOTATION</span>
+              </a>
+              <a href="#"
+                class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-2"
+                style="gap:10px;">
+                <div class="flex items-center justify-center" style="height:55px;">
+                  <img src="assets/images/top/brochure-vector.png" alt="" class="buying-tool__icon obj-contain"
+                    style="width:45px;">
+                </div>
+                <span class="font-be fs-15 text-black ls-5">BROCHURE</span>
+              </a>
+              <a href="#"
+                class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-3"
+                style="gap:10px;">
+                <div class="flex items-center justify-center" style="height:55px;">
+                  <img src="assets/images/top/location-vector.png" alt="" class="buying-tool__icon obj-contain"
+                    style="width:40px;">
+                </div>
+                <span class="font-be fs-15 text-black ls-5">FIND A DEALER</span>
+              </a>
+              <a href="#"
+                class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-4"
+                style="gap:10px;">
+                <div class="flex items-center justify-center" style="height:55px;">
+                  <img src="assets/images/top/test-drive-vector.png" alt="" class="buying-tool__icon obj-contain"
+                    style="width:47px;">
+                </div>
+                <span class="font-be fs-15 text-black ls-5">TEST DRIVE</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+
+    <!-- ═══════════ HERO SLIDER ═══════════ -->
+    <section class="hero" id="heroSlider">
+      <div class="hero-slides">
+        <div class="hero-slide active">
+          <img src="assets/images/top/isuzu-d-max.jpg" alt="Isuzu D-MAX">
+          <div class="hero-slide__cta">
+            <a href="#" class="btn-red fs-16 font-be ls-5 py-14 px-40 text-decoration-none hero-slide__btn">DISCOVER THE
+              D-MAX</a>
+          </div>
+        </div>
+        <div class="hero-slide">
+          <img src="assets/images/top/isuzu-mu-x.jpg" alt="Isuzu MU-X">
+          <div class="hero-slide__cta">
+            <a href="#" class="btn-red fs-16 font-be ls-5 py-14 px-40 text-decoration-none hero-slide__btn">DISCOVER THE
+              MU-X</a>
+          </div>
+        </div>
+        <div class="hero-slide">
+          <img src="assets/images/top/isuzu-traviz.jpg" alt="Isuzu TRAVIZ">
+          <div class="hero-slide__cta">
+            <a href="#" class="btn-red fs-16 font-be ls-5 py-14 px-40 text-decoration-none hero-slide__btn">DISCOVER THE
+              TRAVIZ</a>
+          </div>
+        </div>
+        <div class="hero-slide">
+          <img src="assets/images/top/isuzu-no-1.jpg" alt="Isuzu Top 1">
+          <div class="hero-slide__cta">
+            <a href="#" class="btn-red fs-16 font-be ls-5 py-14 px-40 text-decoration-none hero-slide__btn">DISCOVER
+              ISUZU</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__cta">
+        <div class="hero-dots" id="heroDots">
+          <!-- dots generated by JS -->
+        </div>
+      </div>
+
+      <div class="hero-progress" id="heroProgress"></div>
+    </section>
+
+
+    <!-- ═══════════ DISCOVER YOUR VEHICLES ═══════════ -->
+    <section class="pt-80">
+      <h2 class="font-be fs-48 text-center text-black ls-10 mb-24 reveal">DISCOVER YOUR ISUZU VEHICLES</h2>
+      <p class="font-ar fs-18 text-center text-black lh-160 max-900 mx-auto mb-60 px-40 reveal stagger-1">
+        Wherever your next adventure awaits, Isuzu is ready. From the rugged D-MAX ute to the spacious 7-seat MU-X SUV,
+        power, performance, and reliability come together to drive your journey forward.
+      </p>
+
+      <div class="bg-grey py-50 px-80">
+        <div class="flex justify-center cg-40 max-1200 mx-auto">
+          <!-- D-MAX -->
+          <div class="vehicle-card flex flex-col items-center flex-1 reveal stagger-1" style="gap:12px;">
+            <div class="flex items-center justify-center" style="height:90px;">
+              <img src="assets/images/top/D-MAX-Logo-CHRM-&-Red 1.png" alt="D-MAX" class="obj-contain"
+                style="height:57px; max-width:200px;">
+            </div>
+            <div class="flex items-center justify-center" style="height:170px;">
+              <img src="assets/images/top/RG16 LS-A 2025 copy 1.png" alt="D-MAX" class="vehicle-card__img obj-contain"
+                style="max-width:220px; max-height:170px;">
+            </div>
+            <a href="#" class="btn-outline fs-13 ls-5 py-12 px-25 mt-16 text-decoration-none">DISCOVER THE D-MAX</a>
+          </div>
+          <!-- MU-X -->
+          <div class="vehicle-card flex flex-col items-center flex-1 reveal stagger-2" style="gap:12px;">
+            <div class="flex items-center justify-center" style="height:90px;">
+              <img src="assets/images/top/mu-X-Logo-CHRM-&-Red 1.png" alt="MU-X" class="obj-contain"
+                style="height:50px; max-width:200px;">
+            </div>
+            <div class="flex items-center justify-center" style="height:170px;">
+              <img src="assets/images/top/Splash White front left 2.png" alt="MU-X"
+                class="vehicle-card__img obj-contain" style="max-width:220px; max-height:170px;">
+            </div>
+            <a href="#" class="btn-outline fs-13 ls-5 py-12 px-25 mt-16 text-decoration-none">DISCOVER THE MU-X</a>
+          </div>
+          <!-- TRAVIZ -->
+          <div class="vehicle-card flex flex-col items-center flex-1 reveal stagger-3" style="gap:12px;">
+            <div class="flex items-center justify-center" style="height:90px;">
+              <img src="assets/images/top/TRAVIZ Official BLACK 1.png" alt="TRAVIZ" class="obj-contain"
+                style="height:46px; max-width:200px;">
+            </div>
+            <div class="flex items-center justify-center" style="height:170px;">
+              <img src="assets/images/top/Traviz UV right angle 2.png" alt="TRAVIZ"
+                class="vehicle-card__img obj-contain" style="max-width:220px; max-height:170px;">
+            </div>
+            <a href="#" class="btn-outline fs-13 ls-5 py-12 px-25 mt-16 text-decoration-none">DISCOVER THE TRAVIZ</a>
+          </div>
+          <!-- TRUCKS -->
+          <div class="vehicle-card flex flex-col items-center flex-1 reveal stagger-4" style="gap:12px;">
+            <div class="flex items-center justify-center" style="height:90px;">
+              <img src="assets/images/top/Isuzu Trucks Logo [BLACK] 1.png" alt="Trucks" class="obj-contain"
+                style="height:80px; max-width:200px;">
+            </div>
+            <div class="flex items-center justify-center" style="height:170px;">
+              <img src="assets/images/top/YourVehicles_TRUCKS 1.png" alt="Trucks" class="vehicle-card__img obj-contain"
+                style="max-width:220px; max-height:170px;">
+            </div>
+            <a href="#" class="btn-outline fs-13 ls-5 py-12 px-25 mt-16 text-decoration-none">DISCOVER ALL TRUCKS</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════ BUYING TOOLS (1st) ═══════════ -->
+    <section class="flex justify-center py-40">
+      <div class="flex items-center cg-48">
+        <a href="#" class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-1"
+          style="gap:10px;">
+          <div class="flex items-center justify-center" style="height:55px;">
+            <img src="assets/images/top/quote-vector.png" alt="" class="buying-tool__icon obj-contain"
+              style="width:42px;">
+          </div>
+          <span class="font-be fs-15 text-black ls-5">ASK A QUOTATION</span>
+        </a>
+        <a href="#" class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-2"
+          style="gap:10px;">
+          <div class="flex items-center justify-center" style="height:55px;">
+            <img src="assets/images/top/brochure-vector.png" alt="" class="buying-tool__icon obj-contain"
+              style="width:45px;">
+          </div>
+          <span class="font-be fs-15 text-black ls-5">BROCHURE</span>
+        </a>
+        <a href="#" class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-3"
+          style="gap:10px;">
+          <div class="flex items-center justify-center" style="height:55px;">
+            <img src="assets/images/top/location-vector.png" alt="" class="buying-tool__icon obj-contain"
+              style="width:40px;">
+          </div>
+          <span class="font-be fs-15 text-black ls-5">FIND A DEALER</span>
+        </a>
+        <a href="#" class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-4"
+          style="gap:10px;">
+          <div class="flex items-center justify-center" style="height:55px;">
+            <img src="assets/images/top/test-drive-vector.png" alt="" class="buying-tool__icon obj-contain"
+              style="width:47px;">
+          </div>
+          <span class="font-be fs-15 text-black ls-5">TEST DRIVE</span>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ═══════════ WHY ISUZU / PROMO / OWNERS ═══════════ -->
+    <section class="py-60" style="padding-left:140px; padding-right:140px;">
+      <!-- Why Isuzu -->
+      <div class="why-isuzu relative overflow-hidden mb-20 reveal" style="height:360px;">
+        <img src="assets/images/top/25MY ISUZU MU-X_1_LHD_RBD_20_CAN 2.jpg" alt="Why Isuzu"
+          class="why-isuzu__img w-full obj-cover" style="height:100%; object-position:bottom;">
+        <div class="why-overlay"></div>
+        <div class="absolute flex flex-col" style="top:50%; left:90px; transform:translateY(-50%); gap:24px;">
+          <h2 style="color:#fff; font-size:48px; line-height:1;">
+            <span class="font-be ls-5 fw-400">Why ISUZU?</span>
+          </h2>
+          <a href="#" class="text-center btn-red fs-15 ls-5 py-12 px-32 text-decoration-none">EXPLORE ISUZU</a>
+        </div>
+      </div>
+
+      <!-- Promo + Owners -->
+      <div class="flex cg-20">
+        <div class="promo-card flex flex-col flex-1 reveal-left stagger-1">
+          <div class="overflow-hidden" style="height:224px;">
+            <img src="assets/images/top/PROMOS copy 1.jpg" alt="Promotions" class="promo-card__img w-full obj-cover"
+              style="height:100%;">
+          </div>
+          <div class="bg-grey flex items-center justify-between" style="min-height:125px; padding:24px 32px;">
+            <div>
+              <h3 class="font-be fs-32 text-black mb-5">PROMOTION</h3>
+              <p class="font-be fs-20 text-black">Check out our Latest offers</p>
+            </div>
+            <a href="#" class="btn-red fs-14 ls-5 py-10 px-25 text-decoration-none">GET OFFERS</a>
+          </div>
+        </div>
+        <div class="promo-card flex flex-col flex-1 reveal-right stagger-2">
+          <div class="overflow-hidden" style="height:224px;">
+            <img src="assets/images/top/isuzu owners 2 copy 1.jpg" alt="For Owners"
+              class="promo-card__img w-full obj-cover" style="height:100%;">
+          </div>
+          <div class="bg-grey flex items-center justify-between" style="min-height:125px; padding:24px 32px;">
+            <div>
+              <h3 class="font-be fs-32 text-black mb-5 ls-5">FOR OWNERS</h3>
+              <p class="font-be fs-20 text-black">Welcome, Isuzu Owners!</p>
+            </div>
+            <a href="#" class="btn-red fs-14 ls-5 py-10 px-25 text-decoration-none">VISIT NOW</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════ NEWS ROOM ═══════════ -->
+    <section class="py-80" style="padding-left:140px; padding-right:140px;">
+      <div class="flex justify-center items-end relative mb-40">
+        <h2 class="font-be fs-48 text-center text-black ls-10 reveal">NEWS ROOM</h2>
+        <a href="#"
+          class="font-be fs-20 text-black ls-5 absolute right-0 cursor-pointer text-decoration-none footer-link reveal stagger-1"
+          style="bottom:8px;">ALL NEWS</a>
+      </div>
+
+      <div class="relative" id="newsCarousel">
+        <!-- Left Arrow -->
+        <button class="carousel-arrow absolute flex items-center justify-center z-2" id="newsPrev"
+          style="left:-44px; top:50%; transform:translateY(-50%);">
+          <svg width="24" height="36" viewBox="0 0 24 36">
+            <polygon points="24,0 0,18 24,36" fill="#C90000" />
+          </svg>
+        </button>
+        <!-- Right Arrow -->
+        <button class="carousel-arrow absolute flex items-center justify-center z-2" id="newsNext"
+          style="right:-44px; top:50%; transform:translateY(-50%);">
+          <svg width="24" height="36" viewBox="0 0 24 36">
+            <polygon points="0,0 24,18 0,36" fill="#C90000" />
+          </svg>
+        </button>
+
+        <div class="overflow-hidden">
+          <div class="news-carousel-track cg-25" id="newsTrack">
+            <!-- News 1 -->
+            <article class="news-card flex flex-col reveal stagger-1">
+              <div class="overflow-hidden" style="height:120px;">
+                <img src="https://www.figma.com/api/mcp/asset/ccbda82c-22a1-4acc-9b45-9854287547d7" alt=""
+                  class="news-card__img w-full obj-cover" style="height:100%;">
+              </div>
+              <div class="flex flex-col flex-1" style="padding:16px 8px;">
+                <span class="font-be fs-14 text-black ls-5 mb-8">Jan 14, 2026</span>
+                <h3 class="font-ar fs-16 fw-700 text-black lh-140 flex-1">Isuzu D-MAX and Mu-X deliver outstanding
+                  results at 2025 DOE Fuel Eco-Run</h3>
+                <div class="mt-16">
+                  <span class="news-card__read font-be fs-15 text-black ls-5 cursor-pointer">READ MORE</span>
+                  <div class="news-link-bar mt-5"></div>
+                </div>
+              </div>
+            </article>
+            <!-- News 2 -->
+            <article class="news-card flex flex-col reveal stagger-2">
+              <div class="overflow-hidden" style="height:120px;">
+                <img src="https://www.figma.com/api/mcp/asset/16899e18-9cbe-442b-94cf-baf960d71d1c" alt=""
+                  class="news-card__img w-full obj-cover" style="height:100%;">
+              </div>
+              <div class="flex flex-col flex-1" style="padding:16px 8px;">
+                <span class="font-be fs-14 text-black ls-5 mb-8">Dec 15, 2025</span>
+                <h3 class="font-ar fs-16 fw-700 text-black lh-140 flex-1">Isuzu Philippines Unveils Renovated
+                  IOS-Compliant Zamboanga Dealership to Serve Expanding Market</h3>
+                <div class="mt-16">
+                  <span class="news-card__read font-be fs-15 text-black ls-5 cursor-pointer">READ MORE</span>
+                  <div class="news-link-bar mt-5"></div>
+                </div>
+              </div>
+            </article>
+            <!-- News 3 -->
+            <article class="news-card flex flex-col reveal stagger-3">
+              <div class="overflow-hidden" style="height:120px;">
+                <img src="https://www.figma.com/api/mcp/asset/0b4052ef-a461-4b14-8827-42d920dd1f69" alt=""
+                  class="news-card__img w-full obj-cover" style="height:100%;">
+              </div>
+              <div class="flex flex-col flex-1" style="padding:16px 8px;">
+                <span class="font-be fs-14 text-black ls-5 mb-8">Dec 02, 2025</span>
+                <h3 class="font-ar fs-16 fw-700 text-black lh-140 flex-1">Isuzu Philippines Powers PCL's Fleet Expansion
+                  with 56 New Trucks for Sustainable Logistics</h3>
+                <div class="mt-16">
+                  <span class="news-card__read font-be fs-15 text-black ls-5 cursor-pointer">READ MORE</span>
+                  <div class="news-link-bar mt-5"></div>
+                </div>
+              </div>
+            </article>
+            <!-- News 4 -->
+            <article class="news-card flex flex-col reveal stagger-4">
+              <div class="overflow-hidden" style="height:120px;">
+                <img src="https://www.figma.com/api/mcp/asset/8b1760e3-d672-431e-ad2f-8f62b0c8e8ca" alt=""
+                  class="news-card__img w-full obj-cover" style="height:100%;">
+              </div>
+              <div class="flex flex-col flex-1" style="padding:16px 8px;">
+                <span class="font-be fs-14 text-black ls-5 mb-8">Dec 01, 2025</span>
+                <h3 class="font-ar fs-16 fw-700 text-black lh-140 flex-1">Isuzu Global Service Corporation Marks 10th
+                  Anniversary: A Decade of Developing World-Class Isuzu Truck Service Specialists</h3>
+                <div class="mt-16">
+                  <span class="news-card__read font-be fs-15 text-black ls-5 cursor-pointer">READ MORE</span>
+                  <div class="news-link-bar mt-5"></div>
+                </div>
+              </div>
+            </article>
+            <!-- News 5 -->
+            <article class="news-card flex flex-col">
+              <div class="overflow-hidden" style="height:120px;">
+                <img src="https://www.figma.com/api/mcp/asset/ccbda82c-22a1-4acc-9b45-9854287547d7" alt=""
+                  class="news-card__img w-full obj-cover" style="height:100%;">
+              </div>
+              <div class="flex flex-col flex-1" style="padding:16px 8px;">
+                <span class="font-be fs-14 text-black ls-5 mb-8">Nov 20, 2025</span>
+                <h3 class="font-ar fs-16 fw-700 text-black lh-140 flex-1">Isuzu Philippines Celebrates Record-Breaking
+                  Sales in the Third Quarter of 2025</h3>
+                <div class="mt-16">
+                  <span class="news-card__read font-be fs-15 text-black ls-5 cursor-pointer">READ MORE</span>
+                  <div class="news-link-bar mt-5"></div>
+                </div>
+              </div>
+            </article>
+            <!-- News 6 -->
+            <article class="news-card flex flex-col">
+              <div class="overflow-hidden" style="height:120px;">
+                <img src="https://www.figma.com/api/mcp/asset/0b4052ef-a461-4b14-8827-42d920dd1f69" alt=""
+                  class="news-card__img w-full obj-cover" style="height:100%;">
+              </div>
+              <div class="flex flex-col flex-1" style="padding:16px 8px;">
+                <span class="font-be fs-14 text-black ls-5 mb-8">Nov 05, 2025</span>
+                <h3 class="font-ar fs-16 fw-700 text-black lh-140 flex-1">All-New Isuzu D-MAX Takes Top Honors at the
+                  2025 Philippine Automotive Truck of the Year Awards</h3>
+                <div class="mt-16">
+                  <span class="news-card__read font-be fs-15 text-black ls-5 cursor-pointer">READ MORE</span>
+                  <div class="news-link-bar mt-5"></div>
+                </div>
+              </div>
+            </article>
+            <!-- News 7 -->
+            <article class="news-card flex flex-col">
+              <div class="overflow-hidden" style="height:120px;">
+                <img src="https://www.figma.com/api/mcp/asset/16899e18-9cbe-442b-94cf-baf960d71d1c" alt=""
+                  class="news-card__img w-full obj-cover" style="height:100%;">
+              </div>
+              <div class="flex flex-col flex-1" style="padding:16px 8px;">
+                <span class="font-be fs-14 text-black ls-5 mb-8">Oct 18, 2025</span>
+                <h3 class="font-ar fs-16 fw-700 text-black lh-140 flex-1">Isuzu Philippines Opens New State-of-the-Art
+                  Service Center in Cebu to Support Growing Customer Base</h3>
+                <div class="mt-16">
+                  <span class="news-card__read font-be fs-15 text-black ls-5 cursor-pointer">READ MORE</span>
+                  <div class="news-link-bar mt-5"></div>
+                </div>
+              </div>
+            </article>
+            <!-- News 8 -->
+            <article class="news-card flex flex-col">
+              <div class="overflow-hidden" style="height:120px;">
+                <img src="https://www.figma.com/api/mcp/asset/8b1760e3-d672-431e-ad2f-8f62b0c8e8ca" alt=""
+                  class="news-card__img w-full obj-cover" style="height:100%;">
+              </div>
+              <div class="flex flex-col flex-1" style="padding:16px 8px;">
+                <span class="font-be fs-14 text-black ls-5 mb-8">Oct 02, 2025</span>
+                <h3 class="font-ar fs-16 fw-700 text-black lh-140 flex-1">Isuzu MU-X Named Best Family SUV at the 2025
+                  Car Awards, Reinforcing Its Leadership in the Segment</h3>
+                <div class="mt-16">
+                  <span class="news-card__read font-be fs-15 text-black ls-5 cursor-pointer">READ MORE</span>
+                  <div class="news-link-bar mt-5"></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div><!-- /overflow-hidden track clip -->
+      </div>
+    </section>
+
+
+    <!-- ═══════════ BUYING TOOLS (2nd) ═══════════ -->
+    <section class="bg-grey flex justify-center py-40">
+      <div class="flex items-center cg-48">
+        <a href="#" class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-1"
+          style="gap:10px;">
+          <div class="flex items-center justify-center" style="height:55px;">
+            <img src="assets/images/top/quote-vector.png" alt="" class="buying-tool__icon obj-contain"
+              style="width:42px;">
+          </div>
+          <span class="font-be fs-15 text-black ls-5">ASK A QUOTATION</span>
+        </a>
+        <a href="#" class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-2"
+          style="gap:10px;">
+          <div class="flex items-center justify-center" style="height:55px;">
+            <img src="assets/images/top/brochure-vector.png" alt="" class="buying-tool__icon obj-contain"
+              style="width:45px;">
+          </div>
+          <span class="font-be fs-15 text-black ls-5">BROCHURE</span>
+        </a>
+        <a href="#" class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-3"
+          style="gap:10px;">
+          <div class="flex items-center justify-center" style="height:55px;">
+            <img src="assets/images/top/location-vector.png" alt="" class="buying-tool__icon obj-contain"
+              style="width:40px;">
+          </div>
+          <span class="font-be fs-15 text-black ls-5">FIND A DEALER</span>
+        </a>
+        <a href="#" class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-4"
+          style="gap:10px;">
+          <div class="flex items-center justify-center" style="height:55px;">
+            <img src="assets/images/top/test-drive-vector.png" alt="" class="buying-tool__icon obj-contain"
+              style="width:47px;">
+          </div>
+          <span class="font-be fs-15 text-black ls-5">TEST DRIVE</span>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="bg-black text-white pt-80 pb-40" style="padding-left:160px; padding-right:160px;">
+      <div class="flex justify-between mb-60">
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10">D-MAX</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">OVERVIEW</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">DESIGN</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">FEATURES</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">VARIANTS</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">ACCESSORIES</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10">MU-X</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">OVERVIEW</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">DESIGN</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">FEATURES</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">VARIANTS</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">ACCESSORIES</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10">TRAVIZ</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">OVERVIEW</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">DESIGN</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">FEATURES</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">VARIANTS</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">ACCESSORIES</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10">TRUCKS</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">OVERVIEW</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">DESIGN</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">FEATURES</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">VARIANTS</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px;">ACCESSORIES</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <p class="font-be fs-16 mb-12 lh-140">SUBSCRIBE<br>FOR NEWS AND OFFERS</p>
+          <a href="#" class="btn-red fs-12 ls-5 py-8 px-25 text-decoration-none">SUBSCRIBE NOW</a>
+          <div class="mt-12 footer-social-icons flex items-center cg-10">
+            <a href="#" target="_blank">
+              <img src="assets/images/top/instagram-icon.svg" alt="Instagram" />
+            </a>
+            <a href="#" target="_blank">
+              <img src="assets/images/top/facebook-icon.svg" alt="Facebook" />
+            </a>
+            <a href="#" target="_blank">
+              <img src="assets/images/top/x-icon.svg" alt="X" />
+            </a>
+            <a href="#" target="_blank">
+              <img src="assets/images/top/youtube-icon.svg" alt="Youtube" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between mb-50">
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color:#797979;">ABOUT US</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">ABOUT ISUZU
+            </li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">WHY ISUZU
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color:#797979;">BUYING TOOLS</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">ASK A
+              QUOTATION</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">BROCHURE
+              DOWNLOAD</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">FIND A
+              DEALER</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">TEST DRIVE
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color:#797979;">SERVICES</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">PARTS &
+              ACCESSORIES</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">ISUZU SELECT
+              PARTS</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">BEST VALUE
+              PARTS</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">GENUINE PARTS
+            </li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">GENUINE
+              ACCESSORIES</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">ISUZU
+              LUBRICANTS</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color:#797979;">ISUZU FLEET</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">ISUZU FLEET
+              ADVANTAGE</li>
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">FLEET
+              TRAINING REQUEST</li>
+          </ul>
+          <h4 class="font-be fs-16 mt-25 mb-10" style="color:#797979;">ISUZU FLEET</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">PRICE LIST
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-12 text-white">CONTACT US</h4>
+          <a href="#" class="btn-red fs-12 ls-5 py-8 px-25 text-decoration-none">SEND A MESSAGE</a>
+        </div>
+      </div>
+
+      <div class="flex cg-60 mb-50">
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color:#797979;">NEWS ROOM</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">NEWS</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color:#797979;">OWNERS</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">ISUZU OWNERS
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color:#797979;">PROMO</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">PROMOS &amp;
+              CAMPAIGN</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color:#797979;">SERVICE CAMPAIGN</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">SERVICE
+              CAMPAIGN</li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color:#797979;">CAREER</h4>
+          <ul class="list-type-none">
+            <li class="font-be fs-12 footer-link cursor-pointer" style="line-height:20px; color:#797979;">JOIN OUR TEAM
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex justify-between items-center font-be fs-15 pt-20" style="color:#797979;">
+        <div class="flex w-full cg-60">
+          <div class="col-2">
+            <span class="cursor-pointer footer-link">Privacy Note</span>
+          </div>
+          <div class="col-2">
+            <span class="cursor-pointer footer-link">Site Map</span>
+          </div>
+          <div class="col-2"></div>
+          <div class="col-2"></div>
+          <div class="col-2">
+            <span>© ISUZU PHILIPPINES 2026</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════
+     JAVASCRIPT — Sliders, Scroll Reveal, Interactions
+═══════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ─────────────────────────────────────────────
+         1. HERO SLIDER — auto-play, dots, progress bar
+      ───────────────────────────────────────────────── */
+      const heroSlider = {
+        slides: document.querySelectorAll('.hero-slide'),
+        dotsContainer: document.getElementById('heroDots'),
+        progressBar: document.getElementById('heroProgress'),
+        current: 0,
+        interval: null,
+        duration: 6000,  // 6 seconds per slide
+        progressStart: 0,
+        rafId: null,
+
+        init() {
+          if (!this.slides.length) return;
+
+          // Build dots
+          this.slides.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.className = 'hero-dot ' + ('hero-dot--sm');
+            dot.dataset.index = i;
+            dot.addEventListener('click', () => this.goTo(i));
+            this.dotsContainer.appendChild(dot);
+          });
+
+          this.updateDots();
+          this.startAutoPlay();
+
+          // Trigger entrance animation for first slide's button
+          const firstBtn = this.slides[0].querySelector('.hero-slide__btn');
+          if (firstBtn) firstBtn.classList.add('is-entering');
+
+          // Pause on hover
+          const hero = document.getElementById('heroSlider');
+          hero.addEventListener('mouseenter', () => this.pause());
+          hero.addEventListener('mouseleave', () => this.startAutoPlay());
+
+          // Touch/swipe support
+          let touchStartX = 0;
+          hero.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+          }, { passive: true });
+          hero.addEventListener('touchend', (e) => {
+            const diff = e.changedTouches[0].screenX - touchStartX;
+            if (Math.abs(diff) > 50) {
+              diff > 0 ? this.prev() : this.next();
+            }
+          }, { passive: true });
+        },
+
+        goTo(index) {
+          const oldBtn = this.slides[this.current].querySelector('.hero-slide__btn');
+          if (oldBtn) oldBtn.classList.remove('is-entering');
+          this.slides[this.current].classList.remove('active');
+          this.current = index;
+          this.slides[this.current].classList.add('active');
+          const newBtn = this.slides[this.current].querySelector('.hero-slide__btn');
+          if (newBtn) {
+            void newBtn.offsetWidth; // force reflow to restart animation
+            newBtn.classList.add('is-entering');
+          }
+          this.updateDots();
+          this.resetProgress();
+        },
+
+        next() {
+          this.goTo((this.current + 1) % this.slides.length);
+        },
+
+        prev() {
+          this.goTo((this.current - 1 + this.slides.length) % this.slides.length);
+        },
+
+        updateDots() {
+          const dots = this.dotsContainer.querySelectorAll('.hero-dot');
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('hero-dot--active', i === this.current);
+            dot.classList.toggle('hero-dot--inactive', i !== this.current);
+          });
+        },
+
+        startAutoPlay() {
+          this.pause();
+          this.progressStart = Date.now();
+          this.animateProgress();
+          this.interval = setInterval(() => this.next(), this.duration);
+        },
+
+        pause() {
+          clearInterval(this.interval);
+          cancelAnimationFrame(this.rafId);
+        },
+
+        resetProgress() {
+          this.progressStart = Date.now();
+        },
+
+        animateProgress() {
+          const elapsed = Date.now() - this.progressStart;
+          const pct = Math.min((elapsed / this.duration) * 100, 100);
+          this.progressBar.style.width = pct + '%';
+          this.rafId = requestAnimationFrame(() => this.animateProgress());
+        }
+      };
+
+
+      /* ─────────────────────────────────────────────
+         2. NEWS CAROUSEL — arrows, drag, snap
+      ───────────────────────────────────────────────── */
+      const newsCarousel = {
+        track: document.getElementById('newsTrack'),
+        prevBtn: document.getElementById('newsPrev'),
+        nextBtn: document.getElementById('newsNext'),
+        cards: null,
+        position: 0,
+        maxShift: 0,
+        cardWidth: 0,
+        isDragging: false,
+        startX: 0,
+        currentX: 0,
+
+        init() {
+          if (!this.track) return;
+          this.cards = this.track.querySelectorAll('.news-card');
+
+          this.calculateDimensions();
+          this.updateArrows();
+
+          this.prevBtn && this.prevBtn.addEventListener('click', () => this.slide('prev'));
+          this.nextBtn && this.nextBtn.addEventListener('click', () => this.slide('next'));
+
+          // Drag support
+          this.track.addEventListener('mousedown', (e) => this.dragStart(e));
+          this.track.addEventListener('mousemove', (e) => this.dragMove(e));
+          this.track.addEventListener('mouseup', () => this.dragEnd());
+          this.track.addEventListener('mouseleave', () => this.dragEnd());
+
+          // Touch drag
+          this.track.addEventListener('touchstart', (e) => this.dragStart(e), { passive: true });
+          this.track.addEventListener('touchmove', (e) => this.dragMove(e), { passive: true });
+          this.track.addEventListener('touchend', () => this.dragEnd());
+
+          window.addEventListener('resize', () => this.calculateDimensions());
+        },
+
+        calculateDimensions() {
+          if (!this.cards.length) return;
+          const gap = 25;
+          this.cardWidth = this.cards[0].offsetWidth + gap;
+          this.maxShift = Math.max(0, (this.cards.length * this.cardWidth - gap) - this.track.parentElement.offsetWidth);
+        },
+
+        slide(direction) {
+          const step = this.cardWidth;
+          if (direction === 'next') {
+            this.position = Math.min(this.position + step, this.maxShift);
+          } else {
+            this.position = Math.max(this.position - step, 0);
+          }
+          this.track.style.transform = 'translateX(-' + this.position + 'px)';
+          this.updateArrows();
+        },
+
+        updateArrows() {
+          if (this.prevBtn) this.prevBtn.style.opacity = this.position <= 0 ? '0.3' : '1';
+          if (this.nextBtn) this.nextBtn.style.opacity = this.position >= this.maxShift ? '0.3' : '1';
+        },
+
+        dragStart(e) {
+          this.isDragging = true;
+          this.startX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+          this.currentX = this.position;
+          this.track.style.transition = 'none';
+          this.track.style.cursor = 'grabbing';
+        },
+
+        dragMove(e) {
+          if (!this.isDragging) return;
+          const x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+          const diff = this.startX - x;
+          const newPos = Math.max(0, Math.min(this.currentX + diff, this.maxShift));
+          this.track.style.transform = 'translateX(-' + newPos + 'px)';
+          this.position = newPos;
+        },
+
+        dragEnd() {
+          if (!this.isDragging) return;
+          this.isDragging = false;
+          this.track.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+          this.track.style.cursor = '';
+
+          // Snap to nearest card
+          const snapped = Math.round(this.position / this.cardWidth) * this.cardWidth;
+          this.position = Math.max(0, Math.min(snapped, this.maxShift));
+          this.track.style.transform = 'translateX(-' + this.position + 'px)';
+          this.updateArrows();
+        }
+      };
+
+
+      /* ─────────────────────────────────────────────
+         3. SCROLL REVEAL — IntersectionObserver
+      ───────────────────────────────────────────────── */
+      const scrollReveal = {
+        init() {
+          const targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+          if (!targets.length) return;
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);  // animate once
+              }
+            });
+          }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+          });
+
+          targets.forEach(el => observer.observe(el));
+        }
+      };
+
+
+      /* ─────────────────────────────────────────────
+         4. HEADER — scroll shadow effect
+      ───────────────────────────────────────────────── */
+      const headerScroll = {
+        header: document.querySelector('.site-header'),
+        init() {
+          if (!this.header) return;
+          let ticking = false;
+          window.addEventListener('scroll', () => {
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                this.header.classList.toggle('scrolled', window.scrollY > 10);
+                ticking = false;
+              });
+              ticking = true;
+            }
+          }, { passive: true });
+        }
+      };
+
+
+      /* ─────────────────────────────────────────────
+         5. SMOOTH ANCHOR LINKS
+      ───────────────────────────────────────────────── */
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+
+      /* ─────────────────────────────────────────────
+         5. MEGA MENU — hover open/close
+      ───────────────────────────────────────────────── */
+      const megaMenu = {
+        init() {
+          const header = document.querySelector('.site-header');
+          const navItems = document.querySelectorAll('[data-menu]');
+
+          navItems.forEach(item => {
+            const menuId = item.getAttribute('data-menu');
+            const panel = document.getElementById('menu-' + menuId);
+            if (!panel) return;
+
+            // For simple dropdowns: set left position relative to header
+            if (panel.classList.contains('nav-dropdown')) {
+              const setPos = () => {
+                const r = item.getBoundingClientRect();
+                const h = header.getBoundingClientRect();
+                panel.style.left = (r.left - h.left) + 'px';
+              };
+              setPos();
+              window.addEventListener('resize', setPos);
+            }
+
+            // Toggle on click
+            item.addEventListener('click', e => {
+              e.stopPropagation();
+              const isOpen = panel.classList.contains('is-open');
+              this.closeAll();
+              if (!isOpen) {
+                panel.classList.add('is-open');
+                item.classList.add('menu-open');
+              }
+            });
+          });
+
+          // Close on outside click
+          document.addEventListener('click', e => {
+            if (!e.target.closest('.site-header')) this.closeAll();
+          });
+        },
+
+        closeAll() {
+          document.querySelectorAll('.mega-menu.is-open, .nav-dropdown.is-open')
+            .forEach(p => p.classList.remove('is-open'));
+          document.querySelectorAll('.nav-item.menu-open')
+            .forEach(n => n.classList.remove('menu-open'));
+        }
+      };
+
+
+      /* ─────────────────────────────────────────────
+         BOOT IT ALL UP
+      ───────────────────────────────────────────────── */
+      document.addEventListener('DOMContentLoaded', () => {
+        heroSlider.init();
+        newsCarousel.init();
+        scrollReveal.init();
+        headerScroll.init();
+        megaMenu.init();
+      });
+
+    })();
+  </script>
+
+</body>
+
+</html>

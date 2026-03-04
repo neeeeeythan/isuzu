@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isuzu Philippines - About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Your existing global.css -->
+    <link rel="stylesheet" href="assets/css/global.css">
+
+    <!-- Page-specific styles + animations -->
+    <style>
+        /* ═══════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════ */
+        .btn-red {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            border: none;
+            border-radius: 99px;
+            font-family: var(--font-be);
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-red:hover {
+            background: #a00000;
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .btn-red:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--black);
+            border: 1.5px solid var(--red);
+            border-radius: 99px;
+            font-family: var(--font-be);
+            cursor: pointer;
+            transition: all 0.35s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--red);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 0, 0, 0.3);
+        }
+
+        .btn-outline:active {
+            transform: translateY(0);
+        }
+
+        /* ═══════════════════════════════════
+       OBJECT FIT HELPERS
+    ═══════════════════════════════════ */
+        .obj-cover {
+            object-fit: cover;
+        }
+
+        .obj-contain {
+            object-fit: contain;
+        }
+
+        /* ═══════════════════════════════════
+       SCROLL REVEAL ANIMATIONS
+    ═══════════════════════════════════ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .reveal-left.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .reveal-right.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal-scale.revealed {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ═══════════════════════════════════
+       MISC HELPERS
+    ═══════════════════════════════════ */
+        img {
+            display: block;
+        }
+
+        /* Smooth load-in for entire page */
+        .page-wrap {
+            opacity: 0;
+            animation: pageLoad 0.6s 0.1s ease-out forwards;
+        }
+
+        @keyframes pageLoad {
+            to {
+                opacity: 1;
+            }
+        }
+
+        #hero {
+            background-image: url(assets/images/about/ABOUT\ ISUZU\ copy\ 1.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 500px;
+        }
+
+        /* ═══════════════════════════════════
+       VISION / MISSION
+    ═══════════════════════════════════ */
+
+        /* thin vertical connector line between image and section */
+        .vm-connector {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            height: 160px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .vm-connector__line {
+            width: 3px;
+            height: 100%;
+            background: #F5F5F5;
+        }
+
+        /* centered ghost + heading wrapper */
+        .vm-heading-wrap {
+            position: relative;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .vm-ghost {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-be);
+            letter-spacing: 8px;
+            font-size: 54px;
+            line-height: 1;
+            color: #F5F5F5;
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+        }
+
+        .vm-heading {
+            position: relative;
+            z-index: 1;
+            font-size: 36px;
+            letter-spacing: 6px;
+            line-height: 1;
+        }
+
+        /* quote block */
+        .vm-quote {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin: 0 auto;
+        }
+
+        .vm-quote__text {
+            flex: 1;
+            font-family: var(--font-hv);
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.2em;
+            color: var(--black);
+            text-align: center;
+        }
+
+        /* block separator */
+        .vm-block+.vm-block {
+            margin-top: 0;
+        }
+
+        .fullwidth-image-in-about {
+            height: 360px;
+            background-image: url(assets/images/about/25MY\ ISUZU\ MU-X_11_LHD_RBD_20_CAN\ 3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* ═══════════════════════════════════
+           AWARDS & RECOGNITION
+        ═══════════════════════════════════ */
+        .awards-layout {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+            margin-top: 50px;
+            /* bleed content-wrap to right viewport edge */
+            margin-right: calc(-1 * max(0px, (100vw - 1000px) / 2));
+        }
+
+        #awards {
+            overflow-x: clip;
+        }
+
+        /* Left year list */
+        .awards-year-list {
+            flex-shrink: 0;
+        }
+
+        .awards-year-cols {
+            display: flex;
+            gap: 24px;
+        }
+
+        .awards-year-col {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .awards-yr-btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: var(--font-be);
+            font-size: 20px;
+            color: #797979;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            text-align: left;
+            transition: color 0.25s;
+            white-space: nowrap;
+        }
+
+        .awards-yr-btn.is-active {
+            color: var(--red);
+        }
+
+        /* Right slider */
+        .awards-content-wrap {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .awards-slider-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+
+        .award-card-slide {
+            flex-shrink: 0;
+            width: calc(60% - 10px);
+            background: #FFFFFF;
+            padding: 48px 32px 56px;
+            text-align: center;
+            min-height: 500px;
+            height: 100%;
+        }
+
+        .award-card-slide__year {
+            font-family: var(--font-be);
+            font-size: 64px;
+            color: var(--red);
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .award-card-slide__item {
+            font-family: var(--font-hv);
+            font-size: 18px;
+            color: var(--black);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        @media screen and (max-width: 768px) {
+            #our-vision {
+                margin-top: -30px !important;
+            }
+
+            /* Awards — stack year list above cards */
+            .awards-layout {
+                flex-direction: column;
+                gap: 20px;
+                margin-right: 0;
+            }
+
+            .awards-year-list {
+                width: 100%;
+            }
+
+            .awards-year-cols {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .awards-year-col {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 6px 16px;
+            }
+
+            /* hide dot indicator on mobile */
+            .awards-yr-btn::before {
+                display: none;
+            }
+
+            .awards-yr-btn {
+                font-size: 14px;
+                gap: 0;
+            }
+
+            .award-card-slide {
+                min-height: 350px;
+            }
+
+            #awards {
+                overflow-x: hidden;
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+            .awards-yr-btn {
+                font-size: 12px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="page-wrap page-about max-full mx-auto bg-white">
+        <section id="hero" class="w-full flex items-center">
+            <div class="col-container w-full mx-auto max-1200 md-text-center">
+                <h1 class="font-be fw-400 fs-64 text-white">ABOUT ISUZU</h1>
+            </div>
+        </section>
+        <section id="our-story" class="bg-white">
+            <div class="col-container w-full max-1000 mx-auto d-block py-100 md-py-50 md-px-50">
+                <div class="text-center reveal">
+                    <h3 class="font-be fw-400 fs-24 md-fs-20 text-black">ISUZU PHILIPPINES</h3>
+                    <h2 class="font-be fs-48 fw-400 md-fs-32 text-black">OUR STORY</h2>
+                </div>
+                <div class="mt-40 text-left reveal">
+                    <p class="font-hv fs-20 md-fs-18 fw-400 text-black">For 70 years, Isuzu has helped shape the Philippine
+                        automotive landscape by being its responsible partner, consistently moving the nation forward
+                        with progressive technology and development. Tried, tested, and trusted commercial and
+                        industrial vehicles proudly equipped with diesel engines are the benchmark of the company’s
+                        passion for excellence.</p>
+                </div>
+                <div class="mt-40 md-mt-20 text-left reveal">
+                    <p class="font-hv fs-20 md-fs-18 fw-400 text-black">True to its history, Isuzu Philippines Corporation is
+                        firmly anchored on customer satisfaction and is guided by its corporate slogan “Your Responsible
+                        Partner”. This is evident in the implementation of its company policies and thrusts. Having
+                        carefully built its reputation on the trust and dependence of a whole economy and country, Isuzu
+                        possesses core values unmatched by any other automotive company. Building vehicles that this
+                        nation depends on, Isuzu is a company that can truly be called “The Nation’s Workhorse”.</p>
+                </div>
+                <div class="mt-70  md-hidden reveal-scale">
+                    <img src="assets/images/about/25MY ISUZU MU-X_1_LHD_RBD_20_CAN 2.jpg" alt="Car image"
+                        class="w-full" />
+                </div>
+            </div>
+        </section>
+
+        <div class="hidden md-block reveal-scale">
+            <img src="assets/images/about/25MY ISUZU MU-X_1_LHD_RBD_20_CAN 2.jpg" alt="Car image"
+                class="w-full" />
+        </div>
+
+        <!-- ═══════════ OUR VISION ═══════════ -->
+        <section id="our-vision" class="bg-white md-px-30" style="margin-top: -150px">
+            <div class="vm-connector">
+                <div class="vm-connector__line"></div>
+            </div>
+            <div class="col-container w-full max-1000 mx-auto">
+                <div class="vm-heading-wrap reveal">
+                    <span class="vm-ghost md-fs-48">OUR VISION</span>
+                    <h2 class="font-be fw-400 text-black vm-heading md-fs-32">OUR VISION</h2>
+                </div>
+                <div class="vm-quote reveal stagger-1 md-items-start">
+                    <img class="left-quote-svg quote-svg" alt="left quote image" width="25"
+                        src="assets/images/about/left-quote-svg.svg" />
+                    <p class="vm-quote__text md-fs-16">
+                        Ensure Isuzu Philippines Corporation remains as the number one truck brand in the Philippines in
+                        terms of market share domination and customer preference in all their mobility needs.
+                    </p>
+                    <img class="right-quote-svg quote-svg" alt="right quote image" width="25"
+                        src="assets/images/about/right-quote-svg.svg" />
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════ OUR MISSION ═══════════ -->
+        <section id="our-mision" class="bg-white mt-80 md-px-50">
+            <div class="vm-connector">
+                <div class="vm-connector__line"></div>
+            </div>
+            <div class="col-container w-full max-1000 mx-auto">
+                <div class="vm-heading-wrap reveal">
+                    <span class="vm-ghost">OUR MISSION</span>
+                    <h2 class="font-be fw-400 text-black vm-heading">OUR MISSION</h2>
+                </div>
+                <div class="flex cg-20 mt-40 md-block">
+                    <div class="col-4 md-col-12 bg-grey p-24 text-left reveal-left">
+                        <h4 class="text-red font-be fw-400 fs-26 mb-10">OUR RESPONSIBILITY TO EMPLOYEES</h4>
+                        <p class="font-hv fw-400 fs-20 text-black">As in any Company, Isuzu’s single most valuable asset
+                            is its people. Isuzu believes in harnessing the growth potential and development
+                            possibilities of each employee. Isuzu provides opportunities for the employee to grow and
+                            mature with the Company.</p>
+                    </div>
+                    <div class="col-4 md-col-12 md-mt-30 bg-grey p-24 text-left reveal">
+                        <h4 class="text-red font-be fw-400 fs-26 mb-10">OUR RESPONSIBILITY TO CUSTOMERS</h4>
+                        <p class="font-hv fw-400 fs-20 text-black">Customer satisfaction ranks first in Isuzu’s
+                            hierarchy of values. Thus, Isuzu has the tradition of quality assurance in manufacturing
+                            tried, tested, and trusted vehicles. To maintain such tradition, Isuzu is challenged to
+                            develop, innovate, and provide the best sales and after-sales service to its customers.</p>
+                    </div>
+                    <div class="col-4 md-col-12 md-mt-30 bg-grey p-24 text-left reveal-right">
+                        <h4 class="text-red font-be fw-400 fs-26 mb-10">OUR RESPONSIBILITY TO SOCIETY AND COUNTRY</h4>
+                        <p class="font-hv fw-400 fs-20 text-black">Isuzu Philippines Corporation (IPC) recognizes its
+                            place in society to be that of a good corporate citizen. As such, its responsibility goes
+                            beyond being more than a source of investment, employment, and highly productive commercial
+                            vehicles. Isuzu is in constant search for avenues where it could make relevant contributions
+                            to the community including the protection of the environment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ═══════════ OUR CORE VALUE ═══════════ -->
+        <section id="our-core-value" class="bg-white mt-80 mb-100 md-px-50">
+            <div class="vm-connector">
+                <div class="vm-connector__line"></div>
+            </div>
+            <div class="col-container w-full max-1000 mx-auto">
+                <div class="vm-heading-wrap reveal">
+                    <span class="vm-ghost">OUR CORE VALUE</span>
+                    <h2 class="font-be fw-400 text-black vm-heading">OUR CORE VALUE</h2>
+                </div>
+                <div class="mt-30 text-center">
+                    <p class="fs-20 text-black font-hv fw-400 reveal">
+                        IPC’s corporate philosophy is enshrined in three Core Values - Service Excellence,<br class="md-hidden">
+                        Integrity, and Professionalism. These core values further strengthen IPC's<br class="md-hidden"> management system
+                        in achieving sustained growth and competitive advantage.
+                    </p>
+                </div>
+                <div class="flex cg-20 mt-50 md-block">
+                    <div class="col-4 md-col-12 md-mt-30 bg-grey p-24 text-left reveal-left">
+                        <h4 class="text-red font-be fw-400 fs-26 mb-10">PROFESSIONALISM</h4>
+                        <p class="font-hv fw-400 fs-20 text-black">IPC works in dynamism and teamwork. They instill a
+                            sense of individual and collective responsibility and accountability in all aspect of their
+                            work.</p>
+                    </div>
+                    <div class="col-4 md-col-12 md-mt-30 bg-grey p-24 text-left reveal">
+                        <h4 class="text-red font-be fw-400 fs-26 mb-10">INTEGRITY</h4>
+                        <p class="font-hv fw-400 fs-20 text-black">IPC adheres to a strong sense of fairness and honesty
+                            with all its dealings.</p>
+                    </div>
+                    <div class="col-4 md-col-12 md-mt-30 bg-grey p-24 text-left reveal-right">
+                        <h4 class="text-red font-be fw-400 fs-26 mb-10">SERVICE EXCELLENCE</h4>
+                        <p class="font-hv fw-400 fs-20 text-black">IPC is committed to serving its customers with the
+                            highest level of value and professionalism. Team Members are results-driven and display
+                            creativity and innovation in servicing internal and external customers and business
+                            partners.</p>
+                    </div>
+                </div>
+                <div class="mt-50 text-center">
+                    <p class="fs-20 text-black font-hv fw-400 reveal">
+                        Team Members are expected to adhere with IPC’s performance standards and align<br class="md-hidden"> themselves with aforementioned core competencies.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="w-full fullwidth-image-in-about reveal-scale">
+        </div>
+
+        <!-- ═══════════ AWARDS & RECOGNITION ═══════════ -->
+        <section id="awards" class="py-70 md-py-0" style="background-color: #F5F5F5;">
+            <div class="col-container w-full max-1000 mx-auto d-block py-100 md-py-70 md-px-30">
+                <div class="text-center reveal">
+                    <h2 class="font-be fs-48 fw-400 text-black reveal md-fs-32">ISUZU：AWARDS & ReCOGNITION</h2>
+                </div>
+
+                <div class="awards-layout md-block md-mt-30">
+
+                    <!-- Left: two-column year list -->
+                    <div class="awards-year-list reveal">
+                        <div class="awards-year-cols md-block">
+                            <div class="awards-year-col md-justify-center">
+                                <button class="awards-yr-btn is-active" data-year="1997">1997</button>
+                                <button class="awards-yr-btn" data-year="1999">1999</button>
+                                <button class="awards-yr-btn" data-year="2000">2000</button>
+                                <button class="awards-yr-btn" data-year="2005">2005</button>
+                                <button class="awards-yr-btn" data-year="2006">2006</button>
+                                <button class="awards-yr-btn" data-year="2007">2007</button>
+                                <button class="awards-yr-btn" data-year="2008">2008</button>
+                                <button class="awards-yr-btn" data-year="2009">2009</button>
+                                <button class="awards-yr-btn" data-year="2010">2010</button>
+                                <button class="awards-yr-btn" data-year="2011">2011</button>
+                            </div>
+                            <div class="awards-year-col md-mt-10 md-justify-center">
+                                <button class="awards-yr-btn" data-year="2012">2012</button>
+                                <button class="awards-yr-btn" data-year="2016">2016</button>
+                                <button class="awards-yr-btn" data-year="2018">2018</button>
+                                <button class="awards-yr-btn" data-year="2019">2019</button>
+                                <button class="awards-yr-btn" data-year="2020">2020</button>
+                                <button class="awards-yr-btn" data-year="2021">2021</button>
+                                <button class="awards-yr-btn" data-year="2022">2022</button>
+                                <button class="awards-yr-btn" data-year="2023">2023</button>
+                                <button class="awards-yr-btn" data-year="2024">2024</button>
+                                <button class="awards-yr-btn" data-year="2025">2025</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: horizontal card slider -->
+                    <div class="awards-content-wrap reveal-right md-mt-40">
+                        <div class="awards-slider-track">
+
+                            <div class="award-card-slide" data-year="1997">
+                                <div class="award-card-slide__year">1997</div>
+                                <p class="award-card-slide__item">No.1 in Pick up Category</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="1999">
+                                <div class="award-card-slide__year">1999</div>
+                                <p class="award-card-slide__item">No.1 in Trucks</p>
+                                <p class="award-card-slide__item">1st Place AUV at Petron Rally Series</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2000">
+                                <div class="award-card-slide__year">2000</div>
+                                <p class="award-card-slide__item text-left">Second Place in Best Corporate Display in Motor Show  International</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2005">
+                                <div class="award-card-slide__year">2005</div>
+                                <p class="award-card-slide__item text-left">AUV Diesel of the Year in Auto Focus People’s Choice Award</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2006">
+                                <div class="award-card-slide__year">2006</div>
+                                <p class="award-card-slide__item text-left">Auto Focus People’s Choice Award, Best Display Award</p>
+                                <p class="award-card-slide__item text-left">Automobile of the Year in Auto Focus People’s Choice Award</p>
+                                <p class="award-card-slide__item text-left">Pick up of the Year in Auto Focus People’s Choice Award</p>
+                                <p class="award-card-slide__item text-left">AUV of the Year in Auto Focus People’s Choice Award</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2007">
+                                <div class="award-card-slide__year">2007</div>
+                                <p class="award-card-slide__item text-left">Auto Focus People’s Choice Award, Best Display Award</p>
+                                <p class="award-card-slide__item text-left">Automobile of the Year in Auto Focus People’s Choice Award</p>
+                                <p class="award-card-slide__item text-left">Pick up of the Year in Auto Focus People’s Choice Award</p>
+                                <p class="award-card-slide__item text-left">AUV of the Year in Auto Focus People’s Choice Award</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2008">
+                                <div class="award-card-slide__year">2008</div>
+                                <p class="award-card-slide__item text-left">JD Power Asia Pacific Award for highest rank in vehicle sales satisfaction</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2009">
+                                <div class="award-card-slide__year">2009</div>
+                                <p class="award-card-slide__item text-left">Large SUV Runner Up Award in Auto Focus People’s Choice Award</p>
+                                <p class="award-card-slide__item text-left">AUV of the Year by Auto Focus People’s Choice Award</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2010">
+                                <div class="award-card-slide__year">2010</div>
+                                <p class="award-card-slide__item text-left">Large SUV Runner Up Award in Auto Focus People’s Choice Award</p>
+                                <p class="award-card-slide__item text-left">AUV of the Year by Auto Focus People’s Choice Award</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2011">
+                                <div class="award-card-slide__year">2011</div>
+                                <p class="award-card-slide__item text-left">Environmental Leadership Award by WWF</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2012">
+                                <div class="award-card-slide__year">2012</div>
+                                <p class="award-card-slide__item text-left">IMM bronze medal in 6th Validation Award TBR/ TF and 3rd validation 3rd award truck</p>
+                                <p class="award-card-slide__item text-left">Isuzu Crosswind Hall of Fame by Auto Focus People’s Choice Award</p>
+                                <p class="award-card-slide__item text-left">Large SUV of the Year (Alterra) in Auto Focus People’s Choice Award</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2016">
+                                <div class="award-card-slide__year">2016</div>
+                                <p class="award-card-slide__item text-left">D-MAX Truck of the Year by Car Awards Group</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2018">
+                                <div class="award-card-slide__year">2018</div>
+                                <p class="award-card-slide__item text-left">SPMJ Driven to Serve Awards, Silver Award in Education and Training Category</p>
+                                <p class="award-card-slide__item text-left">SPMJ Driven to Serve Awards, Silver Award in Environment Category</p>
+                                <p class="award-card-slide__item text-left">Best in Customer Test Drive in Top Gear PH Awards</p>
+                                <p class="award-card-slide__item text-left">Isuzu D-MAX Best Value for money in Auto Focus People’s Choice Award</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2019">
+                                <div class="award-card-slide__year">2019</div>
+                                <p class="award-card-slide__item text-left">SPMJ Driven to Serve Awards, Silver Award in Education and Training Category</p>
+                                <p class="award-card-slide__item text-left">Isuzu mu-X Best Value for Money in Auto Focus People’s Choice Award</p>
+                                <p class="award-card-slide__item text-left">Isuzu mu-X Midsize SUV of the Year in Auto Focus People’s Choice Award</p>
+                                <p class="award-card-slide__item text-left">Isuzu D-MAX Pickup of the Year in Auto Focus People’s Choice Award</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2020">
+                                <div class="award-card-slide__year">2020</div>
+                                <p class="award-card-slide__item text-left">SPMJ Driven to Serve Awards, Silver Award in Education and Training Category</p>
+                                <p class="award-card-slide__item text-left">Best Engine Performance in Auto Focus Media’s Choice Award (Isuzu D-MAX)</p>
+                                <p class="award-card-slide__item text-left">Best Value for Money in Auto Focus Media’s Choice Award (Isuzu mu-X)</p>
+                                <p class="award-card-slide__item text-left">Isuzu 300K Unit Sales Milestone</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2021">
+                                <div class="award-card-slide__year">2021</div>
+                                <p class="award-card-slide__item text-left">SPMJ Driven to Serve Awards, Gold Award in Education and Training Category</p>
+                                <p class="award-card-slide__item text-left">Pick-up of the Year 17th C! Magazine Annual Awards</p>
+                                <p class="award-card-slide__item text-left">Automobile of the Year in Auto Focus People’s Choice Award</p>
+                                <p class="award-card-slide__item text-left">Pick-up of the Year in Auto Focus People’s Choice Award</p>
+                                <p class="award-card-slide__item text-left">SUV of the Year in Auto Focus People’s Choice Award</p>
+                                <p class="award-card-slide__item text-left">Best Design in Auto Focus Media’s Choice Award (Isuzu D-MAX)</p>
+                                <p class="award-card-slide__item text-left">Best Engine Performance in Auto Focus Media’s Choice Award (Isuzu D-MAX)</p>
+                                <p class="award-card-slide__item text-left">Best Value for Money in Auto Focus Media’s Choice Award (Isuzu D-MAX)</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2022">
+                                <div class="award-card-slide__year">2022</div>
+                                <p class="award-card-slide__item text-left">SPMJ Driven to Serve Awards, Platinum Award in Education and Training Category</p>
+                                <p class="award-card-slide__item text-left">Pick-up of the Year 18th C! Magazine Annual Awards</p>
+                                <p class="award-card-slide__item text-left">Best Design in Auto Focus Media’s Choice Award (Isuzu D-MAX)</p>
+                                <p class="award-card-slide__item text-left">Best Engine Performance in Auto Focus Media’s Choice Award (Isuzu D-MAX)</p>
+                                <p class="award-card-slide__item text-left">Best Safety Features in Auto Focus Media’s Choice Award (Isuzu D-MAX)</p>
+                                <p class="award-card-slide__item text-left">Best Value for Money in Auto Focus Media’s Choice Award (Isuzu D-MAX)</p>
+                                <p class="award-card-slide__item text-left">Phil. Rallycross Series Champion, Pick-up Class (Isuzu D-MAX)</p>
+                                <p class="award-card-slide__item text-left">Phil. Rallycross Series Champion, AWD Class (Isuzu D-MAX)</p>
+                                <p class="award-card-slide__item text-left">Phil. Rallycross Series Champion, UV Class (Isuzu D-MAX)</p>
+                                <p class="award-card-slide__item text-left">Isuzu TRAVIZ 10K Unit Sales Milestone</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2023">
+                                <div class="award-card-slide__year">2023</div>
+                                <p class="award-card-slide__item text-left">SPMJ Driven to Serve Awards, Platinum Award in Education and Training Category</p>
+                                <p class="award-card-slide__item text-left">Pick-up of the Year 19th C! Magazine Annual Awards</p>
+                                <p class="award-card-slide__item text-left">Isuzu TRAVIZ 20K Unit Sales Milestone</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2024">
+                                <div class="award-card-slide__year">2024</div>
+                                <p class="award-card-slide__item text-left">Best Engine Performance in Auto Focus Media's Choice Award (Isuzu D-MAX)</p>
+                            </div>
+
+                            <div class="award-card-slide" data-year="2025">
+                                <div class="award-card-slide__year">2025</div>
+                                <p class="award-card-slide__item text-left">XXXXXX/p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════
+     JAVASCRIPT — Sliders, Scroll Reveal, Interactions
+═══════════════════════════════════════════════════ -->
+    <script>
+        (function () {
+            'use strict';
+            /* ─────────────────────────────────────────────
+               3. SCROLL REVEAL — IntersectionObserver
+            ───────────────────────────────────────────────── */
+            const scrollReveal = {
+                init() {
+                    const targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+                    if (!targets.length) return;
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('revealed');
+                                observer.unobserve(entry.target);  // animate once
+                            }
+                        });
+                    }, {
+                        threshold: 0.15,
+                        rootMargin: '0px 0px -40px 0px'
+                    });
+
+                    targets.forEach(el => observer.observe(el));
+                }
+            };
+
+            document.addEventListener('DOMContentLoaded', () => {
+                scrollReveal.init();
+
+                /* ─────────────────────────────────────────────
+                   4. AWARDS YEAR SLIDER
+                ───────────────────────────────────────────────── */
+                const awardsTrack = document.querySelector('.awards-slider-track');
+                const awardsCards = document.querySelectorAll('.award-card-slide');
+                const awardsYrBtns = document.querySelectorAll('.awards-yr-btn');
+
+                if (awardsTrack && awardsCards.length && awardsYrBtns.length) {
+                    let activeYear = '1997';
+                    let cardWidth = 0;
+
+                    const isMobile = () => window.innerWidth <= 768;
+
+                    const setupMobile = () => {
+                        awardsTrack.style.transform = '';
+                        awardsCards.forEach(c => {
+                            c.style.width = '100%';
+                            c.style.display = c.dataset.year === activeYear ? 'block' : 'none';
+                        });
+                    };
+
+                    const setupDesktop = () => {
+                        awardsCards.forEach(c => c.style.display = '');
+                        cardWidth = 500;
+                        awardsCards.forEach(c => c.style.width = cardWidth + 'px');
+                        const idx = Array.from(awardsCards).findIndex(c => c.dataset.year === activeYear);
+                        awardsTrack.style.transition = 'none';
+                        awardsTrack.style.transform = idx >= 0 ? `translateX(-${idx * cardWidth}px)` : '';
+                        requestAnimationFrame(() => requestAnimationFrame(() => awardsTrack.style.transition = ''));
+                    };
+
+                    const goToYear = (year) => {
+                        activeYear = year;
+                        awardsYrBtns.forEach(b => b.classList.remove('is-active'));
+                        document.querySelector(`.awards-yr-btn[data-year="${year}"]`)?.classList.add('is-active');
+
+                        if (isMobile()) {
+                            awardsCards.forEach(c => c.style.display = 'none');
+                            const target = document.querySelector(`.award-card-slide[data-year="${year}"]`);
+                            if (target) target.style.display = 'block';
+                        } else {
+                            const idx = Array.from(awardsCards).findIndex(c => c.dataset.year === year);
+                            if (idx >= 0) awardsTrack.style.transform = `translateX(-${idx * cardWidth}px)`;
+                        }
+                    };
+
+                    awardsYrBtns.forEach(btn => {
+                        btn.addEventListener('click', () => goToYear(btn.dataset.year));
+                    });
+
+                    window.addEventListener('resize', () => {
+                        if (isMobile()) setupMobile();
+                        else setupDesktop();
+                    });
+
+                    requestAnimationFrame(() => {
+                        if (isMobile()) setupMobile();
+                        else setupDesktop();
+                    });
+                }
+            });
+
+            /* ─────────────────────────────────────────────
+               5. SMOOTH ANCHOR LINKS
+            ───────────────────────────────────────────────── */
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        })();
+    </script>
+
+</body>
+
+</html>
