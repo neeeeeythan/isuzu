@@ -2294,8 +2294,48 @@ img {
 
 
 /* ═══════════════════════════════════
-       MEGA MENU
+       MEGA MENU AND SITE HEADER
     ═══════════════════════════════════ */
+.site-header {
+  transition: box-shadow 0.35s ease, height 0.35s ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-item:hover .nav-label {
+  color: var(--red) !important;
+}
+
+.nav-item:hover .nav-arrow {
+  transform: rotate(180deg);
+}
+
+.nav-arrow {
+  transition: transform 0.3s ease;
+}
+
 .mega-menu {
   position: absolute;
   top: 90px;
