@@ -34,6 +34,7 @@
 html{
 	scroll-behavior:smooth;
   font-family:'Helvetica';
+  font-weight:400;
   color:var(--black);
 }
 html body a {
@@ -536,8 +537,13 @@ main {
   gap: 100px;
 }
 .gap-150px {
-  gap: 100px;
+  gap: 150px;
 }
+.gap-160px {
+  gap: 160px;
+}
+
+
 
 
 /* ========== GRID ========== */
@@ -879,6 +885,7 @@ main {
 .py-12 { padding-top: 12px; padding-bottom: 12px; }
 .py-14 { padding-top: 14px; padding-bottom: 14px; }
 .py-15 { padding-top: 15px; padding-bottom: 15px; }
+.py-16 { padding-top: 16px; padding-bottom: 16px; }
 .py-18 { padding-top: 18px; padding-bottom: 18px; }
 .py-20 { padding-top: 20px; padding-bottom: 20px; }
 .py-25 { padding-top: 25px; padding-bottom: 25px; }
@@ -887,6 +894,7 @@ main {
 .py-40 { padding-top: 40px; padding-bottom: 40px; }
 .py-45 { padding-top: 45px; padding-bottom: 45px; }
 .py-50 { padding-top: 50px; padding-bottom: 50px; }
+.py-60 { padding-top: 60px; padding-bottom: 60px; }
 .py-70 { padding-top: 70px; padding-bottom: 70px; }
 .py-75 { padding-top: 75px; padding-bottom: 75px; }
 .py-80 { padding-top: 80px; padding-bottom: 80px; }
@@ -2503,7 +2511,29 @@ img {
 }
 
 
+/* ═══════════════════════════════════
+    BUYING TOOLS
+═══════════════════════════════════ */
+.buying-tool {
+  width: 140px;
+  padding: 16px 0;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  transition: background 0.35s ease;
+}
 
+.buying-tool:hover {
+  background: #F5F5F5;
+}
+
+.buying-tool__icon {
+  transition: transform 0.35s ease;
+}
+
+.buying-tool:hover .buying-tool__icon {
+  transform: translateY(6px);
+}
 
 /* ═══════════════════════════════════
     HERO BANNERS IMG
@@ -2518,5 +2548,8 @@ img {
   .hero-banner-img{
     width: 100%;
     height: auto;
+  }
+  .hero-banner-img-full{
+    display:none;
   }
 }
