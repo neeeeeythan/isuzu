@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isuzu Philippines - Subscribe Isuzu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/subscribe.css" />
+
+    <!-- script -->
+    <script src="assets/js/global.js" defer></script>
+    <script src="assets/js/careers.js" defer></script>
+
+    <!-- Page-specific styles + animations -->
+    <style></style>
+  </head>
+
+  <body>
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header
+      class="site-header sticky top-0 z-50 bg-white flex items-center justify-between px-100"
+      style="
+        height: 90px;
+        border-bottom: 3px solid var(--red);
+        overflow: visible;
+      "
+    >
+      <a href="/">
+        <img
+          src="https://www.figma.com/api/mcp/asset/66a6dbcf-b449-4ae4-a451-b987e6e65f18"
+          alt="Isuzu Philippines"
+          class="obj-contain"
+          style="height: 55px"
+        />
+      </a>
+
+      <nav class="flex items-center cg-20">
+        <div
+          class="nav-item flex flex-row cg-10 items-center cursor-pointer"
+          data-menu="dmax"
+        >
+          <span class="nav-label font-be fs-15 text-black">D-MAX</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="currentColor" />
+          </svg>
+        </div>
+        <div
+          class="nav-item flex flex-row cg-10 items-center cursor-pointer"
+          data-menu="mux"
+        >
+          <span class="nav-label font-be fs-15 text-black">MU-X</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="currentColor" />
+          </svg>
+        </div>
+        <div
+          class="nav-item flex flex-row cg-10 items-center cursor-pointer"
+          data-menu="traviz"
+        >
+          <span class="nav-label font-be fs-15 text-black">TRAVIZ</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="currentColor" />
+          </svg>
+        </div>
+        <div
+          class="nav-item flex flex-row cg-10 items-center cursor-pointer"
+          data-menu="trucks"
+        >
+          <span class="nav-label font-be fs-15 text-black">TRUCKS</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="currentColor" />
+          </svg>
+        </div>
+        <div
+          class="nav-item flex flex-row cg-10 items-center cursor-pointer"
+          data-menu="discover"
+        >
+          <span class="nav-label font-be fs-15 text-black">DISCOVER</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="currentColor" />
+          </svg>
+        </div>
+        <div
+          class="nav-item flex flex-row cg-10 items-center cursor-pointer"
+          data-menu="services"
+        >
+          <span class="nav-label font-be fs-15 text-black">SERVICES</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="currentColor" />
+          </svg>
+        </div>
+        <div class="nav-item flex flex-row cg-10 items-center cursor-pointer">
+          <span class="nav-label font-be fs-15 text-black">OWNERS</span>
+        </div>
+        <div class="nav-item flex flex-row cg-10 items-center cursor-pointer">
+          <span class="nav-label font-be fs-15 text-black">FLEET</span>
+        </div>
+        <div
+          class="nav-item flex flex-row cg-10 items-center cursor-pointer"
+          data-menu="buying"
+        >
+          <span class="nav-label font-be fs-15 text-red">BUYING TOOLS</span>
+          <svg class="nav-arrow" width="8" height="5" viewBox="0 0 8 5">
+            <path d="M4 5L0 0h8z" fill="#C90000" />
+          </svg>
+        </div>
+      </nav>
+
+      <a
+        href="#"
+        class="flex items-center cg-8 cursor-pointer text-decoration-none"
+      >
+        <svg width="13" height="16" viewBox="0 0 13 16" fill="none">
+          <path
+            d="M6.5 0C2.91 0 0 2.91 0 6.5 0 11.375 6.5 16 6.5 16S13 11.375 13 6.5C13 2.91 10.09 0 6.5 0zm0 8.82a2.32 2.32 0 110-4.64 2.32 2.32 0 010 4.64z"
+            fill="#181818"
+          />
+        </svg>
+        <span class="font-be fs-15 text-black">FIND A DEALER</span>
+      </a>
+
+      <!-- ─── D-MAX MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-dmax">
+        <div class="mega-menu__body">
+          <div>
+            <h2 class="font-be text-black mega-menu__title">D-MAX</h2>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">OVERVIEW</a>
+              <a href="#" class="font-be text-black fs-20">DESIGN</a>
+              <a href="#" class="font-be text-black fs-20">FEATURES</a>
+              <a href="#" class="font-be text-black fs-20">VARIANTS</a>
+              <a href="#" class="font-be text-black fs-20">ACCESSORIES</a>
+            </div>
+          </div>
+          <img
+            src="assets/images/top/RG16 LS-A 2025 copy 1.png"
+            alt="D-MAX"
+            class="mega-menu__img"
+          />
+        </div>
+        <div class="mega-menu__bar">
+          <a href="#" class="mega-tool"
+            ><img src="assets/images/top/quote-ask-icon.png" alt="" /><span
+              class="font-be fs-13 text-black ls-5"
+              >ASK A QUOTATION</span
+            ></a
+          >
+          <a href="#" class="mega-tool"
+            ><img src="assets/images/top/brochure-vector.png" alt="" /><span
+              class="font-be fs-13 text-black ls-5"
+              >BROCHURE</span
+            ></a
+          >
+          <a href="#" class="mega-tool"
+            ><img src="assets/images/top/location-vector.png" alt="" /><span
+              class="font-be fs-13 text-black ls-5"
+              >FIND A DEALER</span
+            ></a
+          >
+          <a href="#" class="mega-tool"
+            ><img src="assets/images/top/test-drive-vector.png" alt="" /><span
+              class="font-be fs-13 text-black ls-5"
+              >TEST DRIVE</span
+            ></a
+          >
+        </div>
+      </div>
+
+      <!-- ─── MU-X MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-mux">
+        <div class="mega-menu__body">
+          <div>
+            <h2 class="font-be text-black mega-menu__title">MU-X</h2>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">OVERVIEW</a>
+              <a href="#" class="font-be text-black fs-20">DESIGN</a>
+              <a href="#" class="font-be text-black fs-20">FEATURES</a>
+              <a href="#" class="font-be text-black fs-20">VARIANTS</a>
+              <a href="#" class="font-be text-black fs-20">ACCESSORIES</a>
+            </div>
+          </div>
+          <img
+            src="assets/images/top/Splash White front left 2.png"
+            alt="MU-X"
+            class="mega-menu__img"
+          />
+        </div>
+        <div class="mega-menu__bar">
+          <a href="#" class="mega-tool"
+            ><img src="assets/images/top/quote-ask-icon.png" alt="" /><span
+              class="font-be fs-13 text-black ls-5"
+              >ASK A QUOTATION</span
+            ></a
+          >
+          <a href="#" class="mega-tool"
+            ><img src="assets/images/top/brochure-vector.png" alt="" /><span
+              class="font-be fs-13 text-black ls-5"
+              >BROCHURE</span
+            ></a
+          >
+          <a href="#" class="mega-tool"
+            ><img src="assets/images/top/location-vector.png" alt="" /><span
+              class="font-be fs-13 text-black ls-5"
+              >FIND A DEALER</span
+            ></a
+          >
+          <a href="#" class="mega-tool"
+            ><img src="assets/images/top/test-drive-vector.png" alt="" /><span
+              class="font-be fs-13 text-black ls-5"
+              >TEST DRIVE</span
+            ></a
+          >
+        </div>
+      </div>
+
+      <!-- ─── TRAVIZ MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-traviz">
+        <div class="mega-menu__body">
+          <div>
+            <h2 class="font-be text-black mega-menu__title">TRAVIZ</h2>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">OVERVIEW</a>
+              <a href="#" class="font-be text-black fs-20">DESIGN</a>
+              <a href="#" class="font-be text-black fs-20">FEATURES</a>
+              <a href="#" class="font-be text-black fs-20">VARIANTS</a>
+              <a href="#" class="font-be text-black fs-20">ACCESSORIES</a>
+            </div>
+          </div>
+          <img
+            src="assets/images/top/Traviz UV right angle 2.png"
+            alt="TRAVIZ"
+            class="mega-menu__img"
+          />
+        </div>
+        <div class="mega-menu__bar">
+          <a href="#" class="mega-tool"
+            ><img src="assets/images/top/quote-ask-icon.png" alt="" /><span
+              class="font-be fs-13 text-black ls-5"
+              >ASK A QUOTATION</span
+            ></a
+          >
+          <a href="#" class="mega-tool"
+            ><img src="assets/images/top/brochure-vector.png" alt="" /><span
+              class="font-be fs-13 text-black ls-5"
+              >BROCHURE</span
+            ></a
+          >
+          <a href="#" class="mega-tool"
+            ><img src="assets/images/top/location-vector.png" alt="" /><span
+              class="font-be fs-13 text-black ls-5"
+              >FIND A DEALER</span
+            ></a
+          >
+          <a href="#" class="mega-tool"
+            ><img src="assets/images/top/test-drive-vector.png" alt="" /><span
+              class="font-be fs-13 text-black ls-5"
+              >TEST DRIVE</span
+            ></a
+          >
+        </div>
+      </div>
+
+      <!-- ─── TRUCKS MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-trucks">
+        <div
+          class="mega-menu__body"
+          style="
+            align-items: flex-start !important;
+            max-width: 800px !important;
+          "
+        >
+          <div>
+            <h2 class="font-be text-black mega-menu__title">TRUCKS</h2>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">TRAVIZ</a>
+              <a href="#" class="font-be text-black fs-20">N-SERIES</a>
+              <a href="#" class="font-be text-black fs-20">F-SERIES</a>
+              <a href="#" class="font-be text-black fs-20">C&E SERIES</a>
+              <a href="#" class="font-be text-black fs-20">PUV</a>
+              <a href="#" class="font-be text-black fs-20">S&E SERIES</a>
+            </div>
+          </div>
+          <div>
+            <h2 class="font-be text-black mega-menu__title">BUSES</h2>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">BUSES</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── DISCOVER MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-discover">
+        <div
+          class="mega-menu__body"
+          style="
+            align-items: flex-start !important;
+            max-width: 800px !important;
+          "
+        >
+          <div>
+            <div class="flex items-center cg-20 mb-28">
+              <img
+                src="assets//images/top/about-us-icon.png"
+                width="50"
+                alt=""
+              />
+              <h2
+                class="font-be text-black mega-menu__title"
+                style="margin: 0 !important"
+              >
+                ABOUT US
+              </h2>
+            </div>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">ABOUT ISUZU</a>
+              <a href="#" class="font-be text-black fs-20">WHY ISUZU</a>
+              <a href="#" class="font-be text-black fs-20">PROMOS</a>
+              <a href="#" class="font-be text-black fs-20">CAREERS</a>
+              <a href="#" class="font-be text-black fs-20">CONTACT US</a>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center cg-20 mb-28">
+              <img src="assets//images/top/news-vector.png" width="50" alt="" />
+              <h2
+                class="font-be text-black mega-menu__title"
+                style="margin: 0 !important"
+              >
+                NEWS
+              </h2>
+            </div>
+            <div class="mega-menu__links">
+              <a href="#" class="font-be text-black fs-20">LATEST NEWS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── SERVICES MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-services">
+        <div
+          class="mega-menu__body"
+          style="display: block !important; max-width: 800px !important"
+        >
+          <div>
+            <div class="flex items-center cg-20 mb-30">
+              <img
+                src="assets//images/top/mdi_wrench-settings.png"
+                width="50"
+                alt=""
+              />
+              <h2
+                class="font-be text-black mega-menu__title"
+                style="margin: 0 !important"
+              >
+                SERVICES
+              </h2>
+            </div>
+            <div class="flex justify-between items-start">
+              <div class="mega-menu__links">
+                <a href="#" class="font-be text-black fs-20"
+                  >PARTS & ACCESSORIES</a
+                >
+                <a href="#" class="font-be text-black fs-20"
+                  >ISUZU SELECT PARTS</a
+                >
+                <a href="#" class="font-be text-black fs-20"
+                  >BEST VALUE PARTS</a
+                >
+                <a href="#" class="font-be text-black fs-20"
+                  >ISUZU LUBRICANTS</a
+                >
+              </div>
+              <div class="mega-menu__links">
+                <a href="#" class="font-be text-black fs-20"
+                  >GENUINE ACCESSORIES</a
+                >
+                <a href="#" class="font-be text-black fs-20">GENUINE PARTS</a>
+                <a href="#" class="font-be text-black fs-20">GENUINE BATTERY</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── BUYING TOOLS MEGA MENU ─── -->
+      <div class="mega-menu" id="menu-buying">
+        <div
+          class="mega-menu__body"
+          style="display: block !important; max-width: 980px !important"
+        >
+          <div>
+            <h2
+              class="font-be text-black mega-menu__title"
+              style="margin: 0 !important"
+            >
+              BUYING TOOLS
+            </h2>
+            <div class="flex items-center cg-48 mt-30">
+              <a
+                href="#"
+                class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-1"
+                style="gap: 10px"
+              >
+                <div
+                  class="flex items-center justify-center"
+                  style="height: 55px"
+                >
+                  <img
+                    src="assets/images/top/quote-vector.png"
+                    alt=""
+                    class="buying-tool__icon obj-contain"
+                    style="width: 42px"
+                  />
+                </div>
+                <span class="font-be fs-15 text-black ls-5"
+                  >ASK A QUOTATION</span
+                >
+              </a>
+              <a
+                href="#"
+                class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-2"
+                style="gap: 10px"
+              >
+                <div
+                  class="flex items-center justify-center"
+                  style="height: 55px"
+                >
+                  <img
+                    src="assets/images/top/brochure-vector.png"
+                    alt=""
+                    class="buying-tool__icon obj-contain"
+                    style="width: 45px"
+                  />
+                </div>
+                <span class="font-be fs-15 text-black ls-5">BROCHURE</span>
+              </a>
+              <a
+                href="#"
+                class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-3"
+                style="gap: 10px"
+              >
+                <div
+                  class="flex items-center justify-center"
+                  style="height: 55px"
+                >
+                  <img
+                    src="assets/images/top/location-vector.png"
+                    alt=""
+                    class="buying-tool__icon obj-contain"
+                    style="width: 40px"
+                  />
+                </div>
+                <span class="font-be fs-15 text-black ls-5">FIND A DEALER</span>
+              </a>
+              <a
+                href="#"
+                class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-4"
+                style="gap: 10px"
+              >
+                <div
+                  class="flex items-center justify-center"
+                  style="height: 55px"
+                >
+                  <img
+                    src="assets/images/top/test-drive-vector.png"
+                    alt=""
+                    class="buying-tool__icon obj-contain"
+                    style="width: 47px"
+                  />
+                </div>
+                <span class="font-be fs-15 text-black ls-5">TEST DRIVE</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-wrap page-subsribe-isuzu max-full mx-auto bg-white">
+      <section class="subsribe-hero relative">
+        <picture>
+          <source
+            srcset="assets/images/subscribe/bg_subscribe_hero_SP.webp"
+            media="(max-width:752px)"
+          />
+          <img
+            src="assets/images/subscribe/bg_subscribe_hero.webp"
+            alt=""
+            class="hero-banner-img"
+          />
+        </picture>
+        <div class="subscribe-hero-desc flex flex-col gap-0px">
+          <h1 class="font-be text-white fs-74 fw-400 lh-normal text-nowrap">
+            SUBSCRIBE <br />
+            TO NEWSLETTER
+          </h1>
+        </div>
+      </section>
+
+      <section class="subscribe-content">
+        <div class="subscribe-main-container">
+          <div class="flex flex-col gap-58px items-center justify-center">
+            <h2 class="reveal font-beNeu fs-50 fw-400">
+              GET THE LATEST ISUZU NEWS & PROMOTIONS
+            </h2>
+            <p class="reveal fs-24">
+              We will send you the latest news articles and get exclusive offers
+              through direct email.
+            </p>
+          </div>
+          <div
+            class="w-full subcribe-form-container flex flex-col items-center justify-center gap-60px"
+          >
+            <h2 class="reveal fs-50 fw-400 font-beNeu">YOUR INFO</h2>
+            <form
+              class="reveal-scale w-full flex flex-col gap-20px items-center justify-center"
+            >
+              <div class="subscribe-input-row w-full flex flex-row gap-20px">
+                <div class="subscribe-input">
+                  <label for="first-name" class="fs-25 font-beNeu fw-400">
+                    FIRST NAME <span class="text-red">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    name="first-name"
+                    class="mt-5"
+                  />
+                </div>
+
+                <div class="subscribe-input">
+                  <label for="last-name" class="fs-25 font-beNeu fw-400">
+                    LAST NAME <span class="text-red">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="last-name"
+                    name="last-name"
+                    class="mt-5"
+                  />
+                </div>
+              </div>
+
+              <div class="subscribe-input">
+                <label for="email" class="fs-25 font-beNeu fw-400">
+                  EMAIL <span class="text-red">*</span>
+                </label>
+                <input type="email" id="email" name="email" class="mt-5" />
+              </div>
+
+              <div class="subscribe-input">
+                <label for="phone" class="fs-25 font-beNeu fw-400">
+                  PHONE NUMBER <span class="text-red">*</span>
+                </label>
+                <input type="tel" id="phone" name="phone" class="mt-5" />
+              </div>
+
+              <div
+                class="subsribe-checkbox-wrapper w-full flex flex-row items-start gap-22px mt-20"
+              >
+                <input
+                  type="checkbox"
+                  id="terms"
+                  name="terms"
+                  class="subscribe-checkbox"
+                />
+                <label
+                  for="terms"
+                  class="subscribe-checkbox-text text-darkGray fs-20"
+                >
+                  I hereby give my consent in collecting my personal information
+                  and fully read and understand
+                  <br class="subsribe-break" />Isuzu Philippines Corporation’s
+                  <a href="#" class="text-blue">Privacy Statement </a>and
+                  <a href="#" class="text-blue">Privacy Notice </a>
+                </label>
+              </div>
+
+              <a
+                href="#"
+                class="btn-red fs-16 ls-5 py-12 px-25 mt-30 text-decoration-none w-fit-content subscribe-submit-btn"
+                >SUBSCRIBE NOW</a
+              >
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer
+      class="bg-black text-white pt-80 pb-40"
+      style="padding-left: 160px; padding-right: 160px"
+    >
+      <div class="flex justify-between mb-60">
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10">D-MAX</h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              OVERVIEW
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              DESIGN
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              FEATURES
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              VARIANTS
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              ACCESSORIES
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10">MU-X</h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              OVERVIEW
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              DESIGN
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              FEATURES
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              VARIANTS
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              ACCESSORIES
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10">TRAVIZ</h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              OVERVIEW
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              DESIGN
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              FEATURES
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              VARIANTS
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              ACCESSORIES
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10">TRUCKS</h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              OVERVIEW
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              DESIGN
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              FEATURES
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              VARIANTS
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px"
+            >
+              ACCESSORIES
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <p class="font-be fs-16 mb-12 lh-140">
+            SUBSCRIBE<br />FOR NEWS AND OFFERS
+          </p>
+          <a href="#" class="btn-red fs-12 ls-5 py-8 px-25 text-decoration-none"
+            >SUBSCRIBE NOW</a
+          >
+          <div class="mt-12 footer-social-icons flex items-center cg-10">
+            <a href="#" target="_blank">
+              <img src="assets/images/top/instagram-icon.svg" alt="Instagram" />
+            </a>
+            <a href="#" target="_blank">
+              <img src="assets/images/top/facebook-icon.svg" alt="Facebook" />
+            </a>
+            <a href="#" target="_blank">
+              <img src="assets/images/top/x-icon.svg" alt="X" />
+            </a>
+            <a href="#" target="_blank">
+              <img src="assets/images/top/youtube-icon.svg" alt="Youtube" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between mb-50">
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color: #797979">ABOUT US</h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              ABOUT ISUZU
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              WHY ISUZU
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color: #797979">
+            BUYING TOOLS
+          </h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              ASK A QUOTATION
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              BROCHURE DOWNLOAD
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              FIND A DEALER
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              TEST DRIVE
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color: #797979">SERVICES</h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              PARTS & ACCESSORIES
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              ISUZU SELECT PARTS
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              BEST VALUE PARTS
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              GENUINE PARTS
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              GENUINE ACCESSORIES
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              ISUZU LUBRICANTS
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color: #797979">
+            ISUZU FLEET
+          </h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              ISUZU FLEET ADVANTAGE
+            </li>
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              FLEET TRAINING REQUEST
+            </li>
+          </ul>
+          <h4 class="font-be fs-16 mt-25 mb-10" style="color: #797979">
+            ISUZU FLEET
+          </h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              PRICE LIST
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-12 text-white">CONTACT US</h4>
+          <a href="#" class="btn-red fs-12 ls-5 py-8 px-25 text-decoration-none"
+            >SEND A MESSAGE</a
+          >
+        </div>
+      </div>
+
+      <div class="flex cg-60 mb-50">
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color: #797979">NEWS ROOM</h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              NEWS
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color: #797979">OWNERS</h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              ISUZU OWNERS
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color: #797979">PROMO</h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              PROMOS &amp; CAMPAIGN
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color: #797979">
+            SERVICE CAMPAIGN
+          </h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              SERVICE CAMPAIGN
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <h4 class="font-be fs-16 mb-10" style="color: #797979">CAREER</h4>
+          <ul class="list-type-none">
+            <li
+              class="font-be fs-12 footer-link cursor-pointer"
+              style="line-height: 20px; color: #797979"
+            >
+              JOIN OUR TEAM
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="flex justify-between items-center font-be fs-15 pt-20"
+        style="color: #797979"
+      >
+        <div class="flex w-full cg-60">
+          <div class="col-2">
+            <span class="cursor-pointer footer-link">Privacy Note</span>
+          </div>
+          <div class="col-2">
+            <span class="cursor-pointer footer-link">Site Map</span>
+          </div>
+          <div class="col-2"></div>
+          <div class="col-2"></div>
+          <div class="col-2">
+            <span>© ISUZU PHILIPPINES 2026</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
