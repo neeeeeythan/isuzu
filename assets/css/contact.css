@@ -1,0 +1,15 @@
+.contact-main-container{
+    padding: 120px 16px;
+}
+
+@media screen and (max-width:752px){
+    .contact-main-container .fs-24{
+        font-size:20px;
+    }
+}
+
+@media screen and (max-width:450px){
+     .contact-main-container .fs-24{
+        text-align:center;
+    }
+}
