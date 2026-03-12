@@ -1,0 +1,65 @@
+.dealers-main-container {
+  padding: 120px 0px 0px 0px;
+}
+.dealers-main-container .btn-outline {
+  margin-top: 130px;
+}
+.dealer-content-left {
+  width: 100%;
+  max-width: 360px;
+}
+.form-input-dealer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.form-input-dealer input[type="text"] {
+  font-size: 25px;
+  height: 20px;
+}
+.form-location-btn {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.dealers-quick-links {
+  padding: 60px 0px;
+}
+
+@media screen and (max-width: 1000px) {
+  .dealers-map-wrapper {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .dealer-content-left {
+    max-width: 550px;
+  }
+}
+@media screen and (max-width: 752px) {
+  .dealers-main-container .fs-24 {
+    font-size: 20px;
+  }
+  .dealers-quick-links .owners-buying-tools {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+  }
+  .dealers-map-wrapper {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .dealers-main-container .fs-24 {
+    text-align: center;
+  }
+  .dealers-main-container .fs-50 {
+    font-size: 40px;
+  }
+  .dealer-content-left .fs-24 {
+    text-align: left;
+  }
+}
