@@ -56,37 +56,43 @@
       {
         image:
           "assets/images/parts-accessories/d-max/14. ENGINE HOOD PROTECTOR  EXP 1.png",
-        name: "",
-        description: "",
+        name: "Engine Hood Protector",
+        description:
+          "The front portion of the vehicle is the most sensitive as it is always exposed to external contaminants, especially when driving. Engine hood protector has the advantage of protecting the front area of the vehicle from stones, insects and small particle ingress. It alo enhances the overall aesthetics of the D-MAX.",
       },
       {
         image: "assets/images/parts-accessories/d-max/24. DC OUTLET 1.png",
-        name: "",
-        description: "",
+        name: "DC Outlet Set",
+        description:
+          "Provides additional power source for your equipment, especially when going outdoor or camping.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/29. RUP EXTENSION ASM EXP 1.png",
-        name: "",
-        description: "",
+        name: "Rup Extension",
+        description:
+          "Enhances the aerodynamic capabilities of the D-MAX and contributes to its overall aesthetics.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/21. ILLUMINATE ROCKER PLATE FR REG EXT EXP 1.png",
-        name: "",
-        description: "",
+        name: "Illuminated Rocker Plate",
+        description:
+          "Provides additional grip, traction and illumination as you step in and out of the vehicle. Also contributes to the overall look of the interior.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/02. BED LINER OVER RAIL SET CRW 1.png",
-        name: "",
-        description: "",
+        name: "Bed Liner Over Rail Set Crew",
+        description:
+          "Keeps the cargo box inside protected, It prevents scratches and damages from the things being loaded on the cargo box. It comes in 2 types -under rail and over rail. Marked with Isuzu logo at the front the walling.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/01. BED LINER UNDER RAIL SET CRW EXP 1.png",
-        name: "",
-        description: "",
+        name: "Bed Liner Under Rail Set Crew",
+        description:
+          "Keeps the cargo box inside protected. It prevents scratches and damages from the things being loaded on the cargo box. It comes in 2 types -under rail and over rail. Marked with Isuzu logo at the front the walling.",
       },
     ],
     // ── PAGE 3 ── (Add items here)
@@ -94,38 +100,44 @@
       {
         image:
           "assets/images/parts-accessories/d-max/26-tub-light-2p-set (1) 2.png",
-        name: "",
-        description: "",
+        name: "Tub Light 2P Set",
+        description:
+          "Provides illumination on the cargo box, giving you vision on your cargo at night.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/26-tub-light-2p-set (1) 1.png",
-        name: "",
-        description: "",
+        name: "Illuminated Rocker Plate Set Crew",
+        description:
+          "Provides additional grip, traction and illumination as you step in and out of the vehicle. Also contributes to the overall look of the interior.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/25-tub-light-4p-set 1.png",
-        name: "",
-        description: "",
+        name: "Tub Light 4P Set",
+        description:
+          "Provides illumination on the cargo box, giving you vision on your cargo at night.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/31. NUDGE BAR WO FPA  ALLOY EXP (1) 1.png",
-        name: "",
-        description: "",
+        name: "Nudge Bar W/O FPA Alloy",
+        description:
+          "Designed to protect the front area of your vehicle in case of minor collision, absorbing the impact. It is functionally compatible with the air bag safety performance of the vehicle.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/33. NUDGE BAR WO FPA  BLACK EXP 1.png",
-        name: "",
-        description: "",
+        name: "Nudge Bar W/O FPA Black",
+        description:
+          "Designed to protect the front area of the vehicle in case of minor collision, absorbing the impact. It is functionally compatible with the air bag safety performance of the vehicle.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/22. SIDE BAR SET STEEL EXP 1.png",
-        name: "",
-        description: "",
+        name: "Side Bar Set Steel",
+        description:
+          "Designed to protect the rocket panel for unforeseen road obstructions. Also comes with a very functional non-slip steps to prevent lose footing when getting in and out of the vehicle. Tested to be strong to scary heavy weights and uses rust-resistant materials",
       },
     ],
     // ── PAGE 4 ── (Add items here)
@@ -133,38 +145,44 @@
       {
         image:
           "assets/images/parts-accessories/d-max/30. NUDGE BAR WITH FPA ALLOY EXP 1.png",
-        name: "",
-        description: "",
+        name: "Nudge Bar With FPA Black",
+        description:
+          "Designed to protect the front area of the vehicle in case of minor collision, absorbing the impact. It is functionally compatible with the air bag safety performance of the vehicle.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/32. NUDGE BAR WITH FPA  BLACK EXP 1.png",
-        name: "",
-        description: "",
+        name: "Nudge Bar With FPA Black",
+        description:
+          "Designed to protect the front area of the vehicle in case of minor collision, absorbing the impact. It is functionally compatible with the air bag safety performance of the vehicle.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/23. SIDE BAR SET STAINLESS EXP 1.png",
-        name: "",
-        description: "",
+        name: "Side Bar Set Stainless",
+        description:
+          "Designed to protect the rocker panel for unforeseen road obstructions. Also comes with a very functional non-slip steps to prevent lose footing when getting in and out of the vehicle. Tested to be strong to carry heavy weights and uses rust-resistant materials.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/17. OVER FENDER SET EXP 1.png",
-        name: "",
-        description: "",
+        name: "Over Fender Set",
+        description:
+          "Provides additional safety from rocks and other elements that might hit your vehicle, especially when you're doing off-road. It also adds styling and more \"macho\" look to the D-MAX.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/35. SPORT BAR BLACK CRW EXP 1.png",
-        name: "",
-        description: "",
+        name: "Sports Bar Black Crew Polish",
+        description:
+          "Sporty and tough-looking appearance with overall functionality for your outdoor needs. It comes with installation kit that doesn't require welding or punching holes. Compatible with the under rail bed liner.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/34. SPORT BAR CRW POLISH EXP 1.png",
-        name: "",
-        description: "",
+        name: "Sports Bar Crew Polish",
+        description:
+          "Sporty and tough-looking appearance with overall functionality for your outdoor needs. It comes with installation kit that doesn't require welding or punching holes. Compatible with the under rail bed liner.",
       },
     ],
     // ── PAGE 5 ── (Add items here)
@@ -172,14 +190,16 @@
       {
         image:
           "assets/images/parts-accessories/d-max/27. SAILPLANE SET CRW EXP 1.png",
-        name: "",
-        description: "",
+        name: "Sailplane Set Crew",
+        description:
+          "Improves the aerodynamic capabilities of the D-MAX and contributes to its overall aesthetics.",
       },
       {
         image:
           "assets/images/parts-accessories/d-max/28. SHUTTER LID CRW EXP 1.png",
-        name: "",
-        description: "",
+        name: "Shutter Lid Crew",
+        description:
+          "Designed to be durable and resistant to extreme weather conditions. It will keep your cargo protected, especially from water and dust ingress.",
       },
     ],
   ];
