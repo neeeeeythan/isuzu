@@ -569,6 +569,10 @@
   background: #797979;
 }
 
+#section2 .sp-comparison__details--replacement .sp-comparison__bullet-list li::before {
+  background: #C90000;
+}
+
 .sp-comparison__slide-desc {
   font-family: var(--font-hv);
   font-weight: 400;
