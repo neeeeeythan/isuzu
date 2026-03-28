@@ -739,6 +739,183 @@
 
 
 /* ══════════════════════════════════════════════
+   MOBILE TWO-COLUMN LAYOUT (hidden on desktop)
+   ══════════════════════════════════════════════ */
+.sp-mob-container {
+  display: none;
+}
+
+.sp-mob {
+  display: flex;
+  gap: 0;
+  padding: 0 20px;
+  max-width: 750px;
+  margin: 0 auto 30px;
+}
+
+.sp-mob__column {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.sp-mob__column--isp {
+  border: 3px solid #C90000;
+}
+
+.sp-mob__column--replacement {
+  border: 3px solid #F5F5F5;
+}
+
+.sp-mob__header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.sp-mob__header h3 {
+  font-family: var(--font-be);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  margin: 0;
+}
+
+.sp-mob__header--isp {
+  background: #C90000;
+}
+
+.sp-mob__header--isp h3 {
+  color: #ffffff;
+}
+
+.sp-mob__header--replacement {
+  background: #F5F5F5;
+}
+
+.sp-mob__header--replacement h3 {
+  color: #000000;
+}
+
+.sp-mob__slides-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-mob__slide {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-mob__image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.sp-mob__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.sp-mob__details {
+  padding: 12px 10px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.sp-mob__details--isp {
+  background: #F5F5F5;
+}
+
+.sp-mob__details--replacement {
+  background: #F5F5F5;
+}
+
+.sp-mob__slide-title {
+  font-family: var(--font-be);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  margin: 0 0 6px 0;
+  overflow-wrap: break-word;
+}
+
+.sp-mob__bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px 0;
+}
+
+.sp-mob__bullet-list li {
+  font-family: var(--font-hv);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 5px;
+  overflow-wrap: break-word;
+}
+
+.sp-mob__bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* ISP bullets: red for both sections */
+.sp-mob__details--isp .sp-mob__bullet-list li::before {
+  background: #C90000;
+}
+
+/* Section 1 replacement bullets: grey */
+#section1 .sp-mob__details--replacement .sp-mob__bullet-list li::before {
+  background: #797979;
+}
+
+/* Section 2 replacement bullets: red */
+#section2 .sp-mob__details--replacement .sp-mob__bullet-list li::before {
+  background: #C90000;
+}
+
+.sp-mob__slide-desc {
+  font-family: var(--font-hv);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+/* ── Back to previous page link (mobile only) ── */
+.sp-back-link {
+  display: none;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.sp-back-link a {
+  font-family: var(--font-be);
+  font-size: 15px;
+  color: var(--black);
+  text-decoration: underline;
+  letter-spacing: 0.05em;
+}
+
+
+/* ══════════════════════════════════════════════
    RESPONSIVE — MOBILE (max-width: 768px)
    ══════════════════════════════════════════════ */
 @media (max-width: 768px) {
@@ -811,70 +988,23 @@
 
   .sp-content__desc {
     font-size: 20px;
-    line-height: 23px;
-    text-align: center;
+    line-height: 25px;
+    text-align: left;
   }
 
-  /* ── Comparison sections ── */
-  .sp-comparison {
-    padding: 0 20px;
-    margin-bottom: 30px;
-  }
-
-  .sp-comparison__header {
-    height: 64px;
-  }
-
-  .sp-comparison__header-title {
-    font-size: 20px;
-    line-height: 26px;
-  }
-
-  .sp-comparison__body {
-    flex-direction: column;
-    min-height: auto;
-  }
-
-  .sp-comparison__image {
-    width: 100%;
-    min-height: 170px;
-    max-height: 200px;
-  }
-
-  .sp-comparison__image-placeholder {
-    min-height: 170px;
-  }
-
-  .sp-comparison__details {
-    width: 100%;
-    padding: 20px 25px;
-  }
-
-  .sp-comparison__slide-title {
-    font-size: 16px;
-    line-height: 22px;
-  }
-
-  .sp-comparison__bullet-list li {
-    font-size: 16px;
-    line-height: 20px;
-    padding-left: 18px;
-  }
-
-  .sp-comparison__bullet-list li::before {
-    width: 8px;
-    height: 8px;
-    top: 6px;
-  }
-
-  .sp-comparison__slide-desc {
-    font-size: 14px;
-    line-height: 16px;
-  }
-
+  /* ── Hide desktop paginated view on mobile ── */
+  .sp-comparison,
   .sp-pagination {
-    margin-top: 20px;
-    margin-bottom: 30px;
+    display: none !important;
+  }
+
+  /* ── Show mobile two-column layout ── */
+  .sp-mob-container {
+    display: block;
+  }
+
+  .sp-back-link {
+    display: block;
   }
 
   /* ── CTA ── */

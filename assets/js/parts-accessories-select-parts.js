@@ -261,6 +261,70 @@
   }
 
 
+  /* ═══════════════════════════════════════════════════════════════
+     MOBILE LAYOUT — Renders all slides in two-column layout
+     (no pagination on mobile, all data visible at once)
+     ═══════════════════════════════════════════════════════════════ */
+
+  function buildMobileCardHTML(cardData, type) {
+    var imgHTML = cardData.image
+      ? '<div class="sp-mob__image"><img src="' + cardData.image + '" alt="' + (cardData.title || '') + '"></div>'
+      : '<div class="sp-mob__image"><div class="sp-comparison__image-placeholder">PLACEHOLDER</div></div>';
+
+    var titleHTML = cardData.title
+      ? '<h4 class="sp-mob__slide-title">' + cardData.title + '</h4>'
+      : '';
+
+    var bulletsHTML = '';
+    if (cardData.bullets && cardData.bullets.length) {
+      bulletsHTML = '<ul class="sp-mob__bullet-list">' +
+        cardData.bullets.map(function (b) { return '<li>' + b + '</li>'; }).join('') +
+        '</ul>';
+    }
+
+    var descHTML = '';
+    if (cardData.desc) {
+      descHTML = '<p class="sp-mob__slide-desc">' + cardData.desc.replace(/\n/g, '<br>') + '</p>';
+    }
+
+    var detailsBg = type === 'isp' ? 'sp-mob__details--isp' : 'sp-mob__details--replacement';
+
+    return imgHTML +
+      '<div class="sp-mob__details ' + detailsBg + '">' +
+        titleHTML + bulletsHTML + descHTML +
+      '</div>';
+  }
+
+  function initMobileLayout(sectionId, data) {
+    var section = document.getElementById(sectionId);
+    if (!section) return;
+
+    // Build ISP column
+    var ispSlides = '';
+    var repSlides = '';
+    data.forEach(function (item) {
+      ispSlides += '<div class="sp-mob__slide">' + buildMobileCardHTML(item.isp, 'isp') + '</div>';
+      repSlides += '<div class="sp-mob__slide">' + buildMobileCardHTML(item.replacement, 'replacement') + '</div>';
+    });
+
+    var mobileHTML = '<div class="sp-mob">' +
+      '<div class="sp-mob__column sp-mob__column--isp">' +
+        '<div class="sp-mob__header sp-mob__header--isp"><h3>ISUZU SELECT PARTS</h3></div>' +
+        '<div class="sp-mob__slides-wrap">' + ispSlides + '</div>' +
+      '</div>' +
+      '<div class="sp-mob__column sp-mob__column--replacement">' +
+        '<div class="sp-mob__header sp-mob__header--replacement"><h3>ISUZU REPLACEMENT PARTS</h3></div>' +
+        '<div class="sp-mob__slides-wrap">' + repSlides + '</div>' +
+      '</div>' +
+    '</div>';
+
+    var mobileContainer = document.createElement('div');
+    mobileContainer.className = 'sp-mob-container';
+    mobileContainer.innerHTML = mobileHTML;
+    section.appendChild(mobileContainer);
+  }
+
+
   /* ─────────────────────────────────────────────
      SCROLL REVEAL — IntersectionObserver
   ───────────────────────────────────────────────── */
@@ -383,9 +447,13 @@
     megaMenu.init();
     scrollToTop.init();
 
-    // Initialize both paginated sections
+    // Initialize both paginated sections (desktop)
     initPagination('section1', section1Data);
     initPagination('section2', section2Data);
+
+    // Generate mobile two-column layout (all slides visible, no pagination)
+    initMobileLayout('section1', section1Data);
+    initMobileLayout('section2', section2Data);
   });
 
 })();
