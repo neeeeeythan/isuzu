@@ -659,14 +659,14 @@
 
 
 /* ══════════════════════════════════════════════
-   DISCOVER CTA BUTTON
+   BACK BUTTON
    ══════════════════════════════════════════════ */
-.sp-cta {
+.sp-back {
   text-align: center;
   padding: 20px 20px 80px;
 }
 
-.sp-cta__btn {
+.sp-back__btn {
   display: inline-block;
   padding: 14px 40px;
   border: 1px solid var(--red);
@@ -684,13 +684,13 @@
     transform 0.25s ease;
 }
 
-.sp-cta__btn:hover {
+.sp-back__btn:hover {
   background: var(--red);
   color: #ffffff;
   transform: translateY(-2px);
 }
 
-.sp-cta__btn:active {
+.sp-back__btn:active {
   transform: translateY(0) scale(0.98);
 }
 

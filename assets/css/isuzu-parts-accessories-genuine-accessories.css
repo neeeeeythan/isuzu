@@ -159,13 +159,13 @@
   background-image: url(../../assets/images/parts-accessories/genuine-accessories/MUX_WEBSITE\ BANNER\ 1024x580\ copy\ 1.png);
 }
 
-/* Discover button below banners */
-.ga-discover-wrap {
+/* Back button */
+.ga-back {
   text-align: center;
   padding: 40px 0 60px;
 }
 
-.ga-vehicle-banner__discover-btn {
+.ga-back__btn {
   display: inline-block;
   font-family: var(--font-be);
   font-size: 13px;
@@ -179,7 +179,7 @@
   transition: background 0.3s ease, color 0.3s ease, transform 0.25s ease;
 }
 
-.ga-vehicle-banner__discover-btn:hover {
+.ga-back__btn:hover {
   background: var(--red);
   color: #FFFFFF;
   transform: translateY(-2px);
