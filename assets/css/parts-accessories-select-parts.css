@@ -908,6 +908,10 @@
   color: #000000;
   padding: 10px 10px;
   overflow-wrap: break-word;
+  background: #F5F5F5;
+}
+
+#section1 .sp-mob__desc-cell {
   background: #FFFFFF;
 }
 
