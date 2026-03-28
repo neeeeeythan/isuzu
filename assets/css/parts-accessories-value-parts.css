@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════
-   ISUZU SELECT PARTS PAGE
+   SELECT PARTS / BEST VALUE PARTS PAGE
    ══════════════════════════════════════════════ */
 
 /* ── SHARED BUTTON STYLES ── */
@@ -384,7 +384,7 @@
 
 
 /* ══════════════════════════════════════════════
-   SELECT PARTS INTRO CONTENT
+   BEST VALUE PARTS CONTENT
    ══════════════════════════════════════════════ */
 .sp-content {
   max-width: 1000px;
@@ -412,224 +412,73 @@
   margin: 0 0 50px 0;
 }
 
-
-/* ══════════════════════════════════════════════
-   PAGINATED COMPARISON SECTIONS
-   ══════════════════════════════════════════════ */
-.sp-comparison {
-  max-width: 1000px;
-  margin: 0 auto 40px;
-  padding: 0 140px;
+.sp-content__list-section {
+  text-align: left;
+  max-width: 744px;
+  margin: 0 auto;
 }
 
-/* --- Header bar --- */
-.sp-comparison__header {
-  height: 85px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-}
-
-.sp-comparison__header--isp {
-  background: #C90000;
-}
-
-.sp-comparison__header--replacement {
-  background: #D9D9D9;
-}
-
-.sp-comparison__header-title {
-  font-family: var(--font-be);
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 42px;
-  text-align: center;
-}
-
-.sp-comparison__header--isp .sp-comparison__header-title {
-  color: #ffffff;
-}
-
-.sp-comparison__header--replacement .sp-comparison__header-title {
+.sp-content__list-heading {
+  font-family: var(--font-hv);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
   color: var(--black);
+  margin: 0 0 20px 0;
 }
 
-/* --- Slide content area --- */
-.sp-comparison__body {
-  display: flex;
-  border: 3px solid;
-  border-top: none;
-  min-height: 265px;
-  overflow: hidden;
-}
-
-.sp-comparison__body--isp {
-  border-color: #C90000;
-}
-
-.sp-comparison__body--replacement {
-  border-color: #D9D9D9;
-}
-
-/* --- Image side --- */
-.sp-comparison__image {
-  width: 50%;
-  min-height: 265px;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.sp-comparison__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Placeholder for missing images */
-.sp-comparison__image-placeholder {
-  width: 100%;
-  height: 100%;
-  min-height: 265px;
-  background: #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-be);
-  font-size: 14px;
-  color: #999;
-  text-align: center;
-  padding: 20px;
-}
-
-/* --- Details side --- */
-.sp-comparison__details {
-  width: 50%;
-  padding: 30px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.sp-comparison__details--isp {
-  background: #ffffff;
-}
-
-.sp-comparison__details--replacement {
-  background: #F5F5F5;
-}
-
-.sp-comparison__slide-title {
-  font-family: var(--font-be);
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 26px;
-  color: var(--black);
-  margin: 0 0 12px 0;
-}
-
-.sp-comparison__bullet-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 16px 0;
-}
-
-.sp-comparison__bullet-list li {
+.sp-content__parts-list {
   font-family: var(--font-hv);
   font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 24px;
+  line-height: 28px;
   color: var(--black);
-  padding-left: 22px;
-  position: relative;
-  margin-bottom: 4px;
-}
-
-.sp-comparison__bullet-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.sp-comparison__details--isp .sp-comparison__bullet-list li::before {
-  background: #C90000;
-}
-
-.sp-comparison__details--replacement .sp-comparison__bullet-list li::before {
-  background: #797979;
-}
-
-.sp-comparison__slide-desc {
-  font-family: var(--font-hv);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 18px;
-  color: var(--black);
+  padding-left: 30px;
   margin: 0;
+  columns: 1;
 }
 
-/* --- Pagination controls --- */
-.sp-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-
-.sp-pagination__btn {
-  width: 30px;
-  height: 20px;
-  background: #C90000;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease, transform 0.2s ease;
-  padding: 0;
-}
-
-.sp-pagination__btn:hover {
-  background: #a00000;
-  transform: scale(1.1);
-}
-
-.sp-pagination__btn:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.sp-pagination__btn svg {
-  width: 10px;
-  height: 10px;
-  fill: #ffffff;
-}
-
-.sp-pagination__indicator {
-  font-family: var(--font-be);
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  color: var(--black);
-  min-width: 30px;
-  text-align: center;
+.sp-content__parts-list li {
+  margin-bottom: 8px;
 }
 
 
 /* ══════════════════════════════════════════════
-   DISCOVER CTA BUTTON
+   PRODUCT SHOWCASE
+   ══════════════════════════════════════════════ */
+.sp-showcase {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 140px 60px;
+}
+
+.sp-showcase__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  /* PLACEHOLDER: Fallback background for missing image */
+  background: #e0e0e0;
+  min-height: 300px;
+}
+
+
+/* ══════════════════════════════════════════════
+   CALL TO ACTION
    ══════════════════════════════════════════════ */
 .sp-cta {
   text-align: center;
-  padding: 20px 20px 80px;
+  padding: 40px 20px 80px;
+}
+
+.sp-cta__text {
+  font-family: var(--font-hv);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--black);
+  margin: 0 0 40px 0;
 }
 
 .sp-cta__btn {
@@ -694,10 +543,33 @@
   transform: translateY(-4px);
 }
 
+.obj-contain {
+  object-fit: contain;
+}
 
-/* ══════════════════════════════════════════════
-   STAGGER UTILITIES
-   ══════════════════════════════════════════════ */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.cursor-pointer { cursor: pointer; }
+.text-decoration-none { text-decoration: none; }
+
+.font-be {
+  font-family: var(--font-be);
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.text-black {
+  color: var(--black);
+}
+
+.ls-5 {
+  letter-spacing: 0.05em;
+}
+
 .stagger-1 { transition-delay: 0.1s; }
 .stagger-2 { transition-delay: 0.2s; }
 .stagger-3 { transition-delay: 0.3s; }
@@ -781,71 +653,34 @@
     text-align: center;
   }
 
-  /* ── Comparison sections ── */
-  .sp-comparison {
-    padding: 0 20px;
-    margin-bottom: 30px;
-  }
-
-  .sp-comparison__header {
-    height: 64px;
-  }
-
-  .sp-comparison__header-title {
+  .sp-content__list-heading {
     font-size: 20px;
-    line-height: 26px;
+    line-height: 23px;
   }
 
-  .sp-comparison__body {
-    flex-direction: column;
-    min-height: auto;
+  .sp-content__parts-list {
+    font-size: 20px;
+    line-height: 23px;
   }
 
-  .sp-comparison__image {
-    width: 100%;
-    min-height: 170px;
-    max-height: 200px;
+  /* ── Showcase ── */
+  .sp-showcase {
+    padding: 0 20px 40px;
   }
 
-  .sp-comparison__image-placeholder {
-    min-height: 170px;
-  }
-
-  .sp-comparison__details {
-    width: 100%;
-    padding: 20px 25px;
-  }
-
-  .sp-comparison__slide-title {
-    font-size: 16px;
-    line-height: 22px;
-  }
-
-  .sp-comparison__bullet-list li {
-    font-size: 16px;
-    line-height: 20px;
-    padding-left: 18px;
-  }
-
-  .sp-comparison__bullet-list li::before {
-    width: 8px;
-    height: 8px;
-    top: 6px;
-  }
-
-  .sp-comparison__slide-desc {
-    font-size: 14px;
-    line-height: 16px;
-  }
-
-  .sp-pagination {
-    margin-top: 20px;
-    margin-bottom: 30px;
+  .sp-showcase__img {
+    min-height: 200px;
   }
 
   /* ── CTA ── */
   .sp-cta {
-    padding: 20px 20px 60px;
+    padding: 30px 20px 60px;
+  }
+
+  .sp-cta__text {
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 30px;
   }
 
   /* ── Buying Tools ── */
