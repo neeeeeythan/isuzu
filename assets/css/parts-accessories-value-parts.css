@@ -376,10 +376,11 @@
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 67px;
-  height: 2px;
-  background: #ffffff;
-  opacity: 0.7;
+  display: none;
+}
+
+.sp-hero__scroll-indicator .scroll-indicator__chevron {
+  display: none;
 }
 
 
@@ -643,7 +644,17 @@
   }
 
   .sp-hero__scroll-indicator {
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
     bottom: 20px;
+  }
+
+  .sp-hero__scroll-indicator .scroll-indicator__chevron {
+    display: block;
+    width: 40px;
+    height: auto;
   }
 
   /* ── Content ── */
