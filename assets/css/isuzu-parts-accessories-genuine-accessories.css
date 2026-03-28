@@ -252,10 +252,9 @@
 
   .ga-hero__overlay {
     padding-left: 40px;
-    padding-top: 20px;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 40px;
   }
 
   .ga-hero__badge {
@@ -264,8 +263,8 @@
   }
 
   .ga-hero__title {
-    font-size: 64px;
-    line-height: 85px;
+    font-size: 48px;
+    line-height: 64px;
     text-align: center;
   }
 
@@ -348,7 +347,7 @@
 @media (max-width: 768px) {
   .ga-hero__title {
     font-size: 48px;
-    line-height: 60px;
+    line-height: 64px;
   }
 
   .ga-hero__overlay {

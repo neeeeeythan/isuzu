@@ -597,7 +597,7 @@
 
   /* ── Hero ── */
   .sp-hero {
-    height: 850px;
+    height: 450px;
   }
 
   .sp-hero__img {
@@ -607,7 +607,8 @@
   .sp-hero__overlay {
     padding-left: 0;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 40px;
     text-align: center;
     background: linear-gradient(
       180deg,
@@ -622,8 +623,8 @@
   }
 
   .sp-hero__title {
-    font-size: 64px;
-    line-height: 85px;
+    font-size: 48px;
+    line-height: 64px;
     text-align: center;
   }
 

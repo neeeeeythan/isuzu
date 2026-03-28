@@ -71,7 +71,7 @@
       isp: {
         image: "assets/images/parts-accessories/select-parts/Bottom_1 1.png",  // PLACEHOLDER: Replace with actual ISP product image
         title: "Thick Filter Paper",
-        bullets: ["High Filter Paper Strength"],
+        bullets: ["Thick Filter Paper","High Filter Paper Strength"],
         desc: ""
       },
       replacement: {

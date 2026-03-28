@@ -327,8 +327,8 @@
 }
 
 .parts-form__consent-text a {
-  color: var(--red);
-  text-decoration: underline;
+  color: #000C8B;
+  text-decoration: none;
 }
 
 /* Submit button */
@@ -375,6 +375,8 @@
     padding-left: 40px;
     padding-right: 40px;
     align-items: center;
+    justify-content: flex-start;
+    padding-top: 40px;
     text-align: center;
   }
 
