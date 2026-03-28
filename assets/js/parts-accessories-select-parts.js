@@ -334,11 +334,21 @@
           pairsHTML += ispImg + repImg;
         }
 
-        // Details pair row
-        var ispDetails = buildDetailsHTML(item.isp, 'isp');
-        var repDetails = buildDetailsHTML(item.replacement, 'replacement');
-        pairsHTML += '<div class="sp-mob__details sp-mob__details--isp sp-mob__col-isp' + lastClass + '">' + ispDetails + '</div>';
-        pairsHTML += '<div class="sp-mob__details sp-mob__details--replacement sp-mob__col-rep' + lastClass + '">' + repDetails + '</div>';
+        // Title + bullets pair row
+        var hasDesc = item.isp.desc || item.replacement.desc;
+        var tbLastClass = (!hasDesc && isLast) ? ' sp-mob__last-row' : '';
+        var ispTB = buildTitleBulletsHTML(item.isp);
+        var repTB = buildTitleBulletsHTML(item.replacement);
+        pairsHTML += '<div class="sp-mob__details sp-mob__details--isp sp-mob__col-isp' + tbLastClass + '">' + ispTB + '</div>';
+        pairsHTML += '<div class="sp-mob__details sp-mob__details--replacement sp-mob__col-rep' + tbLastClass + '">' + repTB + '</div>';
+
+        // Description pair row (separate grid row so both sides align)
+        if (hasDesc) {
+          var ispDesc = item.isp.desc ? item.isp.desc.replace(/\n/g, '<br>') : '';
+          var repDesc = item.replacement.desc ? item.replacement.desc.replace(/\n/g, '<br>') : '';
+          pairsHTML += '<div class="sp-mob__desc-cell sp-mob__col-isp' + lastClass + '">' + ispDesc + '</div>';
+          pairsHTML += '<div class="sp-mob__desc-cell sp-mob__col-rep' + lastClass + '">' + repDesc + '</div>';
+        }
       });
 
       mobileHTML = '<div class="sp-mob sp-mob--aligned">' +
@@ -376,6 +386,22 @@
     mobileContainer.className = 'sp-mob-container';
     mobileContainer.innerHTML = mobileHTML;
     section.appendChild(mobileContainer);
+  }
+
+  /** Helper: build title + bullets only (no desc) */
+  function buildTitleBulletsHTML(cardData) {
+    var titleHTML = cardData.title
+      ? '<h4 class="sp-mob__slide-title">' + cardData.title + '</h4>'
+      : '';
+
+    var bulletsHTML = '';
+    if (cardData.bullets && cardData.bullets.length) {
+      bulletsHTML = '<ul class="sp-mob__bullet-list">' +
+        cardData.bullets.map(function (b) { return '<li>' + b + '</li>'; }).join('') +
+        '</ul>';
+    }
+
+    return titleHTML + bulletsHTML;
   }
 
   /** Helper: build just the inner details HTML (title + bullets + desc) */

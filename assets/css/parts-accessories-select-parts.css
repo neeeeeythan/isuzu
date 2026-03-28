@@ -899,6 +899,24 @@
   overflow-wrap: break-word;
 }
 
+/* Description cells (separate grid row for alignment) */
+.sp-mob__desc-cell {
+  font-family: var(--font-hv);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  padding: 10px 10px;
+  overflow-wrap: break-word;
+  background: #FFFFFF;
+}
+
+#section1 .sp-mob__slide-desc {
+  background: #FFFFFF;
+  margin: 8px -10px -12px;
+  padding: 10px 10px;
+}
+
 /* --- Aligned grid layout (mobile) --- */
 .sp-mob--aligned {
   display: grid;
