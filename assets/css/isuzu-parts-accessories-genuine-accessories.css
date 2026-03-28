@@ -1,0 +1,342 @@
+/* ═══════════════════════════════════
+   GENUINE ACCESSORIES PAGE STYLES
+═══════════════════════════════════ */
+
+/* ── HERO BANNER ── */
+.ga-hero {
+  position: relative;
+  width: 100%;
+  height: 490px;
+  overflow: hidden;
+}
+
+.ga-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ga-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 120px;
+}
+
+.ga-hero__badge {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.ga-hero__title {
+  font-family: var(--font-be);
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 85px;
+  color: #FFFFFF;
+}
+
+.ga-hero__scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 50px;
+}
+
+.ga-hero__scroll-indicator::before {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 50px;
+  background: #FFFFFF;
+}
+
+/* ── GENUINE ACCESSORIES SECTION ── */
+.ga-section {
+  padding: 80px 160px;
+  text-align: center;
+}
+
+.ga-section__title {
+  font-family: var(--font-be);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 64px;
+  color: var(--black);
+  margin-bottom: 30px;
+}
+
+.ga-section__desc {
+  font-family: var(--font-hv);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  color: var(--black);
+  max-width: 994px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* ── VEHICLE BANNER ── */
+.ga-vehicle-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ga-vehicle-banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.ga-vehicle-banner__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ga-vehicle-banner__logo {
+  width: 350px;
+  height: auto;
+}
+
+.ga-vehicle-banner__new-badge {
+  display: inline-block;
+  background: var(--red);
+  color: #FFFFFF;
+  font-family: var(--font-be);
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  padding: 8px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.25s ease;
+}
+
+.ga-vehicle-banner__new-badge:hover {
+  background: #a00000;
+  transform: translateY(-2px);
+}
+
+.ga-vehicle-banner__discover-btn {
+  display: inline-block;
+  font-family: var(--font-be);
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--black);
+  border: 1px solid var(--red);
+  border-radius: 30px;
+  padding: 12px 30px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.25s ease;
+  margin-top: 10px;
+}
+
+.ga-vehicle-banner__discover-btn:hover {
+  background: var(--red);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* D-MAX specific */
+.ga-vehicle-banner--dmax {
+  height: 363px;
+}
+
+.ga-vehicle-banner--dmax .ga-vehicle-banner__content {
+  align-items: flex-start;
+  padding-left: 160px;
+}
+
+/* MU-X specific */
+.ga-vehicle-banner--mux {
+  height: 356px;
+}
+
+.ga-vehicle-banner--mux .ga-vehicle-banner__content {
+  align-items: flex-start;
+  padding-left: 160px;
+}
+
+/* Discover button below banners - centered */
+.ga-discover-wrap {
+  text-align: center;
+  padding: 40px 0 60px;
+}
+
+/* ── BUYING TOOLS ── */
+.ga-buying-tools {
+  background: var(--grey);
+  padding: 60px 160px;
+}
+
+.ga-buying-tools__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ga-buying-tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.ga-buying-tool:hover {
+  transform: translateY(-3px);
+}
+
+.ga-buying-tool__icon {
+  width: 47px;
+  height: 58px;
+  object-fit: contain;
+}
+
+.ga-buying-tool__label {
+  font-family: var(--font-be);
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: var(--black);
+  text-align: center;
+}
+
+
+/* ═══════════════════════════════════
+   RESPONSIVE - TABLET & MOBILE
+═══════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  /* Hero */
+  .ga-hero {
+    height: auto;
+    aspect-ratio: 750 / 850;
+  }
+
+  .ga-hero__overlay {
+    padding-left: 40px;
+    padding-top: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 80px;
+  }
+
+  .ga-hero__badge {
+    width: 120px;
+    margin-bottom: 40px;
+  }
+
+  .ga-hero__title {
+    font-size: 64px;
+    line-height: 85px;
+    text-align: center;
+  }
+
+  /* Section */
+  .ga-section {
+    padding: 60px 40px;
+  }
+
+  .ga-section__title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .ga-section__desc {
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+  }
+
+  /* Vehicle banners */
+  .ga-vehicle-banner--dmax,
+  .ga-vehicle-banner--mux {
+    height: auto;
+    aspect-ratio: 750 / 363;
+  }
+
+  .ga-vehicle-banner--dmax .ga-vehicle-banner__content,
+  .ga-vehicle-banner--mux .ga-vehicle-banner__content {
+    padding-left: 0;
+    align-items: center;
+  }
+
+  .ga-vehicle-banner__logo {
+    width: 280px;
+  }
+
+  .ga-discover-wrap {
+    padding: 30px 0 40px;
+  }
+
+  /* Buying tools */
+  .ga-buying-tools {
+    padding: 40px 30px;
+  }
+
+  .ga-buying-tools__inner {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .ga-buying-tool {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .ga-hero__title {
+    font-size: 48px;
+    line-height: 60px;
+  }
+
+  .ga-hero__overlay {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .ga-section {
+    padding: 50px 25px;
+  }
+
+  .ga-section__desc {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .ga-vehicle-banner__logo {
+    width: 220px;
+  }
+
+  .ga-buying-tools {
+    padding: 40px 20px;
+  }
+}
