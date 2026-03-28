@@ -251,15 +251,19 @@
   }
 
   .ga-hero__overlay {
-    padding-left: 40px;
+    padding-left: 0;
     justify-content: flex-start;
     align-items: center;
     padding-top: 40px;
   }
 
   .ga-hero__badge {
-    width: 120px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+  }
+
+  .ga-hero__badge-img {
+    width: auto;
+    height: 43px;
   }
 
   .ga-hero__title {
@@ -271,6 +275,7 @@
   /* Section */
   .ga-section {
     padding: 60px 40px;
+    text-align: left;
   }
 
   .ga-section__title {
@@ -281,7 +286,6 @@
   .ga-section__desc {
     font-size: 20px;
     line-height: 23px;
-    text-align: center;
   }
 
   /* Vehicle banners */
@@ -371,6 +375,7 @@
 
   .ga-section {
     padding: 50px 25px;
+    text-align: left;
   }
 
   .ga-section__desc {

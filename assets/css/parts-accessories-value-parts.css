@@ -633,8 +633,13 @@
     );
   }
 
+  .sp-hero__badge {
+    margin-bottom: 20px;
+  }
+
   .sp-hero__badge-img {
-    width: 120px;
+    width: auto;
+    height: 43px;
   }
 
   .sp-hero__title {
