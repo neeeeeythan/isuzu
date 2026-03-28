@@ -266,10 +266,13 @@
      (no pagination on mobile, all data visible at once)
      ═══════════════════════════════════════════════════════════════ */
 
-  function buildMobileCardHTML(cardData, type) {
-    var imgHTML = cardData.image
-      ? '<div class="sp-mob__image"><img src="' + cardData.image + '" alt="' + (cardData.title || '') + '"></div>'
-      : '<div class="sp-mob__image"><div class="sp-comparison__image-placeholder">PLACEHOLDER</div></div>';
+  function buildMobileCardHTML(cardData, type, showImage) {
+    var imgHTML = '';
+    if (showImage !== false) {
+      imgHTML = cardData.image
+        ? '<div class="sp-mob__image"><img src="' + cardData.image + '" alt="' + (cardData.title || '') + '"></div>'
+        : '<div class="sp-mob__image"><div class="sp-comparison__image-placeholder">PLACEHOLDER</div></div>';
+    }
 
     var titleHTML = cardData.title
       ? '<h4 class="sp-mob__slide-title">' + cardData.title + '</h4>'
@@ -299,12 +302,18 @@
     var section = document.getElementById(sectionId);
     if (!section) return;
 
+    // Check if all slides in a column share the same image (only show first image if so)
+    var allIspSameImage = data.every(function (item) { return item.isp.image === data[0].isp.image; });
+    var allRepSameImage = data.every(function (item) { return item.replacement.image === data[0].replacement.image; });
+
     // Build ISP column
     var ispSlides = '';
     var repSlides = '';
-    data.forEach(function (item) {
-      ispSlides += '<div class="sp-mob__slide">' + buildMobileCardHTML(item.isp, 'isp') + '</div>';
-      repSlides += '<div class="sp-mob__slide">' + buildMobileCardHTML(item.replacement, 'replacement') + '</div>';
+    data.forEach(function (item, index) {
+      var showIspImg = allIspSameImage ? (index === 0) : true;
+      var showRepImg = allRepSameImage ? (index === 0) : true;
+      ispSlides += '<div class="sp-mob__slide">' + buildMobileCardHTML(item.isp, 'isp', showIspImg) + '</div>';
+      repSlides += '<div class="sp-mob__slide">' + buildMobileCardHTML(item.replacement, 'replacement', showRepImg) + '</div>';
     });
 
     var mobileHTML = '<div class="sp-mob">' +
