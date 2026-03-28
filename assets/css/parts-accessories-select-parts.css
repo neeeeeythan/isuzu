@@ -899,6 +899,63 @@
   overflow-wrap: break-word;
 }
 
+/* --- Aligned grid layout (mobile) --- */
+.sp-mob--aligned {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 20px;
+  max-width: 750px;
+  margin: 0 auto 30px;
+}
+
+.sp-mob--aligned .sp-mob__header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+/* ISP column border (left side of grid + right side = red middle border) */
+.sp-mob--aligned .sp-mob__col-isp {
+  border-left: 3px solid #C90000;
+  border-right: 3px solid #C90000;
+}
+
+.sp-mob--aligned .sp-mob__header--isp {
+  border-top: 3px solid #C90000;
+}
+
+/* Replacement column border (right side of grid) */
+.sp-mob--aligned .sp-mob__col-rep {
+  border-right: 3px solid #F5F5F5;
+  border-left: none;
+}
+
+.sp-mob--aligned .sp-mob__header--replacement {
+  border-top: 3px solid #F5F5F5;
+}
+
+/* Bottom border on last items */
+.sp-mob--aligned .sp-mob__col-isp.sp-mob__last-row {
+  border-bottom: 3px solid #C90000;
+}
+
+.sp-mob--aligned .sp-mob__col-rep.sp-mob__last-row {
+  border-bottom: 3px solid #F5F5F5;
+}
+
+.sp-mob--aligned .sp-mob__grid-image {
+  overflow: hidden;
+}
+
+.sp-mob--aligned .sp-mob__grid-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 /* ── Back to previous page link (mobile only) ── */
 .sp-back-link {
   display: none;

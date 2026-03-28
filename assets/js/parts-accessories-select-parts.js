@@ -298,39 +298,105 @@
       '</div>';
   }
 
-  function initMobileLayout(sectionId, data) {
+  /**
+   * initMobileLayout(sectionId, data, options)
+   * options.aligned = true  → grid-based paired rows (slides align horizontally)
+   * options.aligned = false → independent columns (default)
+   */
+  function initMobileLayout(sectionId, data, options) {
     var section = document.getElementById(sectionId);
     if (!section) return;
 
-    // Check if all slides in a column share the same image (only show first image if so)
-    var allIspSameImage = data.every(function (item) { return item.isp.image === data[0].isp.image; });
-    var allRepSameImage = data.every(function (item) { return item.replacement.image === data[0].replacement.image; });
+    var aligned = options && options.aligned;
+    var mobileHTML = '';
 
-    // Build ISP column
-    var ispSlides = '';
-    var repSlides = '';
-    data.forEach(function (item, index) {
-      var showIspImg = allIspSameImage ? (index === 0) : true;
-      var showRepImg = allRepSameImage ? (index === 0) : true;
-      ispSlides += '<div class="sp-mob__slide">' + buildMobileCardHTML(item.isp, 'isp', showIspImg) + '</div>';
-      repSlides += '<div class="sp-mob__slide">' + buildMobileCardHTML(item.replacement, 'replacement', showRepImg) + '</div>';
-    });
+    if (aligned) {
+      // Check if all slides share the same image (skip images after first)
+      var allIspSame = data.every(function (item) { return item.isp.image === data[0].isp.image; });
+      var allRepSame = data.every(function (item) { return item.replacement.image === data[0].replacement.image; });
 
-    var mobileHTML = '<div class="sp-mob">' +
-      '<div class="sp-mob__column sp-mob__column--isp">' +
-        '<div class="sp-mob__header sp-mob__header--isp"><h3>ISUZU SELECT PARTS</h3></div>' +
-        '<div class="sp-mob__slides-wrap">' + ispSlides + '</div>' +
-      '</div>' +
-      '<div class="sp-mob__column sp-mob__column--replacement">' +
-        '<div class="sp-mob__header sp-mob__header--replacement"><h3>ISUZU REPLACEMENT PARTS</h3></div>' +
-        '<div class="sp-mob__slides-wrap">' + repSlides + '</div>' +
-      '</div>' +
-    '</div>';
+      // Grid layout: headers then paired image+details rows
+      var pairsHTML = '';
+      data.forEach(function (item, index) {
+        var isLast = index === data.length - 1;
+        var lastClass = isLast ? ' sp-mob__last-row' : '';
+        var showIspImg = allIspSame ? (index === 0) : true;
+        var showRepImg = allRepSame ? (index === 0) : true;
+
+        // Image pair row (only if at least one side should show an image)
+        if (showIspImg || showRepImg) {
+          var ispImg = showIspImg && item.isp.image
+            ? '<div class="sp-mob__grid-image sp-mob__col-isp"><img src="' + item.isp.image + '" alt="' + (item.isp.title || '') + '"></div>'
+            : '<div class="sp-mob__grid-image sp-mob__col-isp"></div>';
+          var repImg = showRepImg && item.replacement.image
+            ? '<div class="sp-mob__grid-image sp-mob__col-rep"><img src="' + item.replacement.image + '" alt="' + (item.replacement.title || '') + '"></div>'
+            : '<div class="sp-mob__grid-image sp-mob__col-rep"></div>';
+          pairsHTML += ispImg + repImg;
+        }
+
+        // Details pair row
+        var ispDetails = buildDetailsHTML(item.isp, 'isp');
+        var repDetails = buildDetailsHTML(item.replacement, 'replacement');
+        pairsHTML += '<div class="sp-mob__details sp-mob__details--isp sp-mob__col-isp' + lastClass + '">' + ispDetails + '</div>';
+        pairsHTML += '<div class="sp-mob__details sp-mob__details--replacement sp-mob__col-rep' + lastClass + '">' + repDetails + '</div>';
+      });
+
+      mobileHTML = '<div class="sp-mob sp-mob--aligned">' +
+        '<div class="sp-mob__header sp-mob__header--isp sp-mob__col-isp"><h3>ISUZU SELECT PARTS</h3></div>' +
+        '<div class="sp-mob__header sp-mob__header--replacement sp-mob__col-rep"><h3>ISUZU REPLACEMENT PARTS</h3></div>' +
+        pairsHTML +
+      '</div>';
+    } else {
+      // Independent columns layout
+      var allIspSameImage = data.every(function (item) { return item.isp.image === data[0].isp.image; });
+      var allRepSameImage = data.every(function (item) { return item.replacement.image === data[0].replacement.image; });
+
+      var ispSlides = '';
+      var repSlides = '';
+      data.forEach(function (item, index) {
+        var showIspImg = allIspSameImage ? (index === 0) : true;
+        var showRepImg = allRepSameImage ? (index === 0) : true;
+        ispSlides += '<div class="sp-mob__slide">' + buildMobileCardHTML(item.isp, 'isp', showIspImg) + '</div>';
+        repSlides += '<div class="sp-mob__slide">' + buildMobileCardHTML(item.replacement, 'replacement', showRepImg) + '</div>';
+      });
+
+      mobileHTML = '<div class="sp-mob">' +
+        '<div class="sp-mob__column sp-mob__column--isp">' +
+          '<div class="sp-mob__header sp-mob__header--isp"><h3>ISUZU SELECT PARTS</h3></div>' +
+          '<div class="sp-mob__slides-wrap">' + ispSlides + '</div>' +
+        '</div>' +
+        '<div class="sp-mob__column sp-mob__column--replacement">' +
+          '<div class="sp-mob__header sp-mob__header--replacement"><h3>ISUZU REPLACEMENT PARTS</h3></div>' +
+          '<div class="sp-mob__slides-wrap">' + repSlides + '</div>' +
+        '</div>' +
+      '</div>';
+    }
 
     var mobileContainer = document.createElement('div');
     mobileContainer.className = 'sp-mob-container';
     mobileContainer.innerHTML = mobileHTML;
     section.appendChild(mobileContainer);
+  }
+
+  /** Helper: build just the inner details HTML (title + bullets + desc) */
+  function buildDetailsHTML(cardData, type) {
+    var titleHTML = cardData.title
+      ? '<h4 class="sp-mob__slide-title">' + cardData.title + '</h4>'
+      : '';
+
+    var bulletsHTML = '';
+    if (cardData.bullets && cardData.bullets.length) {
+      bulletsHTML = '<ul class="sp-mob__bullet-list">' +
+        cardData.bullets.map(function (b) { return '<li>' + b + '</li>'; }).join('') +
+        '</ul>';
+    }
+
+    var descHTML = '';
+    if (cardData.desc) {
+      descHTML = '<p class="sp-mob__slide-desc">' + cardData.desc.replace(/\n/g, '<br>') + '</p>';
+    }
+
+    return titleHTML + bulletsHTML + descHTML;
   }
 
 
@@ -461,8 +527,8 @@
     initPagination('section2', section2Data);
 
     // Generate mobile two-column layout (all slides visible, no pagination)
-    initMobileLayout('section1', section1Data);
-    initMobileLayout('section2', section2Data);
+    initMobileLayout('section1', section1Data, { aligned: true });
+    initMobileLayout('section2', section2Data, { aligned: true });
   });
 
 })();
