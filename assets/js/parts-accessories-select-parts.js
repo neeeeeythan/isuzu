@@ -69,13 +69,13 @@
   const section2Data = [
     {
       isp: {
-        image: "",  // PLACEHOLDER: Replace with actual ISP product image
+        image: "assets/images/parts-accessories/select-parts/Bottom_1 1.png",  // PLACEHOLDER: Replace with actual ISP product image
         title: "Thick Filter Paper",
         bullets: ["High Filter Paper Strength"],
         desc: ""
       },
       replacement: {
-        image: "",  // PLACEHOLDER: Replace with actual aftermarket product image
+        image: "assets/images/parts-accessories/select-parts/Bottom_2 1.png",  // PLACEHOLDER: Replace with actual aftermarket product image
         title: "ISUZU REPLACEMENT PARTS",
         bullets: ["Reduce Filter Paper Area", "Low Filter Paper Strength"],
         desc: ""
@@ -83,58 +83,58 @@
     },
     {
       isp: {
-        image: "",
-        title: "Placeholder ISP Slide 2",
-        bullets: ["Benefit 1"],
+        image: "assets/images/parts-accessories/select-parts/Bottom_3 1.png",
+        title: "",
+        bullets: ["Seal"],
         desc: ""
       },
       replacement: {
-        image: "",
-        title: "Placeholder Replacement Slide 2",
-        bullets: ["Drawback 1"],
+        image: "assets/images/parts-accessories/select-parts/Bottom_5 1.png",
+        title: "",
+        bullets: ["Inner coating", "Protector"],
         desc: ""
       }
     },
     {
       isp: {
-        image: "",
-        title: "Placeholder ISP Slide 3",
-        bullets: ["Benefit 1"],
+        image: "assets/images/parts-accessories/select-parts/Bottom_7 1.png",
+        title: "",
+        bullets: [],
+        desc: "There is adhesion rubber so the string and body of the belt does not get peeled off easily."
+      },
+      replacement: {
+        image: "assets/images/parts-accessories/select-parts/Bottom_9 1.png",
+        title: "",
+        bullets: [],
+        desc: "ISP hardly crack because the cord is thin and has great flexibility."
+      }
+    },
+    {
+      isp: {
+        image: "assets/images/parts-accessories/select-parts/Bottom_4 1.png",
+        title: "",
+        bullets: ["No Seal"],
         desc: ""
       },
       replacement: {
-        image: "",
-        title: "Placeholder Replacement Slide 3",
-        bullets: ["Drawback 1"],
+        image: "assets/images/parts-accessories/select-parts/Bottom_6 1.png",
+        title: "",
+        bullets: ["No inner coating", "No irotector"],
         desc: ""
       }
     },
     {
       isp: {
-        image: "",
-        title: "Placeholder ISP Slide 4",
-        bullets: ["Benefit 1"],
-        desc: ""
+        image: "assets/images/parts-accessories/select-parts/Bottom_8 1.png",
+        title: "",
+        bullets: [],
+        desc: "There is no adhesion rubber so the string and body of the belt get peeled off easily. This will lead to vehicle downtime due to belt breakage."
       },
       replacement: {
-        image: "",
-        title: "Placeholder Replacement Slide 4",
-        bullets: ["Drawback 1"],
-        desc: ""
-      }
-    },
-    {
-      isp: {
-        image: "",
-        title: "Placeholder ISP Slide 5",
-        bullets: ["Benefit 1"],
-        desc: ""
-      },
-      replacement: {
-        image: "",
-        title: "Placeholder Replacement Slide 5",
-        bullets: ["Drawback 1"],
-        desc: ""
+        image: "assets/images/parts-accessories/select-parts/Bottom_10 1.png",
+        title: "",
+        bullets: [],
+        desc: "Poor quality parts easily crack because cord is thick and space in between is large. This will lead to vehicle downtime due to belt breakage."
       }
     }
   ];
