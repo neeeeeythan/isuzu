@@ -387,10 +387,10 @@
    SELECT PARTS INTRO CONTENT
    ══════════════════════════════════════════════ */
 .sp-content {
-  max-width: 1000px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 80px 140px;
-  text-align: center;
+  text-align: left;
 }
 
 .sp-content__title {
@@ -400,6 +400,7 @@
   line-height: 64px;
   color: var(--black);
   margin: 0 0 40px 0;
+  text-align: center;
 }
 
 .sp-content__desc {
@@ -408,8 +409,12 @@
   font-size: 24px;
   line-height: 28px;
   color: var(--black);
-  text-align: center;
-  margin: 0 0 50px 0;
+  text-align: left;
+  margin: 0 0 28px 0;
+}
+
+.sp-content__desc:last-child {
+  margin-bottom: 0;
 }
 
 
@@ -417,7 +422,7 @@
    PAGINATED COMPARISON SECTIONS
    ══════════════════════════════════════════════ */
 .sp-comparison {
-  max-width: 1000px;
+  max-width: 1280px;
   margin: 0 auto 40px;
   padding: 0 140px;
 }
