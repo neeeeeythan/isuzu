@@ -56,33 +56,33 @@
     [
       {
         image: "assets/images/parts-accessories/mu-x/no8-5867641120-cargo-liner-exp-700x400 1.png",
-        name: "",
-        description: "",
+        name: "Cargo Liner",
+        description: "Designed to protect the rear cargo area against damage from dirt or liquid spill. It also lessons abrasion or shock especially when driving on harsh conditions.",
       },
       {
         image: "assets/images/parts-accessories/mu-x/no2-5867638230-carpet-floor-mat-set-lhd-700x400 1.png",
-        name: "",
-        description: "",
+        name: "Cargo Floor Mat Set",
+        description: "Elegantly designed to protect the flooring of your car from dirt. This carpet has thicker fabric that provides maximum durability.",
       },
       {
         image: "assets/images/parts-accessories/mu-x/ENGINE HOOD PROTECTOR NEW 1.png",
-        name: "",
-        description: "",
+        name: "Engine Hood Protector",
+        description: "The front portion of the vehicle is the most sensitive as it is always exposed to external contaminants, especially while driving. Engine hood protector has the advantage of protecting the front area of the vehicle from stones, insects and small particle ingress. It also enhances the overall aesthetics of the MU-X.",
       },
       {
         image: "assets/images/parts-accessories/mu-x/no5-5867640780-door-visor-set-exp-700x400 1.png",
-        name: "",
-        description: "",
+        name: "Door Visor Set",
+        description: "Allows the vehicle windows to be kept open in the event of light rain. It also functions as wind deflector and reduces wind noise inside the cabin.",
       },
       {
         image: "assets/images/parts-accessories/mu-x/no6-5867635730-rear-bumper-garnish-exp-700x400 1.png",
-        name: "",
-        description: "",
+        name: "Rear Bumper Garnish",
+        description: "Gives your vehicle a stylish accent and avoids scratches while loading or unloading cargo at the trunk.",
       },
       {
         image: "assets/images/parts-accessories/mu-x/no7-5867641100-tonneau-cover-exp-700x400 1.png",
-        name: "",
-        description: "",
+        name: "Tonneau Cover",
+        description: "This ensures that all items stored at the rear portion of the vehicle are organized. It also maximizes the rear space that enables you to load more cargo especially when traveling with your family.",
       },
     ],
   ];
