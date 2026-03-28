@@ -1027,6 +1027,10 @@
     height: 850px;
   }
 
+  .sp-hero__img {
+    object-position: 70% center;
+  }
+
   .sp-hero__overlay {
     padding-left: 0;
     align-items: center;

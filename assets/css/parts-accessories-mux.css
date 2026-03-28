@@ -599,7 +599,11 @@
 
   /* ── Hero ── */
   .mux-hero {
-    height: 850px;
+    height: 450px;
+  }
+
+  .mux-hero__img {
+    object-position: 70% center;
   }
 
   .mux-hero__overlay {

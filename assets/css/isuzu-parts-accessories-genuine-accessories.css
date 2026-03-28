@@ -246,6 +246,10 @@
     aspect-ratio: 750 / 850;
   }
 
+  .ga-hero__img {
+    object-position: 70% center;
+  }
+
   .ga-hero__overlay {
     padding-left: 40px;
     padding-top: 20px;

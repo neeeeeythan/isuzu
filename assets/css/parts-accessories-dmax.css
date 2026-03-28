@@ -599,7 +599,11 @@
 
   /* ── Hero ── */
   .dmax-hero {
-    height: 850px;
+    height: 450px;
+  }
+
+  .dmax-hero__img {
+    object-position: 70% center;
   }
 
   .dmax-hero__overlay {
