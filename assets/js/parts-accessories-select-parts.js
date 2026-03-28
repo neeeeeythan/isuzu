@@ -20,13 +20,13 @@
   const section1Data = [
     {
       isp: {
-        image: "",  // PLACEHOLDER: Replace with actual ISP product image
+        image: "assets/images/parts-accessories/select-parts/Top_1 1.png",  // PLACEHOLDER: Replace with actual ISP product image
         title: "Hard Alloy in 1st ring groove",
         bullets: ["Prevent wear", "Prevent output reduction"],
         desc: "ISP uses hard alloy 1st Ring groove as same as genuine parts so that when the combustion takes place, it will prevent from getting worn by 1st Ring collide with ring groove."
       },
       replacement: {
-        image: "",  // PLACEHOLDER: Replace with actual aftermarket product image
+        image: "assets/images/parts-accessories/select-parts/Top_2 1.png",  // PLACEHOLDER: Replace with actual aftermarket product image
         title: "NO Alloy in 1st ring groove",
         bullets: ["Wear in the early stage", "Engine output reduce"],
         desc: "Poor quality aftermarket brand does not have alloy to ring groove so when the combustion takes place, 1st ring collide with ring groove and wear will spread faster."
@@ -34,30 +34,30 @@
     },
     {
       isp: {
-        image: "",
-        title: "Placeholder ISP Slide 2",
-        bullets: ["Benefit 1", "Benefit 2"],
-        desc: "Description for ISP slide 2."
+        image: "assets/images/parts-accessories/select-parts/Top_1 1.png",
+        title: "Thick Alloy",
+        bullets: ["Prevent heat expansion"],
+        desc: "Alloy is used in bottom area of combustion chamber to control piston expansion.\n\u2022 Clearance between piston and cylinder liner will be maintained.\n\u2022 Control deterioration of fuel consumption."
       },
       replacement: {
-        image: "",
-        title: "Placeholder Replacement Slide 2",
-        bullets: ["Drawback 1", "Drawback 2"],
-        desc: "Description for replacement slide 2."
+        image: "assets/images/parts-accessories/select-parts/Top_2 1.png",
+        title: "Thin Alloy",
+        bullets: ["The wear increase around the outer surface of piston"],
+        desc: "Alloy is used in bottom area of combustion chamber to control piston expansion.\n\u2022 Clearance between piston and cylinder liner will be maintained.\n\u2022 Control deterioration of fuel consumption."
       }
     },
     {
       isp: {
-        image: "",
-        title: "Placeholder ISP Slide 3",
-        bullets: ["Benefit 1", "Benefit 2"],
-        desc: "Description for ISP slide 3."
+        image: "assets/images/parts-accessories/select-parts/Top_1 1.png",
+        title: "Have Appropriate Casting Process",
+        bullets: ["Enough strength&durability of piston"],
+        desc: "Prevent from piston to get cracked by having appropriate casting process."
       },
       replacement: {
-        image: "",
-        title: "Placeholder Replacement Slide 3",
-        bullets: ["Drawback 1", "Drawback 2"],
-        desc: "Description for replacement slide 3."
+        image: "assets/images/parts-accessories/select-parts/Top_2 1.png",
+        title: "Cast Cavity Appears",
+        bullets: ["Increase the possibility of damaging piston"],
+        desc: "Many casting cavities appears so it is easy to get cracked."
       }
     }
   ];
@@ -169,23 +169,31 @@
         .join('');
     }
 
-    // Description
+    // Description (supports line breaks via \n)
     const descEl = containerEl.querySelector('.sp-comparison__slide-desc');
     if (descEl) {
-      descEl.textContent = cardData.desc || '';
-      descEl.style.display = cardData.desc ? 'block' : 'none';
+      if (cardData.desc) {
+        descEl.innerHTML = cardData.desc.replace(/\n/g, '<br>');
+        descEl.style.display = 'block';
+      } else {
+        descEl.innerHTML = '';
+        descEl.style.display = 'none';
+      }
     }
   }
 
   function initPagination(sectionId, data) {
     var currentPage = 0;
     var totalPages = data.length;
+    var animating = false;
 
     var section = document.getElementById(sectionId);
     if (!section) return;
 
     var ispCard = section.querySelector('.sp-comparison--isp');
     var repCard = section.querySelector('.sp-comparison--replacement');
+    var ispBody = ispCard.querySelector('.sp-comparison__body');
+    var repBody = repCard.querySelector('.sp-comparison__body');
     var prevBtn = section.querySelector('.sp-pagination__btn--prev');
     var nextBtn = section.querySelector('.sp-pagination__btn--next');
     var indicator = section.querySelector('.sp-pagination__indicator');
@@ -196,26 +204,59 @@
       renderCard(repCard, pageData.replacement, 'replacement');
       indicator.textContent = (currentPage + 1) + ' / ' + totalPages;
 
-      // Disable buttons at bounds
       prevBtn.disabled = currentPage === 0;
       nextBtn.disabled = currentPage === totalPages - 1;
     }
 
-    prevBtn.addEventListener('click', function () {
-      if (currentPage > 0) {
-        currentPage--;
+    function animateTransition(direction) {
+      if (animating) return;
+      animating = true;
+
+      var outClass = direction === 'next' ? 'slide-out-left' : 'slide-out-right';
+      var inClass = direction === 'next' ? 'slide-in' : 'slide-in-left';
+
+      // Fade out current content
+      ispBody.classList.add(outClass);
+      repBody.classList.add(outClass);
+
+      setTimeout(function () {
+        // Swap content while hidden
         render();
+
+        // Remove fade-out, add fade-in start position
+        ispBody.classList.remove(outClass);
+        repBody.classList.remove(outClass);
+        ispBody.classList.add(inClass);
+        repBody.classList.add(inClass);
+
+        // Force reflow so the browser registers the start position
+        void ispBody.offsetWidth;
+
+        // Animate to visible
+        ispBody.classList.remove(inClass);
+        repBody.classList.remove(inClass);
+
+        setTimeout(function () {
+          animating = false;
+        }, 350);
+      }, 350);
+    }
+
+    prevBtn.addEventListener('click', function () {
+      if (currentPage > 0 && !animating) {
+        currentPage--;
+        animateTransition('prev');
       }
     });
 
     nextBtn.addEventListener('click', function () {
-      if (currentPage < totalPages - 1) {
+      if (currentPage < totalPages - 1 && !animating) {
         currentPage++;
-        render();
+        animateTransition('next');
       }
     });
 
-    // Initial render
+    // Initial render (no animation)
     render();
   }
 

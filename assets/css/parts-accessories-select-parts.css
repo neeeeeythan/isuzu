@@ -528,7 +528,7 @@
 .sp-comparison__slide-title {
   font-family: var(--font-be);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 26px;
   color: var(--black);
   margin: 0 0 12px 0;
@@ -576,6 +576,31 @@
   line-height: 18px;
   color: var(--black);
   margin: 0;
+}
+
+/* --- Slide transition --- */
+.sp-comparison__body {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.sp-comparison__body.slide-out-left {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.sp-comparison__body.slide-out-right {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.sp-comparison__body.slide-in {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.sp-comparison__body.slide-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
 }
 
 /* --- Pagination controls --- */
