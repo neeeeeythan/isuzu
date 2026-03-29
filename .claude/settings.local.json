@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"D:/Part Time/isuzu repo/isuzu/assets/images/genuine-accessories\")",
+      "Bash(mkdir -p \"D:/Part Time/isuzu repo/isuzu/assets/css\")",
+      "Bash(mkdir -p \"D:/Part Time/isuzu repo/isuzu/assets/js\")"
+    ]
+  }
+}
