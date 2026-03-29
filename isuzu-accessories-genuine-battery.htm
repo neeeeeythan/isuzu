@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isuzu Philippines - Genuine Battery Isuzu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="assets/css/global.css" /> -->
+    <link rel="stylesheet" href="assets/css/genuine-battery.css" />
+
+    <!-- script -->
+    <script src="assets/js/global.js" defer></script>
+
+    <!-- Page-specific styles + animations -->
+    <style></style>
+  </head>
+
+  <body>
+    <!-- ═══════════ HEADER ═══════════ -->
+
+    <main>
+      <section class="genuine-battery-hero-section" id="genuine-battery-hero">
+         <picture>
+          <source
+            srcset="assets/images/common/bg_genuine_sp.webp"
+            media="(max-width:752px)"
+          />
+          <img
+            src="assets/images/common/bg_genuine.webp"
+            alt="Isuzu Genuine Parts Background"
+            class="genuine-hero-banner-img"
+          />
+        </picture>
+        <div class="genuine-battery-title">
+          <img
+            src="assets/images/common/img_isuzu_genuine_logo.svg"
+            alt="isuzu genuine parts"
+          />
+          <h1 class="">PARTS, ACCESSORIES</h1>
+        </div>
+
+        <!-- APPLIED CTN-ICON from owners page, linking to fleet content section -->
+        <a href="#genuine-battery-content1" class="ctn-icon">
+          <svg
+            width="68"
+            height="19"
+            viewBox="0 0 68 19"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M67.4199 0.90625L34.9199 16.9062L0.419922 0.90625"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+        </a>
+      </section>
+
+      <!--GENUINE BATTERY-->
+      <section id="genuine-battery-content1" class="genuine-battery-content1">
+        <div class="genuine-battery-content1-container">
+          <h2 class = 'reveal'>GENUINE BATTERY</h2>
+          <div class="reveal genuine-battery-content1-desc">
+            <p>
+              Isuzu line of Genuine Batteries offers then (10) battery model
+              series compatible for Isuzu MU-X, D-MAX, crosswind, TRAVIZ,
+              N-Series, F-Series, C&E Series and Bus models.
+            </p>
+            <p>
+              Isuzu Genuine Battery is now available in all Isuzu dealerships
+              nationwide.
+            </p>
+            <div class="genuine-battery-content1-ul">
+              <p>ADVANTAGES</p>
+              <ul>
+                <li>High Quality</li>
+                <li>Lower Price Guarantee</li>
+                <li>Free Labor / Installation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--FEATUES  AND FUCNTIONS-->
+      <section class="features-functions">
+        <div class="features-functions-containers">
+          <h2 class = 'reveal'>FEATURES & FUNCTIONS</h2>
+          <img
+            src="assets/images/genuine-battery/img_genuine_functions.webp"
+            alt="genuine battery features and functions"
+            class = 'reveal-scale'
+          />
+        </div>
+      </section>
+
+      <!--LIST OF ISUZU GENUINE BATTERIES-->
+      <section class="genuine-battery-catalog-page">
+        <div class="genuine-battery-catalog-page-container">
+          <h2 class = 'reveal'>LIST OF ISUZU GENUINE BATTERIES</h2>
+          <div class="battery-grid" id="batteryGrid"></div>
+          <!-- Pagination -->
+          <div
+            class="genuine-battery-pagination"
+            id="genuine-battery-pagination"
+          ></div>
+          <a href="#" class="btn-outline genuine-battery-back-btn"
+            >BACK TO PREVIOUS PAGE</a
+          >
+        </div>
+      </section>
+
+      <!--WHY GET ISUZU-->
+      <section class="why-get-isuzu">
+        <img
+          src="assets/images/genuine-battery/img_isuzu_battery.webp"
+          alt="isuzu genuine battery"
+        />
+        <div class = 'why-get-isuzu-right-desc'>
+          <h2 class = 'reveal'>WHY GET ISUZU GENUINE BATTERY?</h2>
+
+          <div class="why-get-isuzu-desc">
+            <div class = 'reveal'>
+              <h3 class="why-isuzu-title">COMPETITIVE PRICING</h3>
+              <p>Sold in the best price available</p>
+            </div>
+            <div class = 'reveal'>
+              <h3 class="why-isuzu-title">CONVENIENCS</h3>
+              <p>No need to look for auto shops!</p>
+              <p>
+                You can get your ISUZU Genuine Batteries in any ISUZU
+                dealership.
+              </p>
+              <p>Click here to shop for your ISUZU Genuine Battery today!</p>
+              <a href="#" class="btn-red genuine-battery-red-btn"
+                >FIND A DEALER</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+   <script>
+  const batteries = [
+    {
+      batteryPicture: "assets/images/genuine-battery/LN31M.png",
+      model: "LN31M",
+      technology: "Tropicalized",
+      bodyShell: "LN Body Shell",
+      warranty: "24 Months",
+      maintenance: "Maintenance Free",
+      volts: 12,
+      ampere: 70,
+      reserve: 125,
+      recommendedFor: "D-MAX, MU-X",
+      vehicleModel: "RG, RF",
+    },
+    {
+      batteryPicture: "assets/images/genuine-battery/65D26.png",
+      model: "65D26/2SMF (N50)",
+      technology: "Tropicalized",
+      bodyShell: "JIS Body Shell",
+      warranty: "24 Months (Private); 6 Months (Commercial)",
+      maintenance: "Maintenance Free",
+      volts: 12,
+      ampere: 65,
+      reserve: 111,
+      recommendedFor: "TRAVIZ",
+      vehicleModel: "TRAVIZ",
+    },
+    {
+      batteryPicture: "assets/images/genuine-battery/115F51BL.png",
+      model: "2D/115F51BL (N120)",
+      technology: "Dry Changed",
+      bodyShell: "JIS Body Shell",
+      warranty: "6 Months",
+      maintenance: "Low Maintenance",
+      volts: 12,
+      ampere: 120,
+      reserve: 250,
+      recommendedFor: "E-Series",
+      vehicleModel: "CL",
+    },
+    {
+      batteryPicture: "assets/images/genuine-battery/65D23L.png",
+      model: "65D23L/N50 (1SM)",
+      technology: "Tropicalized",
+      bodyShell: "R5 Body Shell",
+      warranty: "24 Months (Private); 6 Months (Commercial)",
+      maintenance: "Maintenance Free",
+      volts: 12,
+      ampere: 65,
+      reserve: 90,
+      recommendedFor: "Crosswind",
+      vehicleModel: "TBR54",
+    },
+    {
+      batteryPicture: "assets/images/genuine-battery/80D26.png",
+      model: "80D26/LN50 (2SM)",
+      technology: "Tropicalized",
+      bodyShell: "R6 Body Shell",
+      warranty: "24 Months (Private); 6 Months (Commercial)",
+      maintenance: "Maintenance Free",
+      volts: 12,
+      ampere: 79,
+      reserve: 145,
+      recommendedFor: "MU-X, D-MAX, N-Series",
+      vehicleModel:
+        "LC/MWS (LS3E-UT7/85), TF, TFR/TFS-6G20 '13, NJR5 (E4), QKR77",
+    },
+    {
+      batteryPicture: "assets/images/genuine-battery/95D31R.png",
+      model: "95D31R/N70 (3SM REV)",
+      technology: "Tropicalized",
+      bodyShell: "R6 Body Shell",
+      warranty: "6 Months (Commercial)",
+      maintenance: "Maintenance Free",
+      volts: 12,
+      ampere: 82,
+      reserve: 162,
+      recommendedFor: "N-Series",
+      vehicleModel: "NHR/NKR55",
+    },
+    {
+      batteryPicture: "assets/images/genuine-battery/95D31L.png",
+      model: "95D31L/N70 (3SM)",
+      technology: "Tropicalized",
+      bodyShell: "R6 Body Shell",
+      warranty: "6 Months (Commercial)",
+      maintenance: "Maintenance Free",
+      volts: 12,
+      ampere: 82,
+      reserve: 162,
+      recommendedFor: "N-Series",
+      vehicleModel: "NLR77",
+    },
+    {
+      batteryPicture: "assets/images/genuine-battery/75D23R.png",
+      model: "75D23R/NS50 (1SM)",
+      technology: "Tropicalized",
+      bodyShell: "R6 Body Shell",
+      warranty: "6 Months (Commercial)",
+      maintenance: "Maintenance Free",
+      volts: 12,
+      ampere: 65,
+      reserve: 118,
+      recommendedFor: "N-Series",
+      vehicleModel: "NKR66/77, NPR66/71, NQR71/75 (E2)",
+    },
+    {
+      batteryPicture: "assets/images/genuine-battery/65D23L-NS50.png",
+      model: "65D23L/NS50 (1SM)",
+      technology: "Tropicalized",
+      bodyShell: "R6 Body Shell",
+      warranty: "6 Months (Commercial)",
+      maintenance: "Maintenance Free",
+      volts: 12,
+      ampere: 65,
+      reserve: 90,
+      recommendedFor: "N-Series/F-Series",
+      vehicleModel: "NLR/NMR/NPR55, FVR34, FRR90",
+    },
+    {
+      batteryPicture: "assets/images/genuine-battery/N150-4D.png",
+      model: "N150 4D/145G51L (JIS)",
+      technology: "Tropicalized",
+      bodyShell: "4D Body Shell",
+      warranty: "6 Months (Commercial)",
+      maintenance: "Low Maintenance",
+      volts: 12,
+      ampere: 150,
+      reserve: 300,
+      recommendedFor: "Bus",
+      vehicleModel: "LV423/LT134",
+    },
+    {
+      batteryPicture: "assets/images/genuine-battery/145G51R.png",
+      model: "4D/145G51R (REVERSE POLARITY)",
+      technology: "Tropicalized",
+      bodyShell: "JIS",
+      warranty: "6 Months",
+      maintenance: "Accessible Low Maintenance",
+      volts: 12,
+      ampere: 150,
+      reserve: 300,
+      recommendedFor: "S&E Series",
+      vehicleModel: "SW5, SG5, EK5, EW5",
+    },
+  ];
+
+  let currentPage = 1;
+  let currentItemsPerPage = getItemsPerPage(); // Dynamic based on screen width
+
+  // Function to determine items per page based on screen width
+  function getItemsPerPage() {
+    return window.innerWidth <= 752 ? 3 : 6;
+  }
+
+  function cardHTML(b) {
+    return `
+      <div class="battery-card">
+        <div class="card-image">
+          <div class="battery-placeholder">
+            <div class="battery-body">
+              <img src="${b.batteryPicture}" alt="${b.model}"/>
+            </div>
+          </div>
+        </div>
+        <div class="card-specs">
+          <div class="spec-row"><span class="spec-label">Model</span><span class="spec-value model-val">${b.model}</span></div>
+          <div class="spec-row"><span class="spec-label">Technology</span><span class="spec-value">${b.technology}</span></div>
+          <div class="spec-row"><span class="spec-label">Body Shell</span><span class="spec-value">${b.bodyShell}</span></div>
+          <div class="spec-row"><span class="spec-label">Warranty</span><span class="spec-value">${b.warranty}</span></div>
+          <div class="spec-row"><span class="spec-label">Maintenance</span><span class="spec-value">${b.maintenance}</span></div>
+          <div class="spec-row"><span class="spec-label">Volt Rating (Volts)</span><span class="spec-value">${b.volts}</span></div>
+          <div class="spec-row"><span class="spec-label">Ampere Rating (AMP)</span><span class="spec-value">${b.ampere}</span></div>
+          <div class="spec-row"><span class="spec-label">Reserve Capacity (MINS)</span><span class="spec-value">${b.reserve}</span></div>
+          <div class="spec-row"><span class="spec-label">Recommended For</span><span class="spec-value">${b.recommendedFor}</span></div>
+          <div class="spec-row"><span class="spec-label">Vehicle Model</span><span class="spec-value">${b.vehicleModel}</span></div>
+        </div>
+      </div>`;
+  }
+
+  function render(page) {
+    currentPage = page;
+    const totalPages = Math.ceil(batteries.length / currentItemsPerPage);
+    const start = (currentPage - 1) * currentItemsPerPage;
+    const slice = batteries.slice(start, start + currentItemsPerPage);
+
+    // Render cards
+    const grid = document.getElementById("batteryGrid");
+    if (grid) {
+      grid.innerHTML = slice.map(cardHTML).join("");
+    }
+
+    // Render pagination
+    const pag = document.getElementById("genuine-battery-pagination");
+    if (pag) {
+      let pagHTML = "";
+
+      // Add Previous button
+      // pagHTML += `<button class="page-btn nav-arrow" ${currentPage === 1 ? "disabled" : ""} onclick="changePage(${currentPage - 1})">&#8249;</button>`;
+
+      for (let i = 1; i <= totalPages; i++) {
+        pagHTML += `<button class="page-btn ${i === currentPage ? "active" : ""}" onclick="changePage(${i})">${i}</button>`;
+      }
+
+      // Add Next button
+      // pagHTML += `<button class="page-btn nav-arrow" ${currentPage === totalPages ? "disabled" : ""} onclick="changePage(${currentPage + 1})">&#8250;</button>`;
+
+      pag.innerHTML = pagHTML;
+    }
+
+ 
+  }
+
+  // Separate function for page changes to maintain proper context
+  function changePage(page) {
+    render(page);
+  }
+
+  // Handle window resize
+  let resizeTimer;
+  function handleResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const newItemsPerPage = getItemsPerPage();
+      if (newItemsPerPage !== currentItemsPerPage) {
+        currentItemsPerPage = newItemsPerPage;
+        // Reset to page 1 when items per page changes
+        currentPage = 1;
+        render(1);
+      }
+    }, 250); // Debounce resize event
+  }
+
+  // Add event listener for resize
+  window.addEventListener("resize", handleResize);
+
+  // Initial render
+  render(1);
+</script>
+    <!-- ═══════════ FOOTER ═══════════ -->
+  </body>
+</html>

@@ -27,7 +27,7 @@
       <header class="site-header sticky top-0 z-50 bg-white flex items-center justify-between px-100"
       style="height:90px; border-bottom:3px solid var(--red); overflow:visible;">
       <a href="/">
-        <img src="https://www.figma.com/api/mcp/asset/66a6dbcf-b449-4ae4-a451-b987e6e65f18" alt="Isuzu Philippines"
+        <img src="assets/images/common/img_isuzu_logo.svg" alt="Isuzu Philippines"
           class="obj-contain" style="height:55px;">
       </a>
 
@@ -296,10 +296,8 @@
       </div>
 
       </header>
-
-
-    <main class="page-wrap page-fleet-isuzu max-full mx-auto bg-white">
-      <section class="relative">
+     <main>
+      <section class="relative fleet-hero-section" id="fleet-hero">
         <picture>
           <source
             srcset="assets/images/fleet/bg_fleet_hero_img_sp.webp"
@@ -307,16 +305,36 @@
           />
           <img
             src="assets/images/fleet/bg_fleet_hero_img.webp"
-            alt=""
+            alt="Isuzu Fleet Hero Background"
             class="hero-banner-img"
           />
         </picture>
         <div class="fleet-hero-desc flex flex-col gap-0px">
-          <h1 class="font-be text-white fs-64 fw-400 lh-normal text-nowrap">ISUZU FLEET</h1>
+          <h1 class="font-be text-white fs-64 fw-400 lh-normal text-nowrap">
+            ISUZU FLEET
+          </h1>
         </div>
+
+        <!-- APPLIED CTN-ICON from owners page, linking to fleet content section -->
+        <a href="#fleet-main-content" class="ctn-icon">
+          <svg
+            width="68"
+            height="19"
+            viewBox="0 0 68 19"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M67.4199 0.90625L34.9199 16.9062L0.419922 0.90625"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+        </a>
       </section>
 
-      <section class="fleet-content">
+    
+      <section id="fleet-main-content" class="fleet-content">
         <div class="fleet-main-container">
           <div class="reveal fleet-main-header flex flex-col gap-50px items-center justify-center">
             <h2 class="font-beNeu fs-60 fw-400">BUILT FOR BUSINESS</h2>
@@ -328,26 +346,29 @@
               one-man operation or an international corporation, we have model
               to suit you.
             </p>
-            <div class = 'reveal'>
-               <a
-              href="#"
-              class="btn-red fs-20 ls-5 py-12 px-25 mt-20 text-decoration-none w-fit-content"
-              >SEND FLEET INQUIRY</a
-            >
+            <div class="reveal">
+              <a
+                href="#"
+                class="btn-red fs-20 ls-5 py-12 px-25 mt-20 text-decoration-none w-fit-content"
+                >SEND FLEET INQUIRY</a
+              >
             </div>
-           
           </div>
 
           <div
             class="fleet-secondary-content flex flex-col gap-60px items-center"
           >
-            <div class="flex-secondary-content-item reveal-right flex flex-row gap-30px items-start">
+            <div
+              class="flex-secondary-content-item flex flex-row gap-30px items-start"
+            >
               <img
                 src="assets/images/fleet/img_fleet_img1.webp"
                 alt="build for business"
-                class="fleet-img"
+                class="reveal-scale fleet-img"
               />
-              <div class="fleet-item-desc flex flex-col items-start justify-center gap-10px">
+              <div
+                class="reveal  fleet-item-desc flex flex-col items-start justify-center gap-10px"
+              >
                 <h2 class="font-beNeu fw-400 fs-50 fleet-title">
                   BUILD FOR BUSINESS
                 </h2>
@@ -357,23 +378,30 @@
                   to withstand the test of time. Capable to operate for a long
                   period time and in different weather conditions, Isuzu
                   vehicles boasts large cargo capacity, easy maintenance and a
-                  wide range of body applications to choose from. <br/> Both our Light
-                  Commercial Vehicle and Truck line -up are engineered towards
-                  durability, reliability and fuel economy. With an extensive
-                  model line -up to choose from, we are confident that there is
-                  an Isuzu model to suit your business needs.
+                  wide range of body applications to choose from. <br />
+                  Both our Light Commercial Vehicle and Truck line -up are
+                  engineered towards durability, reliability and fuel economy.
+                  With an extensive model line -up to choose from, we are
+                  confident that there is an Isuzu model to suit your business
+                  needs.
                 </p>
               </div>
             </div>
 
-            <div class="flex-secondary-content-item reveal-left flex flex-row gap-30px items-start">
+            <div
+              class="flex-secondary-content-item  flex flex-row gap-30px items-start"
+            >
               <img
                 src="assets/images/fleet/img_fleet_img2.webp"
                 alt="NATIONWIDE PARTS & SERVICE AVAILABILITY"
-                class="fleet-img"
+                class="reveal-scale fleet-img "
               />
-              <div class="fleet-item-desc flex flex-col items-start gap-10px">
-                <h2 class="font-beNeu fw-400 fs-50 fleet-title fleet-title-left">
+              <div
+                class="reveal fleet-item-desc flex flex-col items-start gap-10px"
+              >
+                <h2
+                  class="font-beNeu fw-400 fs-50 fleet-title fleet-title-left"
+                >
                   NATIONWIDE PARTS & SERVICE AVAILABILITY
                 </h2>
                 <p class="fs-20">
@@ -389,14 +417,20 @@
               </div>
             </div>
 
-            <div class="flex-secondary-content-item reveal-right flex flex-row gap-30px items-start">
+            <div
+              class="flex-secondary-content-item flex flex-row gap-30px items-start"
+            >
               <img
                 src="assets/images/fleet/img_fleet_img3.webp"
-                alt="NATIONWIDE PARTS & SERVICE AVAILABILITY"
-                class="fleet-img"
+                alt="TECHNICAL & OPERATION SUPPORT"
+                class="reveal-scale fleet-img"
               />
-              <div class="fleet-item-desc flex flex-col items-start gap-10px">
-                <h2 class="font-beNeu fw-400 fs-50 fleet-title fleet-title-left">
+              <div
+                class="reveal fleet-item-desc flex flex-col items-start gap-10px"
+              >
+                <h2
+                  class="font-beNeu fw-400 fs-50 fleet-title fleet-title-left"
+                >
                   TECHNICAL & OPERATION SUPPORT
                 </h2>
                 <p class="fs-20">
@@ -412,17 +446,30 @@
         </div>
       </section>
 
-      <section class = 'fleet-banner relative'>
-        <img src="assets/images/fleet/bg_fleet_banner.webp" alt="FLEET TRANING REQUEST">
-        <div class= 'fleet-banner-info flex flex-col gap-50px items-center justify-center'>
-          <h2 class = 'reveal text-white font-be fs-42 fw-300 text-nowrap'>FLEET TRAINING REQUEST</h2>
-          <div class = 'reveal'>
-              <a href="#" class="btn-red fs-20 ls-5 py-12 px-25 text-decoration-none w-fit-content">SEND FLEET INQUIRY</a>
-
+      <section class="fleet-banner relative">
+        <img
+          src="assets/images/fleet/bg_fleet_banner.webp"
+          alt="FLEET TRAINING REQUEST"
+        />
+        <div
+          class="fleet-banner-info flex flex-col gap-50px items-center justify-center"
+        >
+          <h2
+            class="reveal text-white font-be fs-42 fw-300 text-nowrap"
+          >
+            FLEET TRAINING REQUEST
+          </h2>
+          <div class="reveal">
+            <a
+              href="#"
+              class="btn-red fs-20 ls-5 py-12 px-25 text-decoration-none w-fit-content"
+              >SEND FLEET INQUIRY</a
+            >
           </div>
         </div>
       </section>
     </main>
+
 
     <!-- ═══════════ FOOTER ═══════════ -->
     <footer

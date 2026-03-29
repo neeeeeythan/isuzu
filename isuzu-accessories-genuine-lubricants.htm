@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isuzu Philippines - Genuine lubricants Isuzu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="assets/css/global.css" /> -->
+    <link rel="stylesheet" href="assets/css/genuine-lubricants.css" />
+
+    <!-- script -->
+    <script src="assets/js/global.js" defer></script>
+
+    <!-- Page-specific styles + animations -->
+    <style></style>
+  </head>
+
+  <body>
+    <!-- ═══════════ HEADER ═══════════ -->
+
+    <main>
+      <section
+        class="genuine-lubricants-hero-section"
+        id="genuine-lubricants-hero"
+      >
+        <picture>
+          <source
+            srcset="assets/images/common/bg_genuine_sp.webp"
+            media="(max-width:752px)"
+          />
+          <img
+            src="assets/images/common/bg_genuine.webp"
+            alt="Isuzu Genuine Parts Background"
+            class="genuine-hero-banner-img"
+          />
+        </picture>
+        <div class="genuine-lubricants-title">
+          <img
+            src="assets/images/common/img_isuzu_genuine_logo.svg"
+            alt="isuzu genuine parts"
+          />
+          <h1 class="">PARTS, ACCESSORIES</h1>
+        </div>
+
+        <!-- APPLIED CTN-ICON from owners page, linking to fleet content section -->
+        <a href="#genuine-lubricants-content1" class="ctn-icon">
+          <svg
+            width="68"
+            height="19"
+            viewBox="0 0 68 19"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M67.4199 0.90625L34.9199 16.9062L0.419922 0.90625"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+        </a>
+      </section>
+
+      <!--GENUINE lubricants-->
+      <section
+        id="genuine-lubricants-content1"
+        class="genuine-lubricants-content1"
+      >
+        <div class="genuine-lubricants-content1-container">
+          <h2 class="reveal">ISUZU LUBRICANTS</h2>
+          <div class="reveal genuine-lubricants-content1-desc">
+            <p>
+              By using Isuzu-recommended lubricants, you can ensure that your
+              vehicle is receiving the optimal protection and performance it
+              needs. These lubricants are specifically formulated to meet the
+              demands of Isuzu vehicles, ensuring compatibility and maximizing
+              their efficiency.
+            </p>
+            <p>
+              Find the right lubricants for your vehicle below and contact your
+              Isuzu service advisor for specification and quantity
+              recommendations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--LIST OF ISUZU GENUINE lubricants-->
+      <section class="genuine-lubricants-catalog-page">
+        <div class="genuine-lubricants-catalog-page-container">
+          <div class="lubricants-grid" id="lubricantsGrid"></div>
+          <!-- Pagination -->
+          <div
+            class="genuine-lubricants-pagination"
+            id="genuine-lubricants-pagination"
+          ></div>
+          <a href="#" class="btn-outline genuine-lubricants-back-btn"
+            >BACK TO PREVIOUS PAGE</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const lubricants = [
+        {
+          lubricantsPicture:
+            "assets/images/genuine-lubricants/isuzu-diesel-injector-cleaner.png",
+          lubricantsName: "Isuzu Diesel Injector Cleaner",
+          lubricantsApplication: "Applicable to all Isuzu Models",
+        },
+        {
+          lubricantsPicture:
+            "assets/images/genuine-lubricants/Isuzu BVP Engine Oil Multi Z Plus 10W-30.png",
+          lubricantsName: "Isuzu BVP Engine Oil Multi Z Plus 10W-30",
+          lubricantsApplication: "Applicable to all Isuzu Models",
+        },
+        {
+          lubricantsPicture:
+            "assets/images/genuine-lubricants/Isuzu BVP Engine Oil XTRM 15W-40.png",
+          lubricantsName: "Isuzu BVP Engine Oil XTRM 15W-40",
+          lubricantsApplication: "Applicable to all Isuzu Models",
+        },
+        {
+          lubricantsPicture:
+            "assets/images/genuine-lubricants/Besco Duramax Genuine Engine Oil.png",
+          lubricantsName: "Besco Duramax Genuine Engine Oil",
+          lubricantsApplication: "Applicable to D-MAX and MU-X models",
+        },
+        {
+          lubricantsPicture:
+            "assets/images/genuine-lubricants/Isuzu BVP Premix 50-50 XLC (Orange Coolant).png",
+          lubricantsName: "Isuzu BVP Premix 50/50 XLC (Orange Coolant)",
+          lubricantsApplication: "Applicable to all Isuzu Models",
+        },
+        {
+          lubricantsPicture:
+            "assets/images/genuine-lubricants/Isuzu BVP Premix 50-50 XCL (Green Coolant).png",
+          lubricantsName: "Isuzu BVP Premix 50/50 XCL (Green Coolant)",
+          lubricantsApplication: "Applicable to all Isuzu Models",
+        },
+        {
+          lubricantsPicture:
+            "assets/images/genuine-lubricants/Isuzu BVP Gear Oil 80W-90.png",
+          lubricantsName: "Isuzu BVP Gear Oil 80W-90",
+          lubricantsApplication: "Applicable to all Isuzu Models",
+        },
+        {
+          lubricantsPicture:
+            "assets/images/genuine-lubricants/Isuzu BVP Gear Oil 85W-140.png",
+          lubricantsName: "Isuzu BVP Gear Oil 85W-140",
+          lubricantsApplication: "Applicable to all Isuzu Models",
+        },
+        {
+          lubricantsPicture:
+            "assets/images/genuine-lubricants/Isuzu BVP ATF-PSF.png",
+          lubricantsName: "Isuzu BVP ATF/PSF",
+          lubricantsApplication: "Applicable to all Isuzu Models",
+        },
+        {
+          lubricantsPicture:
+            "assets/images/genuine-lubricants/Besco Gear SH 80W-90.png",
+          lubricantsName: "Besco Gear SH 80W-90",
+          lubricantsApplication: "Applicable to all Isuzu Models",
+        },
+        {
+          lubricantsPicture:
+            "assets/images/genuine-lubricants/Besco Gear Shift on the Fly 75W-90.png",
+          lubricantsName: "Besco Gear Shift on the Fly 75W-90",
+          lubricantsApplication: "Applicable to D-MAX and MU-X 4x4 variants",
+        },
+        {
+          lubricantsPicture:
+            "assets/images/genuine-lubricants/Isuzu Brake Cleaner.png",
+          lubricantsName: "Isuzu Brake Cleaner",
+          lubricantsApplication: "Applicable to all Isuzu Models",
+        },
+      ];
+
+      let currentPage = 1;
+      let currentItemsPerPage = getItemsPerPage(); // Dynamic based on screen width
+
+      // Function to determine items per page based on screen width
+      function getItemsPerPage() {
+        return window.innerWidth <= 752 ? 3 : 6;
+      }
+
+      function cardHTML(l) {
+        return `
+      <div class="lubricants-card">
+        <div class="card-image">
+          <div class="lubricants-placeholder">
+            <div class="lubricants-body">
+              <img src="${l.lubricantsPicture}" alt="${l.lubricantsName}"  class = 'lubricants-img'/>
+            </div>
+          </div>
+        </div>
+        <div>
+            <p class = 'lubricants-name'>${l.lubricantsName}</p>
+            <p class   = 'lubricants-desc'>${l.lubricantsApplication}</p>
+        </div>
+      </div>`;
+      }
+
+      function render(page) {
+        currentPage = page;
+        const totalPages = Math.ceil(lubricants.length / currentItemsPerPage);
+        const start = (currentPage - 1) * currentItemsPerPage;
+        const slice = lubricants.slice(start, start + currentItemsPerPage);
+
+        // Render cards
+        const grid = document.getElementById("lubricantsGrid");
+        if (grid) {
+          grid.innerHTML = slice.map(cardHTML).join("");
+        }
+
+        // Render pagination
+        const pag = document.getElementById("genuine-lubricants-pagination");
+        if (pag) {
+          let pagHTML = "";
+
+          // Add Previous button
+          // pagHTML += `<button class="page-btn nav-arrow" ${currentPage === 1 ? "disabled" : ""} onclick="changePage(${currentPage - 1})">&#8249;</button>`;
+
+          for (let i = 1; i <= totalPages; i++) {
+            pagHTML += `<button class="page-btn ${i === currentPage ? "active" : ""}" onclick="changePage(${i})">${i}</button>`;
+          }
+
+          // Add Next button
+          // pagHTML += `<button class="page-btn nav-arrow" ${currentPage === totalPages ? "disabled" : ""} onclick="changePage(${currentPage + 1})">&#8250;</button>`;
+
+          pag.innerHTML = pagHTML;
+        }
+      }
+
+      // Separate function for page changes to maintain proper context
+      function changePage(page) {
+        render(page);
+      }
+
+      // Handle window resize
+      let resizeTimer;
+      function handleResize() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          const newItemsPerPage = getItemsPerPage();
+          if (newItemsPerPage !== currentItemsPerPage) {
+            currentItemsPerPage = newItemsPerPage;
+            // Reset to page 1 when items per page changes
+            currentPage = 1;
+            render(1);
+          }
+        }, 250); // Debounce resize event
+      }
+
+      // Add event listener for resize
+      window.addEventListener("resize", handleResize);
+
+      // Initial render
+      render(1);
+    </script>
+    <!-- ═══════════ FOOTER ═══════════ -->
+  </body>
+</html>

@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("Helvetica"),
+    url("../fonts/Helvetica.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Bebas";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local("Bebas"),
+    url("../fonts/Bebas-Regular.otf") format("opentype");
+}
+
+:root {
+  /* BASE COLORS */
+  --white: #fdfdfd;
+  --black: #181818;
+  --grey: #f5f5f5;
+  --dark-gray: #797979;
+  --red: #c90000;
+  --textBlue: #000c8b;
+  --textDarkGray: #797979;
+
+  /* FONTS */
+  --font-ar: "Arsenal", sans-serif;
+  --font-be: "Bebas", sans-serif;
+  --font-op: "Open Sans", sans-serif;
+  --font-hv: "Helvetica", Arial, sans-serif;
+  --font-beNeu: "Bebas Neue";
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Helvetica";
+  font-weight: 400;
+  color: var(--black);
+  margin: 0px;
+  overflow-x: hidden;
+  padding: 0px;
+}
+body {
+  margin: 0px;
+  width: 100%;
+  padding: 0px;
+  overflow-x: hidden;
+}
+html body a {
+  color: inherit;
+}
+
+main {
+  transition: margin-top 0.35s ease;
+}
+
+/* ═══════════════════════════════════
+      BUTTONS
+  ═══════════════════════════════════ */
+.btn-red {
+  display: inline-block;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: 99px;
+  font-family: var(--font-be);
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-red:hover {
+  background: #a00000;
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-red:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--black);
+  border: 1.5px solid var(--red);
+  border-radius: 99px;
+  font-family: var(--font-be);
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.btn-outline:hover {
+  background: var(--red);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 0, 0, 0.3);
+}
+
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════
+SCROLL REVEAL ANIMATIONS
+═══════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ═══════════════════════════════════
+OBJECT FIT HELPERS
+═══════════════════════════════════ */
+.obj-cover {
+  object-fit: cover;
+}
+
+.obj-contain {
+  object-fit: contain;
+}
+
+/*code for genuine lubricants BTN*/
+.privacy-notice-red-btn {
+  font-size: 16px !important;
+  letter-spacing: 0.05em;
+  /* padding:25px 12px; */
+  text-decoration: none;
+  border-radius: 50px !important;
+  border: 1px solid var(--red) !important;
+  font-family: "Bebas Neue", "Bebas", sans-serif !important;
+  font-weight: 550 !important;
+  min-height: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 189px;
+  margin: 0px auto;
+}
+.privacy-notice-back-btn {
+  font-size: 16px !important;
+  letter-spacing: 0.05em;
+  /* padding:25px 12px; */
+  text-decoration: none;
+  border-radius: 50px !important;
+  border: 1px solid var(--red) !important;
+  font-family: "Bebas Neue", "Bebas", sans-serif !important;
+  font-weight: 550 !important;
+  min-height: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 189px;
+  margin: 0px auto;
+}
+.privacy-notice-back-btn:hover {
+  color: var(--white) !important;
+}
+
+/*privacy-noitce css*/
+
+.privacy-notice {
+  /* width:100%; */
+  max-width: 966px;
+  margin: 0px auto;
+  padding: 100px 20px;
+}
+.privacy-notice .privacy-notice-back-btn {
+  margin-top: 100px;
+}
+.privacy-notice h1 {
+  text-align: center;
+  font-family: "Bebase Neue", "Bebas", sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  margin-bottom: 80px;
+}
+.privacy-notice h2 {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+.privacy-notice h2 ~ p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+.privacy-notice p {
+  font-family: "Helvetica";
+  font-size: 20px;
+  line-height: 30px;
+  /* margin-block-start:0px;
+    margin-block-end:0px; */
+}
+.privacy-notice table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.privacy-notice table,
+.privacy-notice td,
+.privacy-notice th {
+  border: 1px solid #ececf0;
+  padding: 15px;
+}
+.privacy-notice th,
+.privacy-notice td {
+  font-family: "Helvetica";
+  line-height: 30px;
+  font-size: 20px;
+}
+.privacy-notice tr td:first-child {
+  min-width: 277px;
+  vertical-align: top;
+}
+.privacy-notice th {
+  text-align: left;
+  font-size: 20px;
+}
+.privacy-policy-sec {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+.privacy-notice-sec3 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.privacy-policy-sec img {
+  margin-top: 100px;
+}
+
+.privacy-notice-sec4 p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+@media screen and (max-width: 1200px) {
+  .privacy-notice p {
+    font-size: 16px;
+  }
+  .privacy-notice tr td:first-child {
+    min-width: 100px;
+  }
+  .privacy-notice th,
+  .privacy-notice td {
+    font-size: 16px;
+  }
+  .privacy-notice h2 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 752px) {
+  .privacy-notice h1 {
+    margin-bottom: 40px;
+  }
+}

@@ -34,7 +34,7 @@
     >
       <a href="/">
         <img
-          src="https://www.figma.com/api/mcp/asset/66a6dbcf-b449-4ae4-a451-b987e6e65f18"
+          src="assets/images/common/img_isuzu_logo.svg"
           alt="Isuzu Philippines"
           class="obj-contain"
           style="height: 55px"
@@ -485,13 +485,17 @@
       </div>
     </header>
 
-    <main class="page-wrap page-owners-isuzu max-full mx-auto bg-white">
-      <section id="first-section" class="first-section">
-        <img
-          src="assets/images/owners/bg_owners_hero_img.webp"
-          alt=""
-          class="hero-banner-img hero-banner-img-full"
-        />
+    <main class="bg-white">
+      <section id="owners-first-section" class="first-section">
+        <picture>
+          <source srcset = "assets/images/owners/bg_owners_hero_img_sp.png" media = "(max-width:752px)"/>
+          <img
+            src="assets/images/owners/bg_owners_hero_img.webp"
+            alt=""
+            class="owners-hero-img"
+          />
+        </picture>
+      
 
         <div class="owners-hero-desc flex flex-col gap-0px">
           <h1 class="font-be text-white fs-74 fw-400 lh-normal text-nowrap">
@@ -499,7 +503,8 @@
           </h1>
         </div>
 
-        <a href="#second-section" class="ctn-icon">
+           <!-- APPLIED CTN-ICON from owners page, linking to fleet content section -->
+        <a href="#owners-second-section" class="ctn-icon">
           <svg
             width="68"
             height="19"
@@ -516,30 +521,30 @@
         </a>
       </section>
 
-      <section id="second-section" class="owners-content second-section">
-        <div class="owners-content-container flex flex-col gap-150px">
+      <section id="owners-second-section" class="owners-content second-section">
+        <div class="owners-content-container ">
           <div
-            class="owners-header flex flex-col gap-62px items-center justify-center"
+            class="owners-header"
           >
-            <h2 class="reveal font-beNeu fs-50 fw-400">
+            <h2 class="reveal">
               WELCOME, ISUZU OWNERS!
             </h2>
-            <p class="reveal fs-24">
+            <p class="reveal">
               Your 360° View for your vehicle needs, Anytime, Anywhere.
             </p>
             <div
-              class="owners-header-desc flex flex-col gap-32px items-center justify-center"
+              class="owners-header-desc"
             >
-              <h2 class="reveal font-beNeu fs-50 fw-400">
+              <h2 class="reveal">
                 PERIOD MAINTENANCE SERVICE PRICE GUIDE
               </h2>
-              <div class="">
-                <p class="reveal fs-20">
+              <div class="owners-maintenance">
+                <p class="reveal">
                   Periodic Maintenance Service (PMS) is designated to preserve
                   and restore your vehicle's reliability to ensure Safety,
                   Durability, and Comfort.
                 </p>
-                <ul class="reveal owners-ul mt-10">
+                <ul class="reveal owners-ul">
                   <li>
                     Maintain your vehicle performance minimizing emergency and
                     unplanned repair cost.
@@ -559,10 +564,10 @@
           </div>
 
           <div
-            class="owners-quick-links flex flex-col gap-35px items-center justify-center"
+            class="owners-quick-links"
           >
-            <h2 class="font-beNeu fs-42 fw-400">QUICK LINKS</h2>
-            <div class="flex flex-row gap-80px items-center">
+            <h2>QUICK LINKS</h2>
+            <div class="owners-quick-links-icons">
               <a
                 href="#"
                 class="buying-tool flex flex-col gap-20px items-center cursor-pointer text-decoration-none reveal stagger-1 text-nowrap"
@@ -637,7 +642,7 @@
           </div>
 
           <div class="reveal-scale owners-vidoes-link">
-            <div class="flex flex-col gap-30px">
+            <div>
               <iframe
                 class="owners-videos"
                 width="330px"
@@ -657,10 +662,10 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p class="fs-30 fw-400 font-beNeu">BACKTACKLEEN</p>
+              <p>BACKTACKLEEN</p>
             </div>
 
-            <div class="flex flex-col gap-30px">
+            <div>
               <iframe
                 class="owners-videos"
                 width="330"
@@ -680,10 +685,10 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p class="fs-30 fw-400 font-beNeu">ISUZU EXPRESS CHECKUP</p>
+              <p>ISUZU EXPRESS CHECKUP</p>
             </div>
 
-            <div class="flex flex-col gap-30px">
+            <div>
               <iframe
                 class="owners-videos"
                 width="330"
@@ -703,10 +708,10 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p class="fs-30 fw-400 font-beNeu">ISUZU HEALTH REPORT</p>
+              <p>ISUZU HEALTH REPORT</p>
             </div>
 
-            <div class="flex flex-col gap-30px">
+            <div>
               <iframe
                 class="owners-videos"
                 width="330"
@@ -726,12 +731,12 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p class="fs-30 fw-400 font-beNeu">
+              <p>
                 ISUZU KNOW AND GO-CHECKING YOUR TIRES
               </p>
             </div>
 
-            <div class="flex flex-col gap-30px">
+            <div>
               <iframe
                 class="owners-videos"
                 width="330px"
@@ -751,12 +756,12 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p class="fs-30 fw-400 font-beNeu">
+              <p>
                 ISUZU KNOW AND GO-CHECKING THE AIR FILTER
               </p>
             </div>
 
-            <div class="flex flex-col gap-30px">
+            <div>
               <iframe
                 class="owners-videos"
                 width="330"
@@ -776,12 +781,12 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p class="fs-30 fw-400 font-beNeu">
+              <p>
                 ISUZU KNOW AND GO-CHECKING THE POWER STEERING FLUID
               </p>
             </div>
 
-            <div class="flex flex-col gap-30px">
+            <div>
               <iframe
                 class="owners-videos"
                 width="330"
@@ -801,12 +806,12 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p class="fs-30 fw-400 font-beNeu">
+              <p>
                 ISUZU KNOW AND GO-ENGINE COOLANT INSPECTION
               </p>
             </div>
 
-            <div class="flex flex-col gap-30px">
+            <div>
               <iframe
                 class="owners-videos"
                 width="330"
@@ -826,112 +831,49 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p class="fs-30 fw-400 font-beNeu">
+              <p>
                 ISUZU KNOW AND GO-PROPER BATTERY INSPECTION
               </p>
             </div>
           </div>
 
-          <div
-            class="w-full flex flex-col gap-100px items-center justify-center"
-          >
-            <div
-              class="owners-dashboard flex flex-col gap-40px items-center jusitfy-center bg-grey py-60 w-full"
-            >
-              <h2 class="reveal font-beNeu fs-42 fw-400">
-                KNOW WHAT YOUR DASHBOARD LIGHT SAYS
-              </h2>
-              <p class="reveal fs-20">
-                This will help you understand and interpret your Isuzu Vehicle's
-                warning light symbols.
-              </p>
-              <img
-                src="assets/images/owners/img_owners_rectangle.webp"
-                width="500px"
-                height="auto"
-                class="reveal-scale"
-              />
-            </div>
-
-            <div class="owners-buying-tools flex items-center">
-              <a
-                href="#"
-                class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-1"
-                style="gap: 10px"
-              >
-                <div
-                  class="flex items-center justify-center"
-                  style="height: 55px"
-                >
-                  <img
-                    src="assets/images/top/quote-vector.png"
-                    alt=""
-                    class="buying-tool__icon obj-contain"
-                    style="width: 42px"
-                  />
-                </div>
-                <span class="font-be fs-15 text-black ls-5"
-                  >ASK A QUOTATION</span
-                >
-              </a>
-              <a
-                href="#"
-                class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-2"
-                style="gap: 10px"
-              >
-                <div
-                  class="flex items-center justify-center"
-                  style="height: 55px"
-                >
-                  <img
-                    src="assets/images/top/brochure-vector.png"
-                    alt=""
-                    class="buying-tool__icon obj-contain"
-                    style="width: 45px"
-                  />
-                </div>
-                <span class="font-be fs-15 text-black ls-5">BROCHURE</span>
-              </a>
-              <a
-                href="#"
-                class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-3"
-                style="gap: 10px"
-              >
-                <div
-                  class="flex items-center justify-center"
-                  style="height: 55px"
-                >
-                  <img
-                    src="assets/images/top/location-vector.png"
-                    alt=""
-                    class="buying-tool__icon obj-contain"
-                    style="width: 40px"
-                  />
-                </div>
-                <span class="font-be fs-15 text-black ls-5">FIND A DEALER</span>
-              </a>
-              <a
-                href="#"
-                class="buying-tool flex flex-col items-center cursor-pointer text-decoration-none reveal stagger-4"
-                style="gap: 10px"
-              >
-                <div
-                  class="flex items-center justify-center"
-                  style="height: 55px"
-                >
-                  <img
-                    src="assets/images/top/test-drive-vector.png"
-                    alt=""
-                    class="buying-tool__icon obj-contain"
-                    style="width: 47px"
-                  />
-                </div>
-                <span class="font-be fs-15 text-black ls-5">TEST DRIVE</span>
-              </a>
-            </div>
-          </div>
+         
         </div>
       </section>
+
+     <section id = 'owners-third-section' class = 'owners-dashboard'>
+        <div class = 'owners-dashboard-desc'>
+          <h2 class =  'reveal'>KNOW  WHAT YOUR DASHBOARD LIGHT SAYS</h2>
+          <p class = 'reveal'>This will help you understatnd and interpret your Isuzu Vehicle's warning light symbols.</p>
+        </div>
+        <div class = 'owners-find-more-container'>
+          <img src="assets/images/owners/img_owners_dashboard.png" alt="" class = 'owners-dashboard-img'>
+          <p id = 'findMoreBtn' class = 'owners-dashboard-find'>FIND MORE</p>
+        </div>
+       
+        <div class="modal-overlay" id="dashboardModal">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+          <div  class =  'modal-overlay-header'>
+            <img src="assets/images/common/img_isuzu_logo.svg" alt="isuzu" class = 'overlay-logo'>
+            <button class="modal-close" id="modalClose" aria-label="Close">
+              <img src="assets/images/owners/owners_modal_close.svg" alt="close">
+            </button>
+          </div>
+        
+          <p class = 'owners-modal-note'>Note: RED needs immediate checking by Isuzu Service while AMBER is caution indicator.</p>
+          <div class = 'owners-indicators-desc'>
+            <img src="assets/images/owners/owners_icons.png" alt="AUTOMATIC TRANSMISSION FLUID TEMPERATURE WARNING LIGHT"  class = 'owners-indicators-icon'>
+            <div>
+              <h2>AUTOMATIC TRANSMISSION FLUID TEMPERATURE WARNING LIGHT</h2>
+              <p>This warning light comes "ON" when the temperature of the automatic transmission becomes high while driving. This may result to serious damage in transmission components and transmission failure if not prevented. Immediately stop the vehicle in a safe place and turn off the engine.</p>
+              <p>Contact your nearest Isuzu Dealership.</p>
+            </div>
+          
+          </div>
+      
+          
+        </div>
+     </section>
     </main>
 
     <!-- ═══════════ FOOTER ═══════════ -->
@@ -1311,5 +1253,24 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const btn     = document.getElementById('findMoreBtn');
+      const modal   = document.getElementById('dashboardModal');
+      const closeBtn = document.getElementById('modalClose');
+  
+      btn.addEventListener('click', () => modal.classList.add('active'));
+      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+  
+      // Close on overlay click
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('active');
+      });
+  
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') modal.classList.remove('active');
+      });
+    </script>
   </body>
 </html>
