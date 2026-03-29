@@ -488,14 +488,16 @@
     <main class="bg-white">
       <section id="owners-first-section" class="first-section">
         <picture>
-          <source srcset = "assets/images/owners/bg_owners_hero_img_sp.png" media = "(max-width:752px)"/>
+          <source
+            srcset="assets/images/owners/bg_owners_hero_img_sp.png"
+            media="(max-width:752px)"
+          />
           <img
             src="assets/images/owners/bg_owners_hero_img.webp"
             alt=""
             class="owners-hero-img"
           />
         </picture>
-      
 
         <div class="owners-hero-desc flex flex-col gap-0px">
           <h1 class="font-be text-white fs-74 fw-400 lh-normal text-nowrap">
@@ -503,7 +505,7 @@
           </h1>
         </div>
 
-           <!-- APPLIED CTN-ICON from owners page, linking to fleet content section -->
+        <!-- APPLIED CTN-ICON from owners page, linking to fleet content section -->
         <a href="#owners-second-section" class="ctn-icon">
           <svg
             width="68"
@@ -522,22 +524,14 @@
       </section>
 
       <section id="owners-second-section" class="owners-content second-section">
-        <div class="owners-content-container ">
-          <div
-            class="owners-header"
-          >
-            <h2 class="reveal">
-              WELCOME, ISUZU OWNERS!
-            </h2>
+        <div class="owners-content-container">
+          <div class="owners-header">
+            <h2 class="reveal">WELCOME, ISUZU OWNERS!</h2>
             <p class="reveal">
               Your 360° View for your vehicle needs, Anytime, Anywhere.
             </p>
-            <div
-              class="owners-header-desc"
-            >
-              <h2 class="reveal">
-                PERIOD MAINTENANCE SERVICE PRICE GUIDE
-              </h2>
+            <div class="owners-header-desc">
+              <h2 class="reveal">PERIOD MAINTENANCE SERVICE PRICE GUIDE</h2>
               <div class="owners-maintenance">
                 <p class="reveal">
                   Periodic Maintenance Service (PMS) is designated to preserve
@@ -563,9 +557,7 @@
             </div>
           </div>
 
-          <div
-            class="owners-quick-links"
-          >
+          <div class="owners-quick-links">
             <h2>QUICK LINKS</h2>
             <div class="owners-quick-links-icons">
               <a
@@ -731,9 +723,7 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p>
-                ISUZU KNOW AND GO-CHECKING YOUR TIRES
-              </p>
+              <p>ISUZU KNOW AND GO-CHECKING YOUR TIRES</p>
             </div>
 
             <div>
@@ -756,9 +746,7 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p>
-                ISUZU KNOW AND GO-CHECKING THE AIR FILTER
-              </p>
+              <p>ISUZU KNOW AND GO-CHECKING THE AIR FILTER</p>
             </div>
 
             <div>
@@ -781,9 +769,7 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p>
-                ISUZU KNOW AND GO-CHECKING THE POWER STEERING FLUID
-              </p>
+              <p>ISUZU KNOW AND GO-CHECKING THE POWER STEERING FLUID</p>
             </div>
 
             <div>
@@ -806,9 +792,7 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p>
-                ISUZU KNOW AND GO-ENGINE COOLANT INSPECTION
-              </p>
+              <p>ISUZU KNOW AND GO-ENGINE COOLANT INSPECTION</p>
             </div>
 
             <div>
@@ -831,49 +815,58 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
-              <p>
-                ISUZU KNOW AND GO-PROPER BATTERY INSPECTION
-              </p>
+              <p>ISUZU KNOW AND GO-PROPER BATTERY INSPECTION</p>
             </div>
           </div>
-
-         
         </div>
       </section>
 
-     <section id = 'owners-third-section' class = 'owners-dashboard'>
-        <div class = 'owners-dashboard-desc'>
-          <h2 class =  'reveal'>KNOW  WHAT YOUR DASHBOARD LIGHT SAYS</h2>
-          <p class = 'reveal'>This will help you understatnd and interpret your Isuzu Vehicle's warning light symbols.</p>
+      <section id="owners-third-section" class="owners-dashboard">
+        <div class="owners-dashboard-desc">
+          <h2 class="reveal">KNOW WHAT YOUR DASHBOARD LIGHT SAYS</h2>
+          <p class="reveal">
+            This will help you understatnd and interpret your Isuzu Vehicle's
+            warning light symbols.
+          </p>
         </div>
-        <div class = 'owners-find-more-container'>
-          <img src="assets/images/owners/img_owners_dashboard.png" alt="" class = 'owners-dashboard-img'>
-          <p id = 'findMoreBtn' class = 'owners-dashboard-find'>FIND MORE</p>
+        <div class="owners-find-more-container">
+          <img
+            src="assets/images/owners/img_owners_dashboard.png"
+            alt=""
+            class="owners-dashboard-img"
+          />
+          <p id="findMoreBtn" class="owners-dashboard-find">FIND MORE</p>
         </div>
-       
+
+        <!-- MODAL OVERLAY (fully dynamic content based on indicator click) -->
         <div class="modal-overlay" id="dashboardModal">
-        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-          <div  class =  'modal-overlay-header'>
-            <img src="assets/images/common/img_isuzu_logo.svg" alt="isuzu" class = 'overlay-logo'>
-            <button class="modal-close" id="modalClose" aria-label="Close">
-              <img src="assets/images/owners/owners_modal_close.svg" alt="close">
-            </button>
-          </div>
-        
-          <p class = 'owners-modal-note'>Note: RED needs immediate checking by Isuzu Service while AMBER is caution indicator.</p>
-          <div class = 'owners-indicators-desc'>
-            <img src="assets/images/owners/owners_icons.png" alt="AUTOMATIC TRANSMISSION FLUID TEMPERATURE WARNING LIGHT"  class = 'owners-indicators-icon'>
-            <div>
-              <h2>AUTOMATIC TRANSMISSION FLUID TEMPERATURE WARNING LIGHT</h2>
-              <p>This warning light comes "ON" when the temperature of the automatic transmission becomes high while driving. This may result to serious damage in transmission components and transmission failure if not prevented. Immediately stop the vehicle in a safe place and turn off the engine.</p>
-              <p>Contact your nearest Isuzu Dealership.</p>
+          <div class="modal-box" role="dialog" aria-modal="true">
+            <div class="modal-overlay-header">
+              <img
+                src="assets/images/common/img_isuzu_logo.svg"
+                alt="isuzu"
+                class="overlay-logo"
+              />
+              <button class="modal-close" id="modalClose" aria-label="Close">
+                ✕
+              </button>
             </div>
-          
+            <p class="owners-modal-note">
+              Note: RED needs immediate checking by Isuzu Service while AMBER is
+              caution indicator.
+            </p>
+            <div class="owners-indicators-desc">
+              <div class="owners-indicators" id="indicatorsGrid">
+              </div>
+              <div class="indicator-text-area" id="indicatorTextArea">
+                <h2 id="modalIndicatorTitle"></h2>
+                <p id="modalIndicatorDesc"></p>
+                <p id="modalSubDesc"></p>
+              </div>
+            </div>
           </div>
-      
-          
         </div>
-     </section>
+      </section>
     </main>
 
     <!-- ═══════════ FOOTER ═══════════ -->
@@ -1254,23 +1247,167 @@
       </div>
     </footer>
 
-    <script>
-      const btn     = document.getElementById('findMoreBtn');
-      const modal   = document.getElementById('dashboardModal');
-      const closeBtn = document.getElementById('modalClose');
   
-      btn.addEventListener('click', () => modal.classList.add('active'));
-      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
-  
-      // Close on overlay click
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.classList.remove('active');
+
+   <script>
+  const indicatorsData = [
+    {
+      img: "assets/images/owners/img_indicator1.png",
+      title: "AUTOMATIC TRANSMISSION FLUID TEMPERATURE WARNING LIGHT",
+      desc: "This warning light comes ON when the temperature of the automatic transmission becomes high while driving. This may result to serious damage in transmission components and transmission failure if not prevented. Immediately stop the vehicle in a safe place and turn off the engine.",
+      subText: 'Contact your nearest Isuzu Dealership.'
+    },
+    {
+      img: "assets/images/owners/img_indicator2.png",
+      title: "Brake system Warning Light",
+      desc: 'The brake system warning light may comes "ON" while engine is running (after start up) due to the drop in the level of brake fluid (possible due to brake wear or leakage, etc.) and may result to poor braking.',
+      subText:'Have your vehicle inspected in the nearest Isuzu Dealership.'
+    },
+    {
+      img: "assets/images/owners/img_indicator3.png",
+      title: "Engine Oil Pressure Warning Light",
+      desc: 'When the warning light comes "ON" while engine is running, the engine oil pressure becomes too low. This may result to serious damage to the engine. Immediately stop the vehicle in a safe place and turn off the engine.',
+      subText:'Contact your nearest Isuzu Dealership.'
+    },
+    {
+      img: "assets/images/owners/img_indicator4.png",
+      title: "Engine Overheating Warning Light",
+      desc: 'Warning lights comes "ON" when operation or the gauge indicate in the red zone. Overheating may result to serious damage in engine components and can lead to engine failure.<br/>Immediately stop the vehicle in a safe place and turn off the engine.',
+      subText:'Contact your nearest Isuzu Dealership.'
+    },
+    {
+      img: "assets/images/owners/img_indicator5.png",
+      title: "Generator Warning Light",
+      desc: 'This warning light comes "ON" (while the engine is running) when there is a problem with the charging system, such as a loose or broken fan belt.<br/>Start-up operation may be affected and may result to engine stalling.',
+      subText:'Have your vehicle inspected in the nearest Isuzu Dealership.'
+    },
+    {
+      img: "assets/images/owners/img_indicator6.png",
+      title: "SRS Airbag Warning Light",
+      desc: 'The SRS airbag warning light should flash 7 times when ignition switch is turn "ON" and should go out. <br/> If the SRS airbag warning light comes on, there is something wrong with the airbag system and the seat belt with pretensioner and airbag may not function in the event of collision.',
+      subText:'Have your vehicle inspected in the nearest Isuzu Dealership.',
+    },
+    {
+      img: "assets/images/owners/img_indicator7.png",
+      title: "ABS Warning Light",
+      desc: 'This warning light comes "ON" whenever there is a problem in the anti-lock brake system (ABS) after engine started.<br/>In this case, the ABS stop working but the brakes still function as ordinary service brakes.',
+      subText: 'Have the vehicle inspected in the nearest Isuzu Dealership'
+    },
+    {
+      img: "assets/images/owners/img_indicator8.png",
+      title: "Check Engine Warning Light",
+      desc: 'If this light comes "ON" while the engine is running, this alerts you to problem with the engine electronic control system.',
+      subText:'Avoid driving in high speed and have the vehicle inspected in the nearest Isuzu Dealership.'
+    },
+    {
+      img: "assets/images/owners/img_indicator9.png",
+      title: "Check Trans Warning Light (AT model)",
+      desc: 'This warning light should remain "ON" for about 3 seconds after the starter switch is turned to "ON" position, and then should go out',
+      subText:'If this light flashes after the engine has started, there is something wrong with the transmission electronic control system.'
+    },
+    {
+      img: "assets/images/owners/img_indicator10.png",
+      title: "ESC OFF Warning Light",
+      desc: 'The ESC OFF indicator light will turn "ON" in the meter cluster if you press the ESC OFF switch for approximately 5 seconds.',
+      subText:'This will cancel the ESC operation.'
+    },
+    {
+      img: "assets/images/owners/img_indicator11.png",
+      title: "ESC Warning Light",
+      desc: 'ESC warning light turn "ON" whenever there is a problem in the electronic stability control (ESC). When the ESC warning light is on, the TCS/ESC will not operate but this has no effect in normal driving.',
+      subText:'The ESC warning light may turn on when battery cables are disconnected, or the battery voltage is low.'
+    },
+    {
+      img: "assets/images/owners/img_indicator12.png",
+      title: "Fuel Filter Warning Light",
+      desc: 'This warning light comes "ON" when the fuel filter element is clogged with dirt and the like.<br/>This may cause damage on the injection system and problem with the engine performance if continuously use with warning light on.',
+      subText:'If this warning light comes on, have your vehicle inspected in the nearest Isuzu Dealership.'
+    },
+    {
+      img: "assets/images/owners/img_indicator13.png",
+      title: "Low Fuel Warning Light",
+      desc: 'This warning light comes "ON" when the fuel level in the tank becomes low. If the low-level warning light comes on, add fuel at the earliest possible time.',
+      subText:'If the vehicle runs out of fuel, air bleeding procedure must perform.'
+    },
+    {
+      img: "assets/images/owners/img_indicator14.png",
+      title: "TCS OFF Warning Light",
+      desc: 'The TCS OFF indicator light goes off after turning "ON" the starter switch for about 3 seconds.<br/>The TCS OFF indicator light will turn "ON" in the meter cluster if you press the TCS OFF switch for approximately 1 second. This will cancel the TCS operation.',
+      subText:''
+    },
+    {
+      img: "assets/images/owners/img_indicator15.png",
+      title: "Water Separator Warning Light",
+      desc: 'This warning light will come "ON" if the water in the separator needs draining. If you continue driving with the warning light on, the fuel injection may fail and may cause problem on engine performance.',
+      subText:'Have your vehicle inspected in the nearest Isuzu Dealership.'
+    },
+  ];
+
+  const indicatorsContainer = document.getElementById("indicatorsGrid");
+  const modalTitleElem = document.getElementById("modalIndicatorTitle");
+  const modalDescElem = document.getElementById("modalIndicatorDesc");
+  const modalSubDesc = document.getElementById("modalSubDesc");
+
+  function buildIndicators() {
+    indicatorsContainer.innerHTML = "";
+    indicatorsData.forEach((item, idx) => {
+      const img = document.createElement("img");
+      img.src = item.img;
+      img.alt = `indicator ${idx + 1}`;
+      img.classList.add("indicator-icon");
+      img.setAttribute("data-index", idx);
+      img.addEventListener("click", (e) => {
+        e.stopPropagation();
+        
+        document.querySelectorAll('.indicator-icon').forEach(icon => {
+          icon.classList.remove('active-indicator');
+        });
+        img.classList.add('active-indicator');
+        
+        modalTitleElem.innerText = item.title;
+        modalDescElem.innerHTML = item.desc;
+        modalSubDesc.innerText = item.subText || '';
+        
+        const modalOverlay = document.getElementById("dashboardModal");
+        if (!modalOverlay.classList.contains("active")) {
+          modalOverlay.classList.add("active");
+        }
       });
-  
-      // Close on Escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') modal.classList.remove('active');
-      });
-    </script>
+      indicatorsContainer.appendChild(img);
+    });
+  }
+
+  const findBtn = document.getElementById("findMoreBtn");
+  const modalOverlay = document.getElementById("dashboardModal");
+  const closeModalBtn = document.getElementById("modalClose");
+
+  function openModal() {
+    document.querySelectorAll('.indicator-icon').forEach(icon => {
+      icon.classList.remove('active-indicator');
+    });
+    const firstIndicator = document.querySelector('.indicator-icon');
+    if (firstIndicator) {
+      firstIndicator.classList.add('active-indicator');
+    }
+    
+    modalTitleElem.innerText = indicatorsData[0].title;
+    modalDescElem.innerHTML = indicatorsData[0].desc;
+    modalSubDesc.innerText = indicatorsData[0].subText || '';
+    modalOverlay.classList.add("active");
+  }
+
+  findBtn.addEventListener("click", openModal);
+  closeModalBtn.addEventListener("click", () =>
+    modalOverlay.classList.remove("active"),
+  );
+  modalOverlay.addEventListener("click", (e) => {
+    if (e.target === modalOverlay) modalOverlay.classList.remove("active");
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") modalOverlay.classList.remove("active");
+  });
+
+  buildIndicators();
+</script>
   </body>
 </html>

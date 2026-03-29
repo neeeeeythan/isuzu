@@ -866,6 +866,7 @@ div[class$="section"] {
   position: relative;
   animation: slideUp 0.3s ease;
   max-height: 700px;
+  min-height:700px;
   overflow: auto;
 }
 .modal-overlay-header {
@@ -923,6 +924,7 @@ div[class$="section"] {
   text-align: center;
   width: 80%;
   margin: 0px auto;
+   transition:all 0.3s ease-in-out;
 }
 .owners-indicators-desc p {
   font-size: 20px;
@@ -930,8 +932,35 @@ div[class$="section"] {
   letter-spacing: 0.05em;
   margin-top: 40px;
   text-align: left;
+  transition:all 0.3s ease-in-out;
+}
+.owners-indicators{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  align-items: center;
+  justify-content: center;
+  max-width:550px;
+}
+.owners-indicators img{
+ height:65px;
+  width:65px;
+  object-fit: cover;
+  transition:all 0.3s ease-in-out;
+  border:2px solid var(--white);
+}
+.owners-indicators img.active-indicator {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(201, 0, 0, 0.3);
 }
 
+.owners-indicators img:hover{
+  transform:scale(1.1);
+}
+
+#modalSubDesc{
+  margin-top:20px;
+}
 @keyframes slideUp {
   from {
     transform: translateY(30px);
